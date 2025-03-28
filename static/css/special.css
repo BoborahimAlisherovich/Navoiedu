@@ -1,0 +1,155 @@
+.special-top{background: #373634;}
+.special-settings {
+    display: none;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 30px !important;
+    font-family: Verdana, Arial, sans-serif;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    color: white;
+}
+html.specialversion .special-settings {
+    display: block
+}
+html.specialversion a#specialversion {
+    display: none
+}
+.a-fontsize-small{display: none !important;}
+.a-fontsize,
+.a-colors,
+.default-version,
+.norm-version {
+    float: left;
+    margin: 10px 30px 0 0px;
+}
+.norm-version a{
+    border-bottom: 1px dashed #000;
+    color: white;
+}
+.a-fontsize a {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    border-radius: 4px;
+    color: #fff;
+}
+.a-fontsize .bigFont{font-size: 32px;}
+.a-fontsize-big {
+    font-size: 30px;
+    font-weight: bold
+}
+.a-fontsize-normal {
+    font-size: 20px
+}
+.a-fontsize-small {
+    font-size: 17px
+}
+.color1 .a-fontsize-small {
+    display: none;
+}
+.color1.fs-big .a-fontsize-big, .color1.fs-small .a-fontsize-small, .color1.fs-normal .a-fontsize-normal, .color1 .a-fontsize a:hover, .fs-bigFont .bigFont{
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+}
+.a-colors a {
+    display: none;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.a-colors .a-color1 {
+    display: inline-block;
+    color: #000;
+    background-color: #fff;
+    border-color: #000 !important;
+}
+.a-colors .a-color2 {
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    border-color: #fff !important;
+}
+html.specialversion body img, .specialversion .fixed-block, .specialversion #canvas_wrapper, .specialversion .ya-share2__badge{
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    color: #000;
+}
+.fs-bigFont .answers-btn, .fs-bigFont .subscribe-btn, .fs-bigFont .middle-news .main-middle-news p, .fs-bigFont .links-item h3{font-size: 16px;}
+.fs-bigFont .header-logo-title h4, .fs-bigFont .header-logo-title h3, .fs-bigFont .news div .news-text p{font-size: 19px;}
+.fs-bigFont .header-logo-title p, .fs-bigFont #header .header-nav-main nav > ul > li > a{font-size: 18px;}
+.fs-bigFont #mainNav li {padding: 0 8px;}
+.specialversion .header-nav-main nav > ul > li.dropdown:hover > .dropdown-menu {margin: 8px 0 0 -8px !important;}
+.color1 body {background-color: #fff !important; color: #000 !important;}
+.specialversion h2, .specialversion h3, .specialversion h4, .specialversion h5, .specialversion h6, .specialversion p, .specialversion span, .specialversion .galery-text h1, .specialversion .galery-text a, .specialversion .footer-info-bottom a, .specialversion #footer i, .specialversion .gsInformer .gsLinks .leftCol .gis-blue, .specialversion .news_item_text a, .specialversion .panel-group .panel-heading a{
+    color: #000 !important;
+}
+.specialversion .sp-button, .specialversion .news-imagem, .specialversion .radio-style:not(checked) + label:before, .specialversion .news-image, .specialversion .docs ul li, .specialversion .docs ul, .specialversion .btn-primary, .specialversion .error-page-404 h4{
+    border-color: #000 !important;
+}
+.specialversion .gsInformer{border-color: #efefef !important;}
+.specialversion .news-views p:after{border-color: transparent transparent transparent #000;}
+.specialversion .title-block h1{
+    line-height: 15px;
+}
+.specialversion .sp-selected-button, .specialversion .title-block{
+    background: #000 !important;
+    border: 0;
+}
+.specialversion .left-img{display: none;}
+.specialversion #owl-links .owl-dots .owl-dot span {
+    background: transparent;
+    border: 1px solid #fff;
+}
+.specialversion .flatpickr-current-month .numInputWrapper span.arrowUp:after{border-bottom-color: #fff}
+.specialversion .flatpickr-current-month .numInputWrapper span.arrowDown:after {
+    border-top-color: #fff;
+}
+.specialversion #owl-links  .owl-dots .owl-dot.active span, .specialversion #owl-links .owl-dots .owl-dot:hover span, .specialversion #header{
+    background: #fff !important;
+}
+.specialversion #header .header-nav, .specialversion .news-date, .specialversion .news-views,  .specialversion .flatpickr-month, .specialversion .answers-btn, .specialversion .subscribe-btn, .specialversion .cabinet a, .specialversion .btn, .specialversion .dropdown:hover, .specialversion #header .header-nav-main nav > ul > li.dropdown .dropdown-menu, .specialversion #header .dropdown-menu li:hover, .specialversion .radio-style:not(checked) + label:after, .specialversion div#captcha_contacts_button, .specialversion #year .sel, .specialversion #year li:hover, .specialversion #year li, .specialversion .data-banner a, .specialversion .owl-carousel .owl-dots .owl-dot.active span, .specialversion .owl-carousel .owl-dots .owl-dot:hover span{
+    background: #000 !important;
+}
+.specialversion .news-date, .specialversion .date, .specialversion #footer .dev a, .specialversion .error-page-404 .fa-exclamation-triangle  {
+    color: #000;
+}
+.specialversion .special-menu ul li span, .specialversion .news-views p, .specialversion .news-date p, .specialversion .flatpickr-month, .specialversion .flatpickr-current-month span.cur-month, .specialversion .flatpickr-current-month input.cur-year, .specialversion .numInputWrapper span, .specialversion .title-block .rss:hover, .specialversion .data-banner a span{
+    color: #fff !important;
+}
+.specialversion .title-block::after, .specialversion .flatpickr-month::after{border-top: 10px solid #000;}
+.specialversion body, .specialversion #header .header-nav, .specialversion .galery-main, .specialversion #footer-top {
+    background: none;
+}
+.specialversion .flatpickr-day.today:hover, .specialversion .flatpickr-day.today:focus, .specialversion .flatpickr-day.today {
+    border-color: #000;
+    background: #000;
+    color: #fff !important;
+}
+.specialversion .gsInformer tbody.gsInformer thead, .specialversion .gsInformer tr, .specialversion .gsInformer .cols_1 #colsDays{    background-color: rgb(241, 241, 241) !important;}
+.color2 body, .color2 .special-top, .color2 .news div .news-text, .color2 .block-sidebar .sidebar-title, .color2 #footer, .color2 .opros-title, .color2 .opros .answers, .color2 .pages, .color2 #header, .color2 .news_content, .color2 .symbols, .color2 .error-page-404 h4 {
+    background-color: #000 !important;
+    /*color: #ff0 !important;*/
+     color: #fff !important;
+}
+.color2 .a-fontsize a, .color2 .norm-version a{color: #fff;}
+.color2 h2, .color2 h3, .color2 h4, .color2 h5, .color2 h6, .color2 p, .color2 span, .color2 .galery-text h1, .color2 .galery-text a, .color2 .footer-info-bottom a, .color2 .footer-info-top div i, .color2 .gsInformer .gsLinks .leftCol .gis-blue, .color2 .top-block .phone a, .color2 #header .header-nav-main nav > ul > li > a, .color2 .news_item_text a, .color2 #symbols a, .color2 .panel-group .panel-heading a{color: #fff !important;}
+.color2 #header .header-nav, .color2 .title-block, .color2 .flatpickr-month, .color2 .flatpickr-day.today, .color2 .answers-btn, .color2 .subscribe-btn, .color2 .btn, .color2 .modal-content{
+    background: #373634 !important;
+}
+.color2 .error-page-404 h4{    border-bottom: 5px solid #fff !important;
+    border-top: 5px solid #fff !important;}
+.color2 .title-block::after, .color2 .flatpickr-month::after {
+    border-top: 10px solid #373634;
+}
+.color2 .gsInformer tr, .color2 .gsInformer .gsAddInfo2.padding{background-color: rgb(0, 0, 0) !important;}
+.color2 .footer-info-top div a, .color2 .captcha-main i, .color2 #header .header-nav-main nav > ul > li.dropdown .dropdown-menu li a, .color2 #footer i, .color2 .site-info-footer ul li, .color2 #footer .dev a,  .color2 .error-page-404 .fa-exclamation-triangle{color: #fff !important;}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="body container-user">
+
+    <div role="main" class="main row">
+        <div class="fixed-block">
+            <a href="../../murojaatlar/index.html" class="feed-button"
+               style="background: url(../../templates/Default/images/human-feedback-uz.png);"> </a>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="pull-left col-md-9">
+            <div class="news-main">
+                <div class="yangilik-block">
+                    <a href="https://navoiyedu.uz/boshqarma-haqida/erishilgan-yutuqlar/uz/news.html">Barcha
+                        yangiliklar</a>
+                    <a href="https://navoiyedu.uz/boshqarma-haqida/erishilgan-yutuqlar/uz/rss" class="rss">RSS <i
+                            class="fa fa-rss" aria-hidden="true"></i></a>
+
+                </div>
+
+
+                <div class="news-full">
+                    <header><h3 style="line-height: 40px;">{{ data.title }}</h3></header>
+                    <div style="text-align:left;">
+                        <span style="font-size:16px;line-height:107%;font-family:'Times New Roman', serif;">
+                            <img src="{{ data.image.url }}"
+                            class="fr-fic fr-dib" alt="">
+                    </span>
+                    </div>
+                    <span style="font-size:16px;line-height:107%;font-family:'Times New Roman', serif;">     {{ data.content }}</span>
+
+                    <table style="width:100%;">
+                        <tbody>
+                        <tr>
+                            {% for image in data.rasmlar.all %}
+                            <td style="width:50%;"><img
+                                    src="{{ image.url }}"
+                                    class="fr-fic fr-dib" alt=""></td>
+                            {% endfor %}
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <div class="date-main" align="center">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> 8-02-2024, 21:06 <br/>
+                        <i class="fa fa-eye" aria-hidden="true"></i> Ko'rishlar: 21 <br/>
+                        <a href="print%253Apage,1,203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html"><i
+                                class="fa fa-print" aria-hidden="true"></i> Sahifani chop etish</a></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="pull-left block-sidebar col-md-3">
+                    <span class="news" style="border:1px solid #3669d1;">
+                        <div class="news__image" style="height: auto;"><img
+                                src="{% static 'images/raxba_copy.jpg' %}"/></div>
+                        <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
+                        <div style="text-align:center; ">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+                    </span>
+
+            <div id="activities_wrap">
+                <ul class="nav navbar-nav" id="main-menu">
+
+                    <li class="dropdown parent"><a
+                            href="203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html#">Qonunchilik
+                        palatasi qarorlari</a></li>
+                    <li class="dropdown parent"><a
+                            href="203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html#">Vazirlar
+                        mahkamasi qarorlari</a></li>
+                    <li class="dropdown parent"><a
+                            href="203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html#">O'z
+                        kuchini yo'qotgan me'yoriy hujjatlar</a></li>
+                    <li class="dropdown parent"><a
+                            href="203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html#">Rasmiy
+                        ma'ruzalar</a></li>
+                    <li class="dropdown parent"><a
+                            href="203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html#">Analitik
+                        xisobot va taxlillar</a></li>
+                </ul>
+            </div>
+
+            <hr/>
+            <div class="data-banner">
+                <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i
+                        class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
+                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o"
+                                                                                aria-hidden="true"></i> <span>Ish grafigi</span></a>
+                <a style="background: #219653;" href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i
+                        class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
+                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br/>Onlayn tarzda yuboring</span></a>
+            </div>
+
+            <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock content %}
+
+

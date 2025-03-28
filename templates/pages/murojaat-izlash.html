@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="body container-user">
+
+            <div role="main" class="main row">
+                <div class="fixed-block">
+                    <a href="/murojaatlar" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+                </div>
+                <!-- MAIN CONTENT -->
+                <div class="pull-left col-md-9">
+                    <div class="news-main">
+                        <div class="yangilik-block">
+                        <a href="https://navoiyedu.uz/murojaat-izlash/uz/news.html">Barcha yangiliklar</a>
+                        <a href="https://navoiyedu.uz/murojaat-izlash/uz/rss" class="rss">RSS <i class="fa fa-rss" aria-hidden="true"></i></a>
+                            <h1>
+
+                                Onlayn murojaat qoldirish
+                            </h1>
+                        </div>
+
+
+                            <div class="news-full">
+        <h3 class="common__h1-deco">Murojaatingiz holatini bilish uchun joriy maydonlarni to'ldiring</h3><br />
+        <div class="">
+			<form class="form appeals-search form-validate form-horizontal form-validate" method="post">
+				<div class="form__section" style="max-width: 650px;">
+					<div class="row form-group">
+						<div class="form-field col-sm-6">
+							<label for="registered_in" class="control-label appeals-search__control-label">
+								Murojaat sanasi
+							</label>
+							<input autocomplete="off" id="registered_in" name="registered_in" type="text" required="required" value="" class="form-control form-control__datepiker">
+						</div>
+						<div class="form-field col-sm-6">
+							<label for="number" class="control-label appeals-search__control-label">
+								Murojaat raqami
+							</label>
+							<input id="number" name="number" type="text" required="required" value="" class="form-control">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-12 form-field">
+							<input type="submit" value="Murojaatni tekshirish" class="btn btn-primary">
+						</div>
+					</div>
+				</div>
+					<input type="hidden" name="step" value="search"/>
+					<input type="hidden" name="act" value="search"/>
+					<input type="hidden" name="do" value="claims"/>
+
+			</form>
+			<script>
+
+				var cal_language   = {en:{months:['Yanvar','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],dayOfWeek:["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]}};
+
+
+
+			$(document).ready(function(){
+				$('#registered_in').datetimepicker({
+				  format:'d/m/Y',
+				  closeOnDateSelect:true,
+				  dayOfWeekStart: 1,
+				  timepicker:false,
+				  scrollMonth:false,
+				  scrollInput:false,
+				  i18n: cal_language
+				});
+
+				});
+			</script>
+ 	    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+                <div class="pull-left block-sidebar col-md-3">
+                    <span class="news" style="border:1px solid #3669d1;">
+                        <div class="news__image" style="height: auto;"><img src="/static/images/raxba_copy.jpg" /></div>
+                        <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
+                        <div style="text-align:center; ">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+                    </span>
+
+                    <div id="activities_wrap">
+                        <ul class="nav navbar-nav" id="main-menu">
+
+                            <li class="dropdown parent"><a href="index.html#">Qonunchilik palatasi qarorlari</a></li>
+                            <li class="dropdown parent"><a href="index.html#">Vazirlar mahkamasi qarorlari</a></li>
+                            <li class="dropdown parent"><a href="index.html#">O'z kuchini yo'qotgan me'yoriy hujjatlar</a></li>
+                            <li class="dropdown parent"><a href="index.html#">Rasmiy ma'ruzalar</a></li>
+                            <li class="dropdown parent"><a href="index.html#">Analitik xisobot va taxlillar</a></li>
+                        </ul>
+                    </div>
+
+                    <hr />
+                    <div class="data-banner">
+                        <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
+                        <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
+                        <a style="background: #219653;" href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
+                        <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
+                    </div>
+
+                    <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+{% endblock content %}

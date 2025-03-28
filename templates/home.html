@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="body container-user">
+
+    <div class="slider-main">
+        <div id="slider" class="slider-pro">
+            <div class="slider-preload">
+                <img src="{% static 'images/slider-loading.gif' %}" alt=""/>
+            </div>
+
+            <div class="sp-slides">
+                <div class="sp-slide">
+                    <img class="sp-image scale" src="{% static 'uploads/posts/2024-10/1728020545_1728020456263.png' %}"
+                         data-src="{% static 'uploads/posts/2024-10/1728020545_1728020456263.png' %}"
+                         data-retina="{% static 'uploads/posts/2024-10/1728020545_1728020456263.png' %}"/>
+                </div>
+                <div class="sp-slide">
+                    <img class="sp-image scale" src="{% static 'uploads/posts/2024-10/1728020035_1728019945219.png' %}"
+                         data-src="{% static 'uploads/posts/2024-10/1728020035_1728019945219.png' %}"
+                         data-retina="{% static 'uploads/posts/2024-10/1728020035_1728019945219.png' %}"/>
+                </div>
+                <div class="sp-slide">
+                    <img class="sp-image scale" src="{% static 'uploads/posts/2024-05/1717054344_glavnij.jpg' %}"
+                         data-src="{% static 'uploads/posts/2024-05/1717054344_glavnij.jpg' %}"
+                         data-retina="{% static 'uploads/posts/2024-05/1717054344_glavnij.jpg' %}"/>
+                </div>
+                <div class="sp-slide">
+                    <img class="sp-image scale" src="{% static 'uploads/posts/2024-05/1716789182_photo_2024-05-24_20-13-31.jpg' %}"
+                         data-src="{% static 'uploads/posts/2024-05/1716789182_photo_2024-05-24_20-13-31.jpg' %}"
+                         data-retina="{% static 'uploads/posts/2024-05/1716789182_photo_2024-05-24_20-13-31.jpg' %}"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div role="main" class="main row">
+        <div class="fixed-block">
+            <a href="{% static 'murojaatlar/index.html' %}" class="feed-button"
+               style="background: url({% static 'images/human-feedback-uz.png' %});"> </a>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="pull-left col-md-9">
+            <div class="news-main">
+                <div class="yangilik-block">
+                    <a href="https://edunavoiy.uz/uz/news.html">Barcha yangiliklar</a>
+                    <a href="https://edunavoiy.uz/uz/rss" class="rss">RSS <i class="fa fa-rss"
+                                                                             aria-hidden="true"></i></a>
+                    <h1>So'nggi xabarlar va e'lonlar</h1>
+                </div>
+
+                    <div class="grid grid_news">
+                        {% for i in elon_va_tadbirlar %}
+                            <div class="grid_item news_item">
+                        <a href="{% url 'elon_va_tadbir_detail' pk=i.id %}" class="news">
+                            <div class="news__image"
+                                 style="background: url({{i.image.url}});background-size: cover;"></div>
+                            <div class="news__title">
+                                {{ i.title }}
+                            </div>
+                            <div class="news__date">
+                                <i>
+                                    <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="{% static 'images/sprite_icons.svg#icon__time' %}"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </i>
+                                <span>{{ i.created_at }}</span>
+                            </div>
+                            <div class="news__text">{{ i.content|truncatewords:11 }}
+                            </div>
+                            <div class="news__arrow">
+                                <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="{% static 'images/sprite_icons.svg#icon__arrow_right' %}"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                        {% endfor %}
+                     </div>
+
+            </div>
+        </div>
+        <div class="pull-left block-sidebar col-md-3">
+            <span class="news" style="border:1px solid #3669d1;">
+                <div class="news__image" style="height: auto;"><img src='{% static "images/raxba_copy.jpg" %}'/></div>
+                <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
+                <div style="text-align:center;">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+            </span>
+
+            <div id="activities_wrap">
+                <ul class="nav navbar-nav" id="main-menu">
+                    <li class="dropdown parent"><a href="#">Qonunchilik palatasi qarorlari</a></li>
+                    <li class="dropdown parent"><a href="#">Vazirlar mahkamasi qarorlari</a></li>
+                    <li class="dropdown parent"><a href="#">O'z kuchini yo'qotgan me'yoriy hujjatlar</a></li>
+                    <li class="dropdown parent"><a href="#">Rasmiy ma'ruzalar</a></li>
+                    <li class="dropdown parent"><a href="#">Analitik xisobot va taxlillar</a></li>
+                </ul>
+            </div>
+
+            <hr/>
+            <div class="data-banner">
+                <a class="calc-button" href="#"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
+                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
+                <a style="background: #219653;" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
+                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br/>Onlayn tarzda yuboring</span></a>
+            </div>
+
+            <img src="{% static 'images/yil_dasturi.jpg' %}"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="bloklar-main">
+    <div class="container-user">
+        <div class="info__content">
+            <div class="galery-foto">
+                <div class="galery-text">
+                    <h1>Fotogalereya</h1>
+                    <a href="#">Barcha rasmlar</a>
+                </div>
+                <div class="foto">
+                    <div class="row">
+                        <div class="col-md-6 foto-img">
+                            <a href="{% static 'uploads/posts/2024-10/1728020545_1728020456263.png' %}" class="fancybox" rel="gallery">
+                                <img src="{% static 'uploads/posts/2024-10/1728020545_1728020456263.png' %}" alt=""/>
+                            </a>
+                        </div>
+                        <div class="col-md-6 foto-img">
+                            <a href="{% static 'uploads/posts/2024-10/1728020035_1728019945219.png' %}" class="fancybox" rel="gallery">
+                                <img src="{% static 'uploads/posts/2024-10/1728020035_1728019945219.png' %}" alt=""/>
+                            </a>
+                        </div>
+                        <div class="col-md-6 foto-img">
+                            <a href="{% static 'uploads/posts/2024-05/1717054344_glavnij.jpg' %}" class="fancybox" rel="gallery">
+                                <img src="{% static 'uploads/posts/2024-05/1717054344_glavnij.jpg' %}" alt=""/>
+                            </a>
+                        </div>
+                        <div class="col-md-6 foto-img">
+                            <a href="{% static 'uploads/posts/2024-05/1716789182_photo_2024-05-24_20-13-31.jpg' %}" class="fancybox" rel="gallery">
+                                <img src="{% static 'uploads/posts/2024-05/1716789182_photo_2024-05-24_20-13-31.jpg' %}" alt=""/>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
