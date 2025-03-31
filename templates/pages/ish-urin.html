@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body container-user">
+    <div role="main" class="main row">
+        <div class="fixed-block">
+            <a href="/murojaatlar" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="pull-left col-md-9">
+            <div class="news-main">
+                <div class="yangilik-block">
+                    <a href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html">Barcha bo'sh ish o'rinlari</a>
+                    <h1>Bo'sh ish o'rinlari</h1>
+                </div>
+                {% for ish in bosh_ish_urinlar %}
+                    <div class="grid_item news_item">
+                        <a href="{% url 'bosh_ish_urinlar_detail' pk=ish.id %}" class="news">
+                            <div class="news__image"><img src="{{ ish.image.url }}" /></div>
+                            <div class="news__title">{{ ish.lavozim }}</div>
+                            <div class="news__date">
+                                <i>
+                                    <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="   /static/images/sprite_icons.svg#icon__time"></use>
+                                    </svg>
+                                </i>
+                                <span>{{ ish.sana }}</span>
+                            </div>
+                            <div class="news__text">{{ ish.tavsif|truncatewords:11 }}</div>
+                            <div class="news__arrow">
+                                <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="/static/images/sprite_icons.svg#icon__arrow_right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pull-left block-sidebar col-md-3">
+            <span class="news" style="border:1px solid #3669d1;">
+                <div class="news__image" style="height: auto;"><img src="/static/images/raxba_copy.jpg" /></div>
+                <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
+                <div style="text-align:center;">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+            </span>
+            <hr />
+            <div class="data-banner">
+                <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
+                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
+                <a style="background: #219653;" href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
+                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
+            </div>
+            <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock content %}

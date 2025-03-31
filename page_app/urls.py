@@ -19,4 +19,11 @@ urlpatterns = [
     path('murojaat_izlash/', murojaat_izlash),
     path('murojaatlar/', murojaatlar),
 
+    path('boshqarma-haqida/ish-urin/', bosh_ish_urinlar),
+    path('boshqarma-haqida/ish-urin/<int:pk>/', bosh_ish_urinlar_detail, name='bosh_ish_urinlar_detail'),
+
+    path('boshqarma-haqida/rahbariyat/', rahbariyat),
+    path('boshqarma-haqida/rahbariyat/<int:pk>/', rahbariyat_detail, name='rahbariyat_detail'),
+
+
 ]

@@ -1,6 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 
-from news_app.models import ErishilganYutuqlar, MatbuotXizmati, ElonVaTadbirlar
+from news_app.models import (
+    ErishilganYutuqlar, 
+    MatbuotXizmati, 
+    ElonVaTadbirlar,
+     BoShIshOrin,
+    Rahbariyat,
+    BoshqarmaTarixi,
+    QabulJadvali,
+    MatbuotXizmatiRasmlar,
+  
+    #narmativ hujatlar
+
+    OzbekistonQonunlari,
+    PrezidentFarmonlari,
+    OliyTalImFanInnovatsiya,
+    ViloyatQarorlari,
+    OzKuchiniYoqotgan  )
+
+# 93 311 16 01 
 
 def home_page(request):
     elon_va_tadbirlar = ElonVaTadbirlar.objects.all()
@@ -11,8 +29,13 @@ def home_page(request):
 
     return render(request, 'home.html', ctx)
 
+
+
 def boshqarma_haqida(request):
     return render(request, 'pages/boshqarma-haqida.html')
+
+
+
 
 def erishilgan_yutuqlar(request):
     erishilgan_yutuqlar = ErishilganYutuqlar.objects.all()
@@ -22,6 +45,50 @@ def erishilgan_yutuqlar(request):
     }
 
     return render(request, 'pages/erishilgan-yutuqlar.html', ctx)
+
+
+def bosh_ish_urinlar(request):
+    bosh_ish_urinlar = BoShIshOrin.objects.all()
+
+    ctx = {
+        'bosh_ish_urinlar': bosh_ish_urinlar,
+    }
+
+    return render(request, 'pages/ish-urin.html', ctx)
+
+
+def rahbariyat(request):
+    rahbariyat = Rahbariyat.objects.all()
+
+    ctx = {
+        'rahbariyat': rahbariyat,
+    }
+
+    return render(request, 'pages/rahbaryat.html', ctx)
+
+
+def rahbariyat_detail(request, pk):
+    rahbariyatlar = get_object_or_404(Rahbariyat, pk=pk)
+
+    ctx = {
+        'data': rahbariyatlar,
+    }
+    return render(request, 'pages/news_detail.html', ctx)
+
+    
+
+
+def bosh_ish_urinlar_detail(request, pk):
+    bosh_ish_urin = get_object_or_404(BoShIshOrin, pk=pk)
+
+    ctx = {
+        'data': bosh_ish_urin,
+    }
+    return render(request, 'pages/news_detail.html', ctx)
+
+    # return render(request, 'pages/ish-urin-detail.html', ctx)
+
+
 
 def erishilgan_yutuq_detail(request, pk):
     erishilgan_yutuq = get_object_or_404(ErishilganYutuqlar, pk=pk)
@@ -42,10 +109,15 @@ def matbuot_xizmati(request):
 
 def matbuot_xizmati_detail(request, pk):
     matbuot_xizmati = get_object_or_404(MatbuotXizmati, pk=pk)
+    rasmlar = MatbuotXizmatiRasmlar.objects.filter(yutuq=matbuot_xizmati)  # Tegishli rasmlar olinmoqda
+
 
     ctx = {
         'data': matbuot_xizmati,
+        'rasmlar': rasmlar,  # Rasmlarni kontekstga qo'shamiz
     }
+    
+
 
     return render(request, 'pages/news_detail.html', ctx)
 
@@ -76,10 +148,21 @@ def yangiliklar(request):
     }
     return render(request, 'pages/yangiliklar.html', ctx)
 
+
 def murojaat_izlash(request):
     return render(request, 'pages/murojaat-izlash.html')
 
+
+
+from django.shortcuts import render, redirect
+from news_app.forms import MurojatForm
+
 def murojaatlar(request):
-    return render(request, 'pages/murojaatlar.html')
-
-
+    if request.method == 'POST':
+        form = MurojatForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'pages/success.html')  # yuborilganidan so'ngki sahifa
+    else:
+        form = MurojatForm()
+    return render(request, 'pages/murojaatlar.html', {'form': form})
