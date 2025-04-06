@@ -20,13 +20,15 @@
 
                             </h1>
                         </div>
+                        {% for boshqarma in boshqarma_haqida %}
 
 
                             <div class="grid_item news_item">
-    <a href="erishilgan-yutuqlar/203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html" class="news">
-        <div class="news__image" style="background: url(../uploads/posts/2024-02/1707407957_photo_2024-02-02_04-19-27.jpg);background-size: cover;"></div>
+
+                                <a href="{% url 'boshqarma_haqida_detail' pk=boshqarma.id %}" class="news">
+                                    <div class="news__image" style="background: url({{boshqarma.image.url}});background-size: cover;"></div>
         <div class="news__title">
-            BARKAMOL AVLOD-2023 SPORT MUSOBAQASIDA MUVOFFAQIYATLI BIRINCHI QADAM.
+            {{ boshqarma.title }}
         </div>
         <div class="news__date">
             <i>
@@ -34,9 +36,9 @@
                     <use xlink:href="/static/images/sprite_icons.svg#icon__time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                 </svg>
             </i>
-            <span>8-02-2024, 21:06</span>
+            <span>{{ boshqarma.created_at }}</span>
         </div>
-        <div class="news__text"> Barkamol avlod sport musobaqasining o‘quvchi yoshlar o‘rtasida Badminton sport turi bo‘yicha...</div>
+        <div class="news__text"> {{boshqarma.content | truncatewords:11}}</div>
         <div class="news__arrow">
             <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="/static/images/sprite_icons.svg#icon__arrow_right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
@@ -45,6 +47,9 @@
     </a>
 </div>
 
+
+
+                        {% endfor %}
 
 
                     </div>
@@ -71,7 +76,7 @@
                     <div class="data-banner">
                         <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
                         <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
-                        <a style="background: #219653;" href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
+                        <a style="background: #219653;" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
                         <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
                     </div>
 

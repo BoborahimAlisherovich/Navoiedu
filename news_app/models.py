@@ -87,7 +87,7 @@ class ElonVaTadbirlarRasmlar(models.Model):
 
 
 class ElonVaTadbirlar(models.Model):
-    title = models.CharField(max_length=455, verbose_name="Sarlavha")
+    title = models.CharField(max_length=455, verbose_name="Sarlavha",)
     image = models.ImageField(upload_to='Images/elon_va_tadbirlar/', verbose_name="Asosiy Rasm")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
@@ -106,7 +106,7 @@ class ElonVaTadbirlar(models.Model):
 
 #new addit
 class BoShIshOrin(models.Model):
-    image = models.ImageField(upload_to='Images/bo_shish_orin/')
+    image = models.ImageField(upload_to='Images/bo_shish_orin/', verbose_name="Rasm")
     lavozim = models.CharField(max_length=100)
     joylashuv = models.CharField(max_length=100)
     sana = models.DateField()
@@ -124,7 +124,7 @@ class BoShIshOrin(models.Model):
 
 class Rahbariyat(models.Model):
     ism = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='Images/rahbariyat/')
+    image = models.ImageField(upload_to='Images/rahbariyat/',verbose_name="Rasm")
     lavozim = models.CharField(max_length=100)
     telefon = models.CharField(max_length=20)
     email = models.EmailField()
@@ -141,12 +141,27 @@ class Rahbariyat(models.Model):
         return self.ism
 
 class BoshqarmaTarixi(models.Model):
+    image = models.ImageField(upload_to='Images/boshqarma_haqida/', verbose_name="Asosiy Rasm")
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = "Boshqarma Haqida"
+        verbose_name_plural = "Boshqarma Haqida"
+
+
+# class BoshqarmaTarixi(models.Model):
+#     title = models.CharField(max_length=255)
+#     content = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return self.title
     
 
     
@@ -164,6 +179,7 @@ class BoshqarmaTarixi(models.Model):
 #         verbose_name="Tegishli TarkibiyTuzilma"
 #     )
 
+
     
 class QabulJadvali(models.Model):
     ism = models.CharField(max_length=255)
@@ -180,6 +196,58 @@ class QabulJadvali(models.Model):
 
     def __str__(self):
         return self.ism
+
+
+
+
+
+class Murojat(models.Model):
+    MUROJAT_TURLARI = [
+        ('shikoyat', 'Shikoyat'),
+        ('taklif', 'Taklif'),
+        ('savol', 'Savol'),
+    ]
+    
+    # Kimga yuborilishi uchun tanlovlar
+    KIMGA = [
+        ('rahbar', 'Rahbar'),
+        ('urinbosar', 'O\'rinbosar'),
+       
+    ]
+
+    id  = models.AutoField(primary_key=True)
+    create_date = models.DateField(auto_now_add=True,verbose_name="Qoyilgan Sana")
+    murojat_kimga = models.CharField(max_length=20, choices=KIMGA, default='rahbar')    
+    murojat_turi = models.CharField(max_length=20, choices=MUROJAT_TURLARI, default='savol')    
+    familiya = models.CharField(max_length=255)
+    ismi = models.CharField(max_length=255)
+    otasining_ismi = models.CharField(max_length=255,blank=True, null=True)
+    kompaniyaning_nomi = models.CharField(max_length=255,blank=True, null=True)
+    boglanish_malumotlari = models.CharField(max_length=255)
+    pochta_manzil = models.EmailField()
+    mirojat_matni = models.TextField()
+    hujjatlar = models.FileField(upload_to='murojatlar/',blank=True, null=True) 
+    tel_raqam = models.CharField(max_length=20)
+    def __str__(self):
+        return self.murojat_kimga
+
+
+
+class MurojatHammuallif(models.Model):   
+    murojat = models.ForeignKey(
+        'Murojat',
+        related_name="murojat_hammuallif",
+        on_delete=models.CASCADE,
+        verbose_name="Tegishli Murojat"
+    )
+    familya = models.CharField(max_length=255)
+    ismi = models.CharField(max_length=255)
+    otasining_ismi = models.CharField(max_length=255,blank=True, null=True)
+    pochta_manzil = models.EmailField()
+
+    def __str__(self):
+        return self.familya
+
 
 
 #-----------------
@@ -258,31 +326,6 @@ class OzKuchiniYoqotgan(models.Model):
 
 
 
-class Murojat(models.Model):
-    id  = models.AutoField(primary_key=True)
-    create_date = models.DateField(auto_now_add=True)
-    murojat_kimga = models.CharField(max_length=255)
-    murojat_turi = models.CharField(max_length=255)
-    familiya = models.CharField(max_length=255)
-    ismi = models.CharField(max_length=255)
-    otasining_ismi = models.CharField(max_length=255,blank=True, null=True)
-    kompaniyaning_nomi = models.CharField(max_length=255,blank=True, null=True)
-    boglanish_malumotlari = models.CharField(max_length=255)
-    pochta_manzil = models.EmailField()
-    mirojat_matni = models.TextField()
-    hujjatlar = models.FileField(upload_to='murojatlar/',blank=True, null=True) 
-    tel_raqam = models.CharField(max_length=20)
-
-
-
-# class TelRaqam(models.Model):   
-#     murojat = models.ForeignKey(
-#         'Murojat',
-#         related_name="TelRaqam",
-#         on_delete=models.CASCADE,
-#         verbose_name="Tegishli Murojat"
-#     )
-#     ttel_raqam = models.CharField(max_length=20)
 
 
 

@@ -7,6 +7,9 @@ from .models import (
     ElonVaTadbirlar,
     ElonVaTadbirlarRasmlar,
 
+    Murojat,
+    MurojatHammuallif,    
+
     #boshqarma haqida 
     BoShIshOrin,
     Rahbariyat,
@@ -19,7 +22,7 @@ from .models import (
     PrezidentFarmonlari,
     OliyTalImFanInnovatsiya,
     ViloyatQarorlari,
-    OzKuchiniYoqotgan
+    OzKuchiniYoqotgan,
     
 )
 
@@ -95,6 +98,20 @@ class BoshqarmaTarixiAdmin(admin.ModelAdmin):
     list_filter = ('created_at','title')
     inlines = [BoShIshOrinInline,RahbariyatInline,QabulJadvaliInline]
 
+
+class MurojatHammuallifInline(admin.TabularInline):
+    model = MurojatHammuallif
+    extra = 1
+    verbose_name = "MurojatHammuallif"
+    verbose_name_plural = "MurojatHammualliflar"
+
+
+@admin.register(Murojat)
+class MurojatAdmin(admin.ModelAdmin):
+    list_display = ('id', 'murojat_kimga', 'create_date','ismi')
+    search_fields = ('ismi', 'murojat_kimga')
+    list_filter = ('murojat_kimga','ismi')
+    inlines = [MurojatHammuallifInline]
 
 
 

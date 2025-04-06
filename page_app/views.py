@@ -19,21 +19,20 @@ from news_app.models import (
     OzKuchiniYoqotgan  )
 
 # 93 311 16 01 
-
 def home_page(request):
     elon_va_tadbirlar = ElonVaTadbirlar.objects.all()
+    bosh_ish_urinlar = BoShIshOrin.objects.all()  # Bo'sh ish o'rinlarini ham olish
 
     ctx = {
-        'elon_va_tadbirlar': elon_va_tadbirlar
+        'elon_va_tadbirlar': elon_va_tadbirlar,
+        'bosh_ish_urinlar': bosh_ish_urinlar,  # Kontekstga qo'shish
     }
 
     return render(request, 'home.html', ctx)
 
 
-
-def boshqarma_haqida(request):
-    return render(request, 'pages/boshqarma-haqida.html')
-
+def korrupsiya(request):
+    return render(request, 'pages/korrupsiya.html')
 
 
 
@@ -58,6 +57,7 @@ def bosh_ish_urinlar(request):
 
 
 def rahbariyat(request):
+    
     rahbariyat = Rahbariyat.objects.all()
 
     ctx = {
@@ -152,17 +152,49 @@ def yangiliklar(request):
 def murojaat_izlash(request):
     return render(request, 'pages/murojaat-izlash.html')
 
+def boshqarma_haqida(request):
+    boshqarma_haqida = BoshqarmaTarixi.objects.all()
+
+    ctx = {
+        'boshqarma_haqida': boshqarma_haqida,
+    }
+
+    return render(request, 'pages/boshqarma-haqida.html', ctx)
 
 
+def boshqarma_haqida_detail(request, pk):
+    boshqarma_haqid = get_object_or_404(BoshqarmaTarixi, pk=pk)
+
+    ctx = {
+        'data': boshqarma_haqid,
+    }
+
+    return render(request, 'pages/news_detail.html', ctx)
+
+
+
+# news_app/views.py
 from django.shortcuts import render, redirect
-from news_app.forms import MurojatForm
+from news_app.forms import MurojatForm, MurojatHammuallifForm
+from django.forms import formset_factory
 
 def murojaatlar(request):
+    HammuallifFormSet = formset_factory(MurojatHammuallifForm, extra=0)
     if request.method == 'POST':
         form = MurojatForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return render(request, 'pages/success.html')  # yuborilganidan so'ngki sahifa
+        formset = HammuallifFormSet(request.POST)
+        if form.is_valid() and formset.is_valid():
+            murojat = form.save()
+            for hammuallif_form in formset:
+                hammuallif = hammuallif_form.save(commit=False)
+                hammuallif.murojat = murojat
+                hammuallif.save()
+            return redirect('home_page')  # Muvaffaqiyatli yuborilgandan keyin bosh sahifaga yo‘naltirish
     else:
         form = MurojatForm()
-    return render(request, 'pages/murojaatlar.html', {'form': form})
+        formset = HammuallifFormSet()
+    ctx = {
+        'form': form,
+        'formset': formset,
+    }
+    return render(request, 'pages/murojaatlar.html', ctx)

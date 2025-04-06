@@ -4,8 +4,9 @@ from .views import *
 urlpatterns = [
     path('', home_page, name='home_page'),
 
-    path('boshqarma-haqida/', boshqarma_haqida),
-
+    path('boshqarma-haqida/', boshqarma_haqida, name='boshqarma_haqida'),
+    path('boshqarma-haqida/<int:pk>/', boshqarma_haqida_detail, name='boshqarma_haqida_detail'),
+    
     path('boshqarma-haqida/erishilgan-yutuqlar/', erishilgan_yutuqlar),
     path('boshqarma-haqida/erishilgan-yutuqlar/<int:pk>/', erishilgan_yutuq_detail, name='erishilgan_yutuq_detail'),
 
@@ -17,13 +18,19 @@ urlpatterns = [
 
     path('matbuot-xizmati/yangiliklar/', yangiliklar),
     path('murojaat_izlash/', murojaat_izlash),
-    path('murojaatlar/', murojaatlar),
+    # path('murojaatlar/', murojaatlar),
 
     path('boshqarma-haqida/ish-urin/', bosh_ish_urinlar),
     path('boshqarma-haqida/ish-urin/<int:pk>/', bosh_ish_urinlar_detail, name='bosh_ish_urinlar_detail'),
 
     path('boshqarma-haqida/rahbariyat/', rahbariyat),
     path('boshqarma-haqida/rahbariyat/<int:pk>/', rahbariyat_detail, name='rahbariyat_detail'),
+    
+    path('boshqarma-haqida/murojaatlar/', murojaatlar),
+    # path('boshqarma-haqida/murojaatlar/<int:pk>/', rahbariyat_detail, name='rahbariyat_detail'),
+    
+    path('korrupsiyaga-qarshi-kurashish/',korrupsiya),
+
 
 
 ]
