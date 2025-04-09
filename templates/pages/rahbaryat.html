@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
 
 {% block content %}
 <div class="body container-user">
@@ -6,7 +8,7 @@
         <div class="pull-left col-md-9">
             <div class="news-main">
                 <div class="yangilik-block">
-                    <h1>Rahbariyat</h1>
+                    <h1>{% blocktrans %}Rahbariyat{% endblocktrans %}</h1>
                 </div>
                 {% for rahbar in rahbariyat %}
                 <div class="grid_item news_item">
@@ -22,25 +24,22 @@
                         <div class="news__date"><i class="fa fa-envelope"></i> <a href="mailto:{{ rahbar.email }}">{{ rahbar.email }}</a></div>
                     </div>
                 </div>
-
-            {% endfor %}
-            
-
+                {% endfor %}
             </div>
         </div>
         <div class="pull-left block-sidebar col-md-3">
             <div class="data-banner">
                 <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html">
                     <i class="fa fa-files-o" aria-hidden="true"></i>
-                    <span>Me'yoriy hujjatlar</span>
+                    <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span>
                 </a>
                 <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <span>Ish grafigi</span>
+                    <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span>
                 </a>
                 <a href="https://my.gov.uz/" class="mygov">
                     <i class="fa fa-comments-o" aria-hidden="true"></i>
-                    <span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span>
+                    <span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span>
                 </a>
             </div>
             <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />

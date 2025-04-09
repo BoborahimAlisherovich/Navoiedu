@@ -1,0 +1,792 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-09 13:05+0500\n"
+"PO-Revision-Date: 2025-04-08 15:00+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English <en@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:68
+msgid "Shrift o'lchami: "
+msgstr "Font size: "
+
+#: templates/base.html:77
+msgid " Sayt rangi: "
+msgstr "Site color: "
+
+#: templates/base.html:87
+msgid " Saytning to'liq talqini "
+msgstr "Full version of the site"
+
+#: templates/base.html:107
+msgid " Bosh sahifa  "
+msgstr "Home page"
+
+#: templates/base.html:114
+msgid " Sayt xaritasi "
+msgstr "Site map"
+
+#: templates/base.html:120
+msgid " Mobil versiya "
+msgstr "Mobile version"
+
+#: templates/base.html:126
+msgid " Zaif ko'ruvchilar uchun "
+msgstr "For the visually impaired"
+
+#: templates/base.html:132
+msgid " Tizimga kirish "
+msgstr ""
+
+#: templates/base.html:182
+msgid " Navoiy viloyat Oliy ta’lim "
+msgstr "Navoi region Higher Education"
+
+#: templates/base.html:183
+msgid "fan va innovatsiyalar  "
+msgstr "Science and Innovations"
+
+#: templates/base.html:184
+msgid "boshqarmasi "
+msgstr "Department"
+
+#: templates/base.html:222
+msgid "Boshqarma haqida "
+msgstr "About the Department"
+
+#: templates/base.html:227
+msgid " Tarkibiy tuzilma "
+msgstr "Organizational Structure"
+
+#: templates/base.html:233
+msgid " Erishilgan yutuqlar "
+msgstr "Achievements"
+
+#: templates/base.html:239
+#, fuzzy
+#| msgid " Bo'sh ish o'rinlari "
+msgid " Bo&#039;sh ish o&#039;rinlari "
+msgstr "Vacancies"
+
+#: templates/base.html:245
+msgid " Normativ hujjatlar "
+msgstr "Regulatory Documents"
+
+#: templates/base.html:248
+msgid " O`zbekiston Respuplikasi Qonunlari "
+msgstr "Laws of the Republic of Uzbekistan"
+
+#: templates/base.html:253
+msgid "  Prezident qaror va farmonlari "
+msgstr "Presidential Decrees and Orders"
+
+#: templates/base.html:257
+msgid " Oliy ta’lim, fan va innovatsiyalar vazirligi "
+msgstr "Ministry of Higher Education, Science and Innovations"
+
+#: templates/base.html:262
+msgid " Navoiy viloyati boshqarmasi qarorlari "
+msgstr "Decisions of the Navoi Region Department"
+
+#: templates/base.html:266
+#, fuzzy
+#| msgid " O'z kuchini yo‘qotgan hujjatlar "
+msgid " O&#039;z kuchini yo‘qotgan hujjatlar "
+msgstr "Expired Documents"
+
+#: templates/base.html:272
+msgid " Korrupsiyaga qarshi kurashish "
+msgstr "Fight Against Corruption"
+
+#: templates/base.html:276
+msgid "Ochiq ma`lumotlar "
+msgstr "Open Data"
+
+#: templates/base.html:279
+msgid " Matbuot xizmati "
+msgstr "Press Service"
+
+#: templates/base.html:281
+msgid " Yangiliklar "
+msgstr "News"
+
+#: templates/base.html:284
+#, fuzzy
+#| msgid " E'lon va tadbirlar "
+msgid " E&#039;lon va tadbirlar "
+msgstr "Announcements and Events"
+
+#: templates/base.html:288
+msgid " Mediateka "
+msgstr "Media Library"
+
+#: templates/base.html:294
+#, fuzzy
+#| msgid "Murojaat holatini bilish"
+msgid " Murojaat qilish "
+msgstr "Check Appeal Status"
+
+#: templates/base.html:403 templates/base.html:417
+msgid " Obuna bo'lish "
+msgstr "Subscribe"
+
+#: templates/base.html:407
+msgid ""
+" E-mail manzilingizni kiritgan holda yangiliklar va maslahatlarni to‘g‘ridan-"
+"to‘g‘ri\n"
+"                                elektron pochtangiz orqali qabul qilib oling "
+msgstr ""
+"Enter your email address to receive news and tips directly to your inbox"
+
+#: templates/base.html:423
+msgid "E'lonlar "
+msgstr "Announcements"
+
+#: templates/base.html:429
+msgid " Dual ta’lim jarayonlari "
+msgstr "Dual Education Processes"
+
+#: templates/base.html:435
+msgid " 1-oktabr “O‘qituvchi va murabbiylar kuni "
+msgstr "October 1 - Teachers and Mentors Day"
+
+#: templates/base.html:447
+msgid " “Mirzo Ulugʻbek vorislari” Respublika tanlovi "
+msgstr "“Mirzo Ulugbek Heirs” Republic Competition"
+
+#: templates/base.html:452
+msgid " Talabalar festivali "
+msgstr "Student Festival"
+
+#: templates/base.html:458
+msgid " BARKAMOL AVLOD-2023 SPORT MUSOBAQASIDA MUVOFFAQIYATLI BIRINCHI QADAM "
+msgstr "Successful First Step at the Barkamol Avlod-2023 Sports Competition"
+
+#: templates/base.html:470
+msgid " Foydali havolalar "
+msgstr ""
+
+#: templates/base.html:481
+msgid " O‘zbekiston Respublikasi hukumat portali "
+msgstr "Government Portal of the Republic of Uzbekistan"
+
+#: templates/base.html:490
+msgid ""
+" O‘zbekiston Respublikasi uy - joy kommunal xizmat ko‘rsatish vazirligi "
+msgstr ""
+"Ministry of Housing and Communal Services of the Republic of Uzbekistan"
+
+#: templates/base.html:502
+msgid "  O‘zbekiston Respublikasi Davlat soliq qo‘mitasi "
+msgstr "State Tax Committee of the Republic of Uzbekistan"
+
+#: templates/base.html:511
+msgid "  Korporativ axborot yagona portali "
+msgstr "Unified Corporate Information Portal"
+
+#: templates/base.html:522
+msgid "  O‘zbekiston Respublikasi Qonun hujjatlari ma’lumotlari miliiy bazasi "
+msgstr ""
+"National Database of Legislative Documents of the Republic of Uzbekistan"
+
+#: templates/base.html:532
+msgid "  O‘zbekiston Respublikasi Davlat Statistika Qo‘mitasi "
+msgstr "State Statistics Committee of the Republic of Uzbekistan"
+
+#: templates/base.html:543
+msgid "  Navoiy viloyati hokimligi "
+msgstr "Navoi Region Administration"
+
+#: templates/base.html:553
+msgid "  Navoiy viloyati Sog'liqni saqlash boshqarmasi "
+msgstr "Navoi Region Healthcare Department"
+
+#: templates/base.html:573
+msgid " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarmasi "
+msgstr "Navoi Region Department of Higher Education, Science, and Innovations"
+
+#: templates/base.html:575
+msgid "  2023 © Barcha huquqlar himoyalangan. "
+msgstr "2023 © All Rights Reserved."
+
+#: templates/base.html:604
+msgid "  Navoiy viloyat Urganch shahar P.Mahmud ko‘chasi 162-A-uy "
+msgstr "162-A P. Mahmud Street, Urganch City, Navoi Region"
+
+#: templates/base.html:610
+msgid " Saytning so'nggi yangilangan sanasi: "
+msgstr "Last Updated Date of the Site: "
+
+#: templates/base.html:620
+msgid "  Matnda xatolikni ko'rdingizmi? "
+msgstr "Did you spot an error in the text? "
+
+#: templates/base.html:621
+msgid ""
+"  Sichqoncha bilan belkgilang va Ctrl + Enter tugmalarini baravar bosing "
+msgstr "Highlight it with the mouse and press Ctrl + Enter together"
+
+#: templates/home.html:50
+msgid " So'nggi xabarlar va e'lonlar "
+msgstr "Latest News and Announcements"
+
+#: templates/home.html:89
+msgid " To'xtayev Feruz Sadulloyevich  "
+msgstr "Tokhtayev Feruz Sadulloyevich"
+
+#: templates/home.html:90
+msgid " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
+msgstr ""
+"Head of Navoi Region Department of Higher Education, Science, and Innovations"
+
+#: templates/home.html:105
+msgid " Me'yoriy hujjatlar "
+msgstr "Regulatory Documents"
+
+#: templates/home.html:106
+#, fuzzy
+#| msgid " Ish grafigi "
+msgid "  Ish grafigi "
+msgstr "Work Schedule"
+
+#: templates/home.html:107
+msgid " Bo'sh ish o'rinlari "
+msgstr "Vacancies"
+
+#: templates/home.html:108
+msgid " Shikoyatlar mavjudmi?"
+msgstr ""
+
+#: templates/home.html:108
+#, fuzzy
+#| msgid " Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring "
+msgid " Onlayn tarzda yuboring "
+msgstr "Have any complaints? <br />Submit online"
+
+#: templates/home.html:122
+msgid " Fotogalereya "
+msgstr "Photo Gallery"
+
+#: templates/home.html:123
+msgid " Barcha rasmlar "
+msgstr "All Photos"
+
+#: templates/pages/boshqarma-haqida.html:17
+#: templates/pages/elon-va-tadbirlar.html:16
+#: templates/pages/erishilgan-yutuqlar.html:16
+#: templates/pages/matbuot-xizmati.html:16 templates/pages/news_detail.html:16
+#: templates/pages/yangiliklar.html:16
+msgid "Barcha yangiliklar"
+msgstr "All News"
+
+#: templates/pages/boshqarma-haqida.html:18
+#: templates/pages/elon-va-tadbirlar.html:17
+#: templates/pages/erishilgan-yutuqlar.html:17
+#: templates/pages/matbuot-xizmati.html:17 templates/pages/yangiliklar.html:17
+msgid "RSS"
+msgstr "RSS"
+
+#: templates/pages/boshqarma-haqida.html:20
+msgid "Boshqarma haqida"
+msgstr "About the Department"
+
+#: templates/pages/boshqarma-haqida.html:60
+#: templates/pages/elon-va-tadbirlar.html:51
+#: templates/pages/erishilgan-yutuqlar.html:52 templates/pages/ish-urin.html:45
+#: templates/pages/korrupsiya.html:49 templates/pages/matbuot-xizmati.html:71
+#: templates/pages/murojaatlar.html:270 templates/pages/news_detail.html:74
+#: templates/pages/yangiliklar.html:71
+#, fuzzy
+#| msgid " To'xtayev Feruz Sadulloyevich  "
+msgid "To'xtayev Feruz Sadulloyevich"
+msgstr "Tokhtayev Feruz Sadulloyevich"
+
+#: templates/pages/boshqarma-haqida.html:61
+#: templates/pages/elon-va-tadbirlar.html:52
+#: templates/pages/erishilgan-yutuqlar.html:53 templates/pages/ish-urin.html:46
+#: templates/pages/korrupsiya.html:50 templates/pages/matbuot-xizmati.html:72
+#: templates/pages/news_detail.html:75 templates/pages/yangiliklar.html:72
+#, fuzzy
+#| msgid ""
+#| " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
+msgid "Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i"
+msgstr ""
+"Head of Navoi Region Department of Higher Education, Science, and Innovations"
+
+#: templates/pages/boshqarma-haqida.html:67
+#: templates/pages/elon-va-tadbirlar.html:58
+#: templates/pages/erishilgan-yutuqlar.html:59
+#: templates/pages/matbuot-xizmati.html:78 templates/pages/murojaatlar.html:276
+#: templates/pages/yangiliklar.html:78
+msgid "Qonunchilik palatasi qarorlari"
+msgstr "Decisions of the Legislative Chamber"
+
+#: templates/pages/boshqarma-haqida.html:68
+#: templates/pages/elon-va-tadbirlar.html:59
+#: templates/pages/erishilgan-yutuqlar.html:60
+#: templates/pages/matbuot-xizmati.html:79 templates/pages/murojaatlar.html:277
+#: templates/pages/yangiliklar.html:79
+msgid "Vazirlar mahkamasi qarorlari"
+msgstr "Cabinet of Ministers Decisions"
+
+#: templates/pages/boshqarma-haqida.html:69
+#: templates/pages/elon-va-tadbirlar.html:60
+#: templates/pages/erishilgan-yutuqlar.html:61
+#: templates/pages/matbuot-xizmati.html:80 templates/pages/murojaatlar.html:278
+#: templates/pages/yangiliklar.html:80
+msgid "O'z kuchini yo'qotgan me'yoriy hujjatlar"
+msgstr "Expired Regulatory Documents"
+
+#: templates/pages/boshqarma-haqida.html:70
+#: templates/pages/elon-va-tadbirlar.html:61
+#: templates/pages/erishilgan-yutuqlar.html:62
+#: templates/pages/matbuot-xizmati.html:81 templates/pages/murojaatlar.html:279
+#: templates/pages/yangiliklar.html:81
+msgid "Rasmiy ma'ruzalar"
+msgstr "Official Reports"
+
+#: templates/pages/boshqarma-haqida.html:71
+#: templates/pages/elon-va-tadbirlar.html:62
+#: templates/pages/erishilgan-yutuqlar.html:63
+#: templates/pages/matbuot-xizmati.html:82 templates/pages/murojaatlar.html:280
+#: templates/pages/yangiliklar.html:82
+msgid "Analitik xisobot va taxlillar"
+msgstr "Analytical Reports and Analyses"
+
+#: templates/pages/boshqarma-haqida.html:77
+#: templates/pages/elon-va-tadbirlar.html:68
+#: templates/pages/erishilgan-yutuqlar.html:69 templates/pages/ish-urin.html:50
+#: templates/pages/korrupsiya.html:54 templates/pages/matbuot-xizmati.html:88
+#: templates/pages/murojaatlar.html:286 templates/pages/news_detail.html:79
+#: templates/pages/rahbaryat.html:34 templates/pages/yangiliklar.html:88
+#, fuzzy
+#| msgid " Me'yoriy hujjatlar "
+msgid "Me'yoriy hujjatlar"
+msgstr "Regulatory Documents"
+
+#: templates/pages/boshqarma-haqida.html:78
+#: templates/pages/elon-va-tadbirlar.html:69
+#: templates/pages/erishilgan-yutuqlar.html:70 templates/pages/ish-urin.html:51
+#: templates/pages/korrupsiya.html:55 templates/pages/matbuot-xizmati.html:89
+#: templates/pages/murojaatlar.html:287 templates/pages/news_detail.html:80
+#: templates/pages/rahbaryat.html:38 templates/pages/yangiliklar.html:89
+#, fuzzy
+#| msgid " Ish grafigi "
+msgid "Ish grafigi"
+msgstr "Work Schedule"
+
+#: templates/pages/boshqarma-haqida.html:79
+#: templates/pages/elon-va-tadbirlar.html:70
+#: templates/pages/erishilgan-yutuqlar.html:71 templates/pages/ish-urin.html:16
+#: templates/pages/ish-urin.html:52 templates/pages/korrupsiya.html:56
+#: templates/pages/matbuot-xizmati.html:90 templates/pages/murojaatlar.html:288
+#: templates/pages/news_detail.html:81 templates/pages/yangiliklar.html:90
+#, fuzzy
+#| msgid " Bo'sh ish o'rinlari "
+msgid "Bo'sh ish o'rinlari"
+msgstr "Vacancies"
+
+#: templates/pages/boshqarma-haqida.html:80
+#: templates/pages/elon-va-tadbirlar.html:71
+#: templates/pages/erishilgan-yutuqlar.html:72 templates/pages/ish-urin.html:53
+#: templates/pages/korrupsiya.html:57 templates/pages/matbuot-xizmati.html:91
+#: templates/pages/murojaatlar.html:289 templates/pages/news_detail.html:82
+#: templates/pages/rahbaryat.html:42 templates/pages/yangiliklar.html:91
+#, fuzzy
+#| msgid " Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring "
+msgid "Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring"
+msgstr "Have any complaints? <br />Submit online"
+
+#: templates/pages/elon-va-tadbirlar.html:19
+msgid "E'lon va tadbirlar"
+msgstr "Announcements and Events"
+
+#: templates/pages/erishilgan-yutuqlar.html:19
+msgid "Erishilgan yutuqlar"
+msgstr "Achievements"
+
+#: templates/pages/ish-urin.html:15
+#, fuzzy
+#| msgid " Bo'sh ish o'rinlari "
+msgid "Barcha bo'sh ish o'rinlari"
+msgstr "Vacancies"
+
+#: templates/pages/korrupsiya.html:11
+msgid "Korrupsiyaga qarshi kurash"
+msgstr "Fight Against Corruption"
+
+#: templates/pages/korrupsiya.html:16
+msgid "Korrupsiyaga qarshi xabar berish:"
+msgstr "Reporting Corruption:"
+
+#: templates/pages/korrupsiya.html:18
+msgid "Bosh prokuratura ishonch raqami – 1007"
+msgstr "Prosecutor General's Hotline – 1007"
+
+#: templates/pages/korrupsiya.html:19
+msgid "Korrupsiyaga qarshi kurashish agentligi – 1253"
+msgstr "Anti-Corruption Agency – 1253"
+
+#: templates/pages/korrupsiya.html:20
+msgid ""
+"Bosh prokuratura huzuridagi Iqtisodiy jinoyatlarga qarshi kurashish "
+"departamenti – 71-233-1007"
+msgstr ""
+"Department for Combating Economic Crimes under the Prosecutor General – "
+"71-233-1007"
+
+#: templates/pages/korrupsiya.html:21
+msgid "Telegramdagi @@antikorbot manzili orqali ham xabar berish mumkin"
+msgstr "You can also report via Telegram at @@antikorbot"
+
+#: templates/pages/korrupsiya.html:22
+msgid "Sayt: https://anticorruption.uz/uzc"
+msgstr "Website: https://anticorruption.uz/uzc"
+
+#: templates/pages/korrupsiya.html:25
+msgid "Murojaatlar uchun telefon:"
+msgstr "Phone for Appeals:"
+
+#: templates/pages/korrupsiya.html:25
+msgid "+998 (93)-311-42-28"
+msgstr "+998 (93)-311-42-28"
+
+#: templates/pages/korrupsiya.html:26
+msgid "Korrupsiyaga qarshi kurash bo‘yicha qo‘llanmalar"
+msgstr "Guides on Fighting Corruption"
+
+#: templates/pages/korrupsiya.html:27
+msgid "Oliy ta’lim, fan va innovatsiyalar vazirligi"
+msgstr "Ministry of Higher Education, Science and Innovations"
+
+#: templates/pages/korrupsiya.html:32
+msgid "Ushbu tasdiqlanadi"
+msgstr "This is approved"
+
+#: templates/pages/korrupsiya.html:34
+msgid "Karrupsiyaga qarshi kurashish uchun qullanma"
+msgstr "Guide for Fighting Corruption"
+
+#: templates/pages/korrupsiya.html:36
+msgid "Uslubiy bo'llanma _________________________"
+msgstr "Methodological Guide _________________________"
+
+#: templates/pages/korrupsiya.html:37
+msgid "Uslubiy tavsiyalar _________________________"
+msgstr "Methodological Recommendations _________________________"
+
+#: templates/pages/korrupsiya.html:39
+msgid "Budket-1 _________________________"
+msgstr "Budget-1 _________________________"
+
+#: templates/pages/korrupsiya.html:40
+msgid "Budket-2 _________________________"
+msgstr "Budget-2 _________________________"
+
+#: templates/pages/korrupsiya.html:41
+msgid "Kalendar-1 _________________________"
+msgstr "Calendar-1 _________________________"
+
+#: templates/pages/korrupsiya.html:42
+msgid "Kalendar-2 _________________________"
+msgstr "Calendar-2 _________________________"
+
+#: templates/pages/korrupsiya.html:43
+msgid "Kalendar-3 _________________________"
+msgstr "Calendar-3 _________________________"
+
+#: templates/pages/matbuot-xizmati.html:19
+msgid "Matbuot xizmati"
+msgstr "Press Service"
+
+#: templates/pages/murojaatlar.html:15
+msgid "Onlayn murojaat qoldirish"
+msgstr "Submit an Online Appeal"
+
+#: templates/pages/murojaatlar.html:19
+msgid "Murojaat holatini bilish"
+msgstr "Check Appeal Status"
+
+#: templates/pages/murojaatlar.html:30
+msgid "Bilan belgilangan maydonlarni to'ldirish talab qilinadi"
+msgstr "Fields marked with * are required"
+
+#: templates/pages/murojaatlar.html:31
+msgid ""
+"Elektron shaklda yuborilgan arizalar mualliflarining shaxsiy ma'lumotlari "
+"O'zbekiston qonunchiligi talablariga muvofiq saqlanadi va qayta ishlanadi."
+msgstr ""
+"Personal data of authors of electronically submitted applications is stored "
+"and processed in accordance with the legislation of Uzbekistan."
+
+#: templates/pages/murojaatlar.html:36
+msgid "Murojaat turini va uni kimga yuborayotganingizni tanlang"
+msgstr "Select the type of appeal and to whom you are sending it"
+
+#: templates/pages/murojaatlar.html:39
+msgid "Murojaatingizni kimga yubormoqchisiz?"
+msgstr "To whom do you want to send your appeal?"
+
+#: templates/pages/murojaatlar.html:48
+msgid "Murojaat turi"
+msgstr "Appeal Type"
+
+#: templates/pages/murojaatlar.html:58
+msgid "Murojaatingizdagi nominativ holatda ko'rsating:"
+msgstr "Indicate in nominative case in your appeal:"
+
+#: templates/pages/murojaatlar.html:61
+msgid "Familyangiz:"
+msgstr "Your Surname:"
+
+#: templates/pages/murojaatlar.html:70
+msgid "Ismingiz"
+msgstr "Your Name"
+
+#: templates/pages/murojaatlar.html:79
+msgid "Otangizni ismi"
+msgstr "Your Father's Name"
+
+#: templates/pages/murojaatlar.html:79 templates/pages/murojaatlar.html:112
+msgid "(agar mavjud bo'lsa)"
+msgstr "(if available)"
+
+#: templates/pages/murojaatlar.html:85
+msgid "Kompaniyaning nomi"
+msgstr "Company Name"
+
+#: templates/pages/murojaatlar.html:85
+msgid "(yuridik shaxslar uchun)"
+msgstr "(for legal entities)"
+
+#: templates/pages/murojaatlar.html:91
+msgid "Bog'lanish ma'lumotlarini ko'rsatib o'ting:"
+msgstr "Provide contact information:"
+
+#: templates/pages/murojaatlar.html:95
+msgid "Elektron pochta manzili"
+msgstr "Email Address"
+
+#: templates/pages/murojaatlar.html:96
+msgid "So'rovni yo'naltirish to'g'risida javob yoki xabarnoma olish uchun"
+msgstr "To receive a response or notification regarding the request"
+
+#: templates/pages/murojaatlar.html:105
+msgid "Telefon raqamingiz"
+msgstr "Your Phone Number"
+
+#: templates/pages/murojaatlar.html:112
+msgid "Murojaatning hammualliflarini qo'shing"
+msgstr "Add co-authors of the appeal"
+
+#: templates/pages/murojaatlar.html:118 templates/pages/murojaatlar.html:229
+#: templates/pages/murojaatlar.html:257
+msgid "hammuallif"
+msgstr "co-author"
+
+#: templates/pages/murojaatlar.html:134 templates/pages/murojaatlar.html:245
+msgid "O'chirish"
+msgstr "Delete"
+
+#: templates/pages/murojaatlar.html:142
+msgid "Qo'shish"
+msgstr "Add"
+
+#: templates/pages/murojaatlar.html:152
+msgid ""
+"Biz sizning murojaatingizni ob'ektiv va har tomonlama ko'rib chiqish "
+"maqsadida murojaat matnida siz tasvirlagan harakat, fakt yoki voqea joyining "
+"manzilini ko'rsatish tavsiya etilayotganiga e'tiboringizni qaratamiz."
+msgstr ""
+"We draw your attention to the recommendation to indicate the address of the "
+"action, fact, or event described in your appeal text for an objective and "
+"comprehensive review."
+
+#: templates/pages/murojaatlar.html:153
+msgid ""
+"Agar murojaatingiz matni taklif, ariza yoki shikoyatning mohiyatini "
+"aniqlashga imkon bermasa, murojaatga javob berilmaydi va u o'z vakolatiga "
+"muvofiq davlat organiga, mahalliy davlat hokimiyati organiga yoki mansabdor "
+"shaxsga ko'rib chiqishga yuborilmaydi, bu haqda sizga ma'lumot beriladi. "
+"Apellyatsiya ro'yxatdan o'tgan kundan boshlab yetti kun ichida."
+msgstr ""
+"If the text of your appeal does not allow determining the essence of the "
+"proposal, application, or complaint, no response will be provided, and it "
+"will not be forwarded to the relevant state body, local government "
+"authority, or official for consideration; you will be informed about this "
+"within seven days from the registration date."
+
+#: templates/pages/murojaatlar.html:154
+msgid ""
+"Taklif, bayonot yoki shikoyatning mohiyatini bayon qilish uchun "
+"murojaatnomaning matnini elektron hujjat shaklida kiritish uchun maydonga "
+"kiritilgan belgilar soniga cheklov qo'yilmaydi."
+msgstr ""
+"There is no limit on the number of characters entered in the field for "
+"submitting the text of the appeal in electronic document form to describe "
+"the essence of the proposal, statement, or complaint."
+
+#: templates/pages/murojaatlar.html:159
+msgid ""
+"Murojaatnomangizni elektron hujjat shaklida kiritish uchun joriy maydonda "
+"taklif, ariza yoki shikoyatning mohiyatini aytib bering:"
+msgstr ""
+"To submit your appeal in electronic document form, describe the essence of "
+"the proposal, application, or complaint in this field:"
+
+#: templates/pages/murojaatlar.html:162
+msgid "Murojaat matni"
+msgstr "Appeal Text"
+
+#: templates/pages/murojaatlar.html:173
+msgid ""
+"Agar kerak bo'lsa, sizning dalillaringizni qo'llab-quvvatlash uchun siz "
+"\"Hujjatlarni (fayllarni) biriktirish\" funktsiyasidan foydalangan holda "
+"kerakli hujjatlar va materiallarni elektron shaklda apellyatsiyaga "
+"qo'shishingiz mumkin."
+msgstr ""
+"If necessary, you can attach the required documents and materials in "
+"electronic form to the appeal using the 'Attach Documents (Files)' function "
+"to support your arguments."
+
+#: templates/pages/murojaatlar.html:174
+msgid ""
+"Sizning e'tiboringizni veb-saytda taklif qilingan shaklda ilova qilingan "
+"hujjatlar va materiallar faqat siz aytgan taklif, bayonot yoki shikoyatning "
+"mohiyatini tasdiqlashiga qaratamiz."
+msgstr ""
+"We draw your attention to the fact that documents and materials attached in "
+"the proposed form on the website are intended only to confirm the essence of "
+"the proposal, statement, or complaint you mentioned."
+
+#: templates/pages/murojaatlar.html:175
+msgid ""
+"Siz kerakli hujjatlar va materiallarni arxivlashsiz (ilova fayli), qabul "
+"qilinadigan formatsiz ikkita mustaqil fayl qo'shimchalari bilan istalgan "
+"tartibda elektron shaklda biriktirishingiz mumkin:"
+msgstr ""
+"You can attach the necessary documents and materials in electronic form "
+"without archiving (attachment file), in any order, with two independent file "
+"attachments in acceptable formats:"
+
+#: templates/pages/murojaatlar.html:177
+msgid ""
+"txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub, pdf, jpg, "
+"jpeg, bmp, png, tif, gif, pcx, mp3, wma, avi, mp4, mkv, wmv, mov, flv, "
+"torrent, xml, zip, svg, rar"
+msgstr ""
+"txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub, pdf, jpg, "
+"jpeg, bmp, png, tif, gif, pcx, mp3, wma, avi, mp4, mkv, wmv, mov, flv, "
+"torrent, xml, zip, svg, rar"
+
+#: templates/pages/murojaatlar.html:178
+msgid ""
+"Qo'shimcha fayl (lar) ning pochta serveriga uzatilishi foydalanuvchining "
+"\"Internet\" tarmog'ining o'tkazuvchanlik qobiliyatiga va internet "
+"provayderi serveri tomonidan qayta ishlangan uzatilgan fayllar hajmiga "
+"bog'liqligini sizga ma'lum qilamiz."
+msgstr ""
+"We inform you that the transfer of additional file(s) to the mail server "
+"depends on the bandwidth capacity of the user's 'Internet' network and the "
+"volume of transferred files processed by the internet provider's server."
+
+#: templates/pages/murojaatlar.html:180
+msgid ""
+"Sizning qurilma jihozingiz ADSL, 3G, 4G, WiFi va boshqa texnologiyalar "
+"yordamida Internetdagi ma'lumotlarni uzatish tezligini ta'minlaydigan, "
+"ajratilgan aloqa kanallari orqali Internetga ulanganda, fayl (lar) ning "
+"umumiy hajmini uzatish va qayta ishlash:"
+msgstr ""
+"When your device is connected to the Internet via dedicated communication "
+"channels providing data transfer speed using ADSL, 3G, 4G, WiFi, and other "
+"technologies, the transfer and processing of the total file(s) size:"
+
+#: templates/pages/murojaatlar.html:182
+msgid "5 Mbgacha, qoida tariqasida, vaqtni kechiktirmasdan amalga oshiriladi;"
+msgstr "Up to 5 MB, as a rule, is carried out without delay;"
+
+#: templates/pages/murojaatlar.html:183
+msgid ""
+"5 Mb dan 10 Mb gacha bo'lgan fayllar, vaqtni kechiktirish bilan amalga "
+"oshirish mumkin;"
+msgstr "Files from 5 MB to 10 MB can be processed with a delay;"
+
+#: templates/pages/murojaatlar.html:184
+msgid "10 MB dan ortiq dastur amalga oshirilmasligi mumkin."
+msgstr "Files exceeding 10 MB may not be processed."
+
+#: templates/pages/murojaatlar.html:192
+msgid ""
+"Murojaatga kerakli hujjatlar va materiallarni elektron shaklda qo'shish "
+"uchun \"Fayl(lar) biriktirish\" tugmani bosing"
+msgstr ""
+"To add necessary documents and materials to the appeal in electronic form, "
+"click the 'Attach File(s)' button"
+
+#: templates/pages/murojaatlar.html:197
+msgid "Fayl(lar) biriktirish"
+msgstr "Attach File(s)"
+
+#: templates/pages/murojaatlar.html:197
+msgid "Faylning umumiy hajmi 10 MB dan oshmasligi kerak"
+msgstr "The total file size must not exceed 10 MB"
+
+#: templates/pages/murojaatlar.html:210
+msgid "Murojaatni jo'natish"
+msgstr "Send Appeal"
+
+#: templates/pages/murojaatlar.html:232
+msgid "Familiya"
+msgstr "Surname"
+
+#: templates/pages/murojaatlar.html:235
+msgid "Ism"
+msgstr "Name"
+
+#: templates/pages/murojaatlar.html:238
+msgid "Otasining ismi"
+msgstr "Father's Name"
+
+#: templates/pages/murojaatlar.html:241
+msgid "Email"
+msgstr "Email"
+
+#: templates/pages/murojaatlar.html:271
+#, fuzzy
+#| msgid ""
+#| " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
+msgid "Navoiy viloyat Oliy ta'lim, fan va innovatsiyalar boshqarma boshlig'i"
+msgstr ""
+"Head of Navoi Region Department of Higher Education, Science, and Innovations"
+
+#: templates/pages/news_detail.html:66
+msgid "Ko'rishlar: 21"
+msgstr "Views: 21"
+
+#: templates/pages/news_detail.html:67
+msgid "Sahifani chop etish"
+msgstr "Print Page"
+
+#: templates/pages/rahbaryat.html:11
+msgid "Rahbariyat"
+msgstr "Leadership"
+
+#: templates/pages/yangiliklar.html:19
+msgid "Yangiliklar"
+msgstr "News"
+
+#, fuzzy
+#~| msgid " Bog'lanish "
+#~ msgid " Bog'lanish "
+#~ msgstr "Contact"

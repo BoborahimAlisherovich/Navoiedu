@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
 
 {% block content %}
 <div class="body container-user">
@@ -11,11 +13,10 @@
                 <div class="pull-left col-md-9">
                     <div class="news-main">
                         <div class="yangilik-block">
-                        <a href="https://navoiyedu.uz/matbuot-xizmati/uz/news.html">Barcha yangiliklar</a>
-                        <a href="https://navoiyedu.uz/matbuot-xizmati/uz/rss" class="rss">RSS <i class="fa fa-rss" aria-hidden="true"></i></a>
+                        <a href="https://navoiyedu.uz/matbuot-xizmati/uz/news.html">{% blocktrans %}Barcha yangiliklar{% endblocktrans %}</a>
+                        <a href="https://navoiyedu.uz/matbuot-xizmati/uz/rss" class="rss">{% blocktrans %}RSS{% endblocktrans %} <i class="fa fa-rss" aria-hidden="true"></i></a>
                             <h1>
-                                Yangiliklar
-
+                                {% blocktrans %}Yangiliklar{% endblocktrans %}
                             </h1>
                         </div>
 
@@ -67,27 +68,27 @@
                 <div class="pull-left block-sidebar col-md-3">
                     <span class="news" style="border:1px solid #3669d1;">
                         <div class="news__image" style="height: auto;"><img src="/static/images/raxba_copy.jpg" /></div>
-                        <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
-                        <div style="text-align:center; ">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+                        <div style="text-align:center; margin-bottom:10px;"><b>{% blocktrans %}To'xtayev Feruz Sadulloyevich{% endblocktrans %}</b></div>
+                        <div style="text-align:center; ">{% blocktrans %}Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i{% endblocktrans %}</div>
                     </span>
 
                     <div id="activities_wrap">
                         <ul class="nav navbar-nav" id="main-menu">
 
-                            <li class="dropdown parent"><a href="index.html#">Qonunchilik palatasi qarorlari</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Vazirlar mahkamasi qarorlari</a></li>
-                            <li class="dropdown parent"><a href="index.html#">O'z kuchini yo'qotgan me'yoriy hujjatlar</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Rasmiy ma'ruzalar</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Analitik xisobot va taxlillar</a></li>
+                            <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Qonunchilik palatasi qarorlari{% endblocktrans %}</a></li>
+                            <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Vazirlar mahkamasi qarorlari{% endblocktrans %}</a></li>
+                            <li class="dropdown parent"><a href="index.html#">{% blocktrans %}O'z kuchini yo'qotgan me'yoriy hujjatlar{% endblocktrans %}</a></li>
+                            <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Rasmiy ma'ruzalar{% endblocktrans %}</a></li>
+                            <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Analitik xisobot va taxlillar{% endblocktrans %}</a></li>
                         </ul>
                     </div>
 
                     <hr />
                     <div class="data-banner">
-                        <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
-                        <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
-                        <a style="background: #219653;" href="https://navoiyedu.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
-                        <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
+                        <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span></a>
+                        <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span></a>
+                        <a style="background: #219653;" href="/boshqarma-haqida/ish-urin/"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>{% blocktrans %}Bo'sh ish o'rinlari{% endblocktrans %}</span></a>
+                        <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span></a>
                     </div>
 
                     <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />

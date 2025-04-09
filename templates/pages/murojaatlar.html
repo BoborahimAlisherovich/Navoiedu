@@ -1,259 +1,297 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
 <div class="body container-user">
-
-            <div role="main" class="main row">
-                <div class="fixed-block">
-                    <a href="index.html" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+    <div role="main" class="main row">
+        <div class="fixed-block">
+            <a href="index.html" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="pull-left col-md-9">
+            <div class="news-main">
+                <div class="yangilik-block">
+                    <h1>{% blocktrans %}Onlayn murojaat qoldirish{% endblocktrans %}</h1>
                 </div>
-                <!-- MAIN CONTENT -->
-                <div class="pull-left col-md-9">
-                    <div class="news-main">
-                        <div class="yangilik-block">
-                        <a href="https://eduNavoiy.uz/murojaatlar/uz/news.html">Barcha yangiliklar</a>
-                        <a href="https://eduNavoiy.uz/murojaatlar/uz/rss" class="rss">RSS <i class="fa fa-rss" aria-hidden="true"></i></a>
-                            <h1>
 
-                                Onlayn murojaat qoldirish
-                            </h1>
+                <div class="news-full">
+                    <a type="submit" href="../murojaat-izlash.html">{% blocktrans %}Murojaat holatini bilish{% endblocktrans %}</a><br /><br />
+                    <div class="">
+                        <form class="form-horizontal form-validate" style="padding-left: 15px; padding-right: 15px;" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="hidden" name="act" value="send"/>
+                            <input type="hidden" name="do" value="claims"/>
+                            <div>
+                                <div class="form-group">
+                                    <div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <p><i class="control-required">*</i> {% blocktrans %}Bilan belgilangan maydonlarni to'ldirish talab qilinadi{% endblocktrans %}</p>
+                                                <p>{% blocktrans %}Elektron shaklda yuborilgan arizalar mualliflarining shaxsiy ma'lumotlari O'zbekiston qonunchiligi talablariga muvofiq saqlanadi va qayta ishlanadi.{% endblocktrans %}</p>
+                                            </div>
+                                        </div>
+
+                        <div class="form-group">
+                            <div class="form__section-title col-sm-12">{% blocktrans %}Murojaat turini va uni kimga yuborayotganingizni tanlang{% endblocktrans %} <i class="control-required">*</i>: </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Murojaatingizni kimga yubormoqchisiz?{% endblocktrans %} <i class="control-required">*</i></label>
+                            <div class="col-sm-8">
+                                {{ form.murojat_kimga }}
+                                {% if form.murojat_kimga.errors %}
+                                    <div class="alert alert-danger">{{ form.murojat_kimga.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Murojaat turi{% endblocktrans %} <i class="control-required">*</i></label>
+                            <div class="col-sm-8">
+                                {{ form.murojat_turi }}
+                                {% if form.murojat_turi.errors %}
+                                    <div class="alert alert-danger">{{ form.murojat_turi.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+   
+                        <div class="form-group">
+                            <div class="form__section-title col-sm-12">{% blocktrans %}Murojaatingizdagi nominativ holatda ko'rsating:{% endblocktrans %}</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Familyangiz:{% endblocktrans %} <i class="control-required">*</i></label>
+                            <div class="col-sm-8">
+                                {{ form.familiya }}
+                                {% if form.familiya.errors %}
+                                    <div class="alert alert-danger">{{ form.familiya.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Ismingiz{% endblocktrans %} <i class="control-required">*</i></label>
+                            <div class="col-sm-8">
+                                {{ form.ismi }}
+                                {% if form.ismi.errors %}
+                                    <div class="alert alert-danger">{{ form.ismi.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Otangizni ismi{% endblocktrans %} <span class="control-label__comment">{% blocktrans %}(agar mavjud bo'lsa){% endblocktrans %}</span></label>
+                            <div class="col-sm-8">
+                                {{ form.otasining_ismi }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Kompaniyaning nomi{% endblocktrans %} <span class="control-label__comment">{% blocktrans %}(yuridik shaxslar uchun){% endblocktrans %}</span></label>
+                            <div class="col-sm-8">
+                                {{ form.kompaniyaning_nomi }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form__section-title col-sm-12">{% blocktrans %}Bog'lanish ma'lumotlarini ko'rsatib o'ting:{% endblocktrans %}</div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Elektron pochta manzili{% endblocktrans %} <i class="control-required">*</i>
+                                <span class="control-label__comment">{% blocktrans %}So'rovni yo'naltirish to'g'risida javob yoki xabarnoma olish uchun{% endblocktrans %}</span></label>
+                            <div class="col-sm-8">
+                                {{ form.pochta_manzil }}
+                                {% if form.pochta_manzil.errors %}
+                                    <div class="alert alert-danger">{{ form.pochta_manzil.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Telefon raqamingiz{% endblocktrans %}</label>
+                            <div class="col-sm-8">
+                                {{ form.tel_raqam }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <div class="form__section-title">{% blocktrans %}Murojaatning hammualliflarini qo'shing{% endblocktrans %} <span class="control-label__comment">{% blocktrans %}(agar mavjud bo'lsa){% endblocktrans %}</span></div>
+                                <div class="group">
+                                    {{ formset.management_form }}
+                                    <div class="group__list" id="hammualliflar-list">
+                                        {% for form in formset %}
+                                        <div class="group__item">
+                                            <div class="group__counter">{{ forloop.counter }} {% blocktrans %}hammuallif{% endblocktrans %}</div>
+                                            <div class="form-group">
+                                                <div class="col-sm-3">
+                                                    {{ form.familya }}
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    {{ form.ismi }}
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    {{ form.otasining_ismi }}
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    {{ form.pochta_manzil }}
+                                                </div>
+                                            </div>
+                                            <div class="group__remove">
+                                                <button type="button" class="btn btn-danger btn-sm remove-hammuallif">{% blocktrans %}O'chirish{% endblocktrans %}</button>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-control-wrapper">
+                                                <button type="button" id="addcoauthor" class="btn btn-transparent--black">{% blocktrans %}Qo'shish{% endblocktrans %}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <small>
+                                    <p>{% blocktrans %}Biz sizning murojaatingizni ob'ektiv va har tomonlama ko'rib chiqish maqsadida murojaat matnida siz tasvirlagan harakat, fakt yoki voqea joyining manzilini ko'rsatish tavsiya etilayotganiga e'tiboringizni qaratamiz.{% endblocktrans %}</p>
+                                    <p>{% blocktrans %}Agar murojaatingiz matni taklif, ariza yoki shikoyatning mohiyatini aniqlashga imkon bermasa, murojaatga javob berilmaydi va u o'z vakolatiga muvofiq davlat organiga, mahalliy davlat hokimiyati organiga yoki mansabdor shaxsga ko'rib chiqishga yuborilmaydi, bu haqda sizga ma'lumot beriladi. Apellyatsiya ro'yxatdan o'tgan kundan boshlab yetti kun ichida.{% endblocktrans %}</p>
+                                    <p>{% blocktrans %}Taklif, bayonot yoki shikoyatning mohiyatini bayon qilish uchun murojaatnomaning matnini elektron hujjat shaklida kiritish uchun maydonga kiritilgan belgilar soniga cheklov qo'yilmaydi.{% endblocktrans %}</p>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form__section-title col-sm-12">{% blocktrans %}Murojaatnomangizni elektron hujjat shaklida kiritish uchun joriy maydonda taklif, ariza yoki shikoyatning mohiyatini aytib bering:{% endblocktrans %}</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Murojaat matni{% endblocktrans %} <i class="control-required">*</i></label>
+                            <div class="col-sm-8">
+                                {{ form.mirojat_matni }}
+                                {% if form.mirojat_matni.errors %}
+                                    <div class="alert alert-danger">{{ form.mirojat_matni.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <small>
+                                    <p>{% blocktrans %}Agar kerak bo'lsa, sizning dalillaringizni qo'llab-quvvatlash uchun siz "Hujjatlarni (fayllarni) biriktirish" funktsiyasidan foydalangan holda kerakli hujjatlar va materiallarni elektron shaklda apellyatsiyaga qo'shishingiz mumkin.{% endblocktrans %}</p>
+                                    <p>{% blocktrans %}Sizning e'tiboringizni veb-saytda taklif qilingan shaklda ilova qilingan hujjatlar va materiallar faqat siz aytgan taklif, bayonot yoki shikoyatning mohiyatini tasdiqlashiga qaratamiz.{% endblocktrans %}</p>
+                                    <p>{% blocktrans %}Siz kerakli hujjatlar va materiallarni arxivlashsiz (ilova fayli), qabul qilinadigan formatsiz ikkita mustaqil fayl qo'shimchalari bilan istalgan tartibda elektron shaklda biriktirishingiz mumkin:{% endblocktrans %}</p>
+                                    <ul>
+                                        <li>{% blocktrans %}txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub, pdf, jpg, jpeg, bmp, png, tif, gif, pcx, mp3, wma, avi, mp4, mkv, wmv, mov, flv, torrent, xml, zip, svg, rar{% endblocktrans %}</li>
+                                        <li>{% blocktrans %}Qo'shimcha fayl (lar) ning pochta serveriga uzatilishi foydalanuvchining "Internet" tarmog'ining o'tkazuvchanlik qobiliyatiga va internet provayderi serveri tomonidan qayta ishlangan uzatilgan fayllar hajmiga bog'liqligini sizga ma'lum qilamiz.{% endblocktrans %}</li>
+                                    </ul>
+                                    <p>{% blocktrans %}Sizning qurilma jihozingiz ADSL, 3G, 4G, WiFi va boshqa texnologiyalar yordamida Internetdagi ma'lumotlarni uzatish tezligini ta'minlaydigan, ajratilgan aloqa kanallari orqali Internetga ulanganda, fayl (lar) ning umumiy hajmini uzatish va qayta ishlash:{% endblocktrans %}</p>
+                                    <ul>
+                                        <li>{% blocktrans %}5 Mbgacha, qoida tariqasida, vaqtni kechiktirmasdan amalga oshiriladi;{% endblocktrans %}</li>
+                                        <li>{% blocktrans %}5 Mb dan 10 Mb gacha bo'lgan fayllar, vaqtni kechiktirish bilan amalga oshirish mumkin;{% endblocktrans %}</li>
+                                        <li>{% blocktrans %}10 MB dan ortiq dastur amalga oshirilmasligi mumkin.{% endblocktrans %}</li>
+                                    </ul>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <div>
+                                    <p>{% blocktrans %}Murojaatga kerakli hujjatlar va materiallarni elektron shaklda qo'shish uchun "Fayl(lar) biriktirish" tugmani bosing{% endblocktrans %}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">{% blocktrans %}Fayl(lar) biriktirish{% endblocktrans %} <span class="control-label__comment">{% blocktrans %}Faylning umumiy hajmi 10 MB dan oshmasligi kerak{% endblocktrans %}</span></label>
+                            <div>
+                                {{ form.hujjatlar }}
+                            </div>
+                        </div>
 
-                            <div class="news-full">
-								{% csrf_token %}*
-	<a type="submit" href="../murojaat-izlash.html">Murojaat holatini bilish</a><br /><br />
-	<div class="">
-		<form class="form-horizontal form-validate" style="padding-left: 15px; padding-right: 15px;" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="act" value="send"/>
-			<input type="hidden" name="do" value="claims"/>
-			<div>
-				<div class="form-group">
-					<div>
-						<div class="form-group">
-							<div class="col-sm-12">
-									<p><i class="control-required">*</i>  Bilan belgilangan maydonlarni to'ldirish talab qilinadi</p>
-									<p>Elektron shaklda yuborilgan arizalar mualliflarining shaxsiy ma'lumotlari O'zbekiston qonunchiligi talablariga muvofiq saqlanadi va qayta ishlanadi.</p>
-							</div>
-						</div>
-						<form id="myForm" action="#" method="POST">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div class="form-control-wrapper2">
+                        <button id="sendbutton" class="btn btn-primary" type="submit">{% blocktrans %}Murojaatni jo'natish{% endblocktrans %}</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
 
-						<div class="form-group">
-							<div class="form__section-title col-sm-12"> Murojaat turini va uni kimga yuborayotganingizni tanlang <i class="control-required">*</i>: </div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label">Murojaatingizni kimga yubormoqchisiz? <i class="control-required">*</i>
-							</label>
-							                
-							<div class="col-sm-8">
-								<select name="department" class="form-control"><option value="1">Rahbar</option><option value="2">O'rinbosar</option></select>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label">Murojaat turi <i class="control-required">*</i>
-							</label>
-							<div class="col-sm-8">
-								<select name="ctype" class="form-control"><option value="1">Savol</option><option value="2">Shikoyat</option><option value="3">Taklif</option></select>
-							</div>
-						</div>
-   
-						<div class="form-group">
-							<div class="form__section-title col-sm-12"> Murojaatingizdagi nominativ holatda ko'rsating: </div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Familyangiz: <i class="control-required">*</i>
-							</label>
-							<div class="col-sm-8">
-								<input name="surname" maxlength="191" type="text" class="form-control" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Ismingiz <i class="control-required">*</i>
-							</label>
-							<div class="col-sm-8">
-								<input name="name" maxlength="191" type="text" class="form-control" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Otangizni ismi <span class="control-label__comment">(agar mavjud bo'lsa)</span></label>
-							<div class="col-sm-8">
-								<input name="patronymic" maxlength="191" type="text" class="form-control" >
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Kompaniyaning nomi <span class="control-label__comment">(yuridik shaxslar uchun)</span></label>
-							<div class="col-sm-8">
-								<input name="inn" maxlength="2000" type="text" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form__section-title col-sm-12">Bog'lanish ma'lumotlarini ko'rsatib o'ting: </div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Elektron pochta manzili <i class="control-required">*</i>
-								<span class="control-label__comment">So'rovni yo'naltirish to'g'risida javob yoki xabarnoma olish uchun</span></label>
-							<div class="col-sm-8">
-								<input name="email" maxlength="191" type="text" class="form-control" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Telefon raqamingiz </label>
-							<div class="col-sm-8">
-								<input name="phone" placeholder="+998 (XX) XXX XX XX" maxlength="64" type="text" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-12">
-								<div class="form__section-title"> Murojaatning hammualliflarini qo'shing <span class="control-label__comment">(agar mavjud bo'lsa)</span></div>
-								<div class="group">
-									<div class="group__list">
-
-									</div>
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="form-control-wrapper">
-												<button type="button" id="addcoauthor" class="btn btn-transparent--black"> Qo'shish </button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-12">
-								<small>
-										<p>Biz sizning murojaatingizni ob'ektiv va har tomonlama ko'rib chiqish maqsadida murojaat matnida siz tasvirlagan harakat, fakt yoki voqea joyining manzilini ko'rsatish tavsiya etilayotganiga e'tiboringizni qaratamiz.</p>
-										<p>Agar murojaatingiz matni taklif, ariza yoki shikoyatning mohiyatini aniqlashga imkon bermasa, murojaatga javob berilmaydi va u o'z vakolatiga muvofiq davlat organiga, mahalliy davlat hokimiyati organiga yoki mansabdor shaxsga ko'rib chiqishga yuborilmaydi, bu haqda sizga ma'lumot beriladi. Apellyatsiya ro'yxatdan o'tgan kundan boshlab yetti kun ichida. </p>
-										<p>Taklif, bayonot yoki shikoyatning mohiyatini bayon qilish uchun murojaatnomaning matnini elektron hujjat shaklida kiritish uchun maydonga kiritilgan belgilar soniga cheklov qo'yilmaydi. </p>
-									</small>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form__section-title col-sm-12">Murojaatnomangizni elektron hujjat shaklida kiritish uchun joriy maydonda taklif, ariza yoki shikoyatning mohiyatini aytib bering: </div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Murojaat matni <i class="control-required">*</i>
-							</label>
-							<div class="col-sm-8">
-								<textarea name="claim" placeholder="Murojaat matni" rows="5" maxlength="65000" class="form-control" required></textarea>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-12">
-								<small>
-										<p>Agar kerak bo'lsa, sizning dalillaringizni qo'llab-quvvatlash uchun siz "Hujjatlarni (fayllarni) biriktirish" funktsiyasidan foydalangan holda kerakli hujjatlar va materiallarni elektron shaklda apellyatsiyaga qo'shishingiz mumkin.</p>
-										<p>Sizning e'tiboringizni veb-saytda taklif qilingan shaklda ilova qilingan hujjatlar va materiallar faqat siz aytgan taklif, bayonot yoki shikoyatning mohiyatini tasdiqlashiga qaratamiz.</p>
-										<p>Siz kerakli hujjatlar va materiallarni arxivlashsiz (ilova fayli), qabul qilinadigan formatsiz ikkita mustaqil fayl qo'shimchalari bilan istalgan tartibda elektron shaklda biriktirishingiz mumkin: </p>
-										<ul>
-											<li>txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub, pdf, jpg, jpeg, bmp, png, tif, gif, pcx, mp3, wma, avi, mp4, mkv, wmv, mov, flv, torrent, xml, zip, svg, rar</li>
-											<li> Qo'shimcha fayl (lar) ning pochta serveriga uzatilishi foydalanuvchining "Internet" tarmog'ining o'tkazuvchanlik qobiliyatiga va internet provayderi serveri tomonidan qayta ishlangan uzatilgan fayllar hajmiga bog'liqligini sizga ma'lum qilamiz. </li>
-										</ul>
-										<p>Sizning qurilma jihozingiz ADSL, 3G, 4G, WiFi va boshqa texnologiyalar yordamida Internetdagi ma'lumotlarni uzatish tezligini ta'minlaydigan, ajratilgan aloqa kanallari orqali Internetga ulanganda, fayl (lar) ning umumiy hajmini uzatish va qayta ishlash: </p>
-										<ul>
-											<li>5 Mbgacha, qoida tariqasida, vaqtni kechiktirmasdan amalga oshiriladi; </li>
-											<li>5 Mb dan 10 Mb gacha bo'lgan fayllar, vaqtni kechiktirish bilan amalga oshirish mumkin; </li>
-											<li>10 MB dan ortiq dastur amalga oshirilmasligi mumkin. </li>
-										</ul>
-									</small>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-12">
-								<div>
-									<p>Murojaatga kerakli hujjatlar va materiallarni elektron shaklda qo'shish uchun "Fayl(lar) biriktirish" tugmani bosing</p>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-4 control-label"> Fayl(lar) biriktirish <span class="control-label__comment">Faylning umumiy hajmi 10 MB dan oshmasligi kerak</span></label>
-							<div>
-								<input multiple="multiple" name="attach[]" type="file">
-							</div>
-							</div>
-
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-4">
-					<div class="form-control-wrapper2">
-						<button id="sendbutton" class="btn btn-primary" type="submit" href="#">Murojaatni jo'natish</button>
-					</div>
-				</div>
-			</div>
-			<div>
-			</div>
-
-		</form>
-	</div>
+        </form>
+    </div>
 </div>
 
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+$(document).ready(function() {
+    // Add co-author
+    $('#addcoauthor').click(function() {
+        var form_idx = $('#id_hammuallif-TOTAL_FORMS').val();
+        $('#hammualliflar-list').append(`
+            <div class="group__item">
+                <div class="group__counter">${parseInt(form_idx) + 1} {% blocktrans %}hammuallif{% endblocktrans %}</div>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <input type="text" name="hammuallif-${form_idx}-familya" class="form-control" placeholder="{% blocktrans %}Familiya{% endblocktrans %}" id="id_hammuallif-${form_idx}-familya">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" name="hammuallif-${form_idx}-ismi" class="form-control" placeholder="{% blocktrans %}Ism{% endblocktrans %}" id="id_hammuallif-${form_idx}-ismi">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" name="hammuallif-${form_idx}-otasining_ismi" class="form-control" placeholder="{% blocktrans %}Otasining ismi{% endblocktrans %}" id="id_hammuallif-${form_idx}-otasining_ismi">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="email" name="hammuallif-${form_idx}-pochta_manzil" class="form-control" placeholder="{% blocktrans %}Email{% endblocktrans %}" id="id_hammuallif-${form_idx}-pochta_manzil">
+                    </div>
+                </div>
+                <div class="group__remove">
+                    <button type="button" class="btn btn-danger btn-sm remove-hammuallif">{% blocktrans %}O'chirish{% endblocktrans %}</button>
+                </div>
+            </div>
+        `);
+        $('#id_hammuallif-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+    });
 
-	var i = 1;
-
-	$('body').on('click', '#addcoauthor', function () {
-
-		$('<div class="group__item">  <div class="group__counter"> '+i+' hammuallif </div>  <div class="form-group">  <div class="col-sm-3">  <label class="form__label--hint"><input type="text" name="coauthors[surname]['+i+']" class="form-control group-inline" placeholder="Familiya *" required>  </label>  </div>  <div class="col-sm-3">  <label class="form__label--hint"><input type="text" name="coauthors[name]['+i+']" class="form-control group-inline" placeholder="Ism *" required>  </label>  </div>  <div class="col-sm-3">  <label class="form__label--hint"><input type="text"  name="coauthors[patronymic]['+i+']" class="form-control group-inline" placeholder="Otasining ismi">  </label>  </div>  <div class="col-sm-3">  <label class="form__label--hint"><input type="text" name="coauthors[email]['+i+']" class="form-control group-inline" placeholder="E-mail manzili">  </label>  </div>  </div>  <div class="group__remove">  </div>  </div>').appendTo('.group__list');
-
-		i = i+1;
-	});
-
-	$('body').on('click', '.group__remove', function () {
-
-		var st = 0;
-
-		$(this).closest('.group__item').remove();
-		i = i-1;
-
-		$( ".group__counter" ).each(function( index ) {
-		  st = st + 1;
-		  $(this).text(st + ' соавтор');
-		});
-
-	});
-
+    // Remove co-author
+    $(document).on('click', '.remove-hammuallif', function() {
+        $(this).closest('.group__item').remove();
+        // Update counters
+        $('.group__counter').each(function(index) {
+            $(this).text(index + 1 + ' {% blocktrans %}hammuallif{% endblocktrans %}');
+        });
+        // Update management form count
+        $('#id_hammuallif-TOTAL_FORMS').val($('.group__item').length);
+    });
+});
 </script>
 
-
-
-                    </div>
                 </div>
-                <div class="pull-left block-sidebar col-md-3">
-                    <span class="news" style="border:1px solid #3669d1;">
-                        <div class="news__image" style="height: auto;"><img src="../static/images/raxba_copy.jpg" /></div>
-                        <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
-                        <div style="text-align:center; ">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
-                    </span>
-
-                    <div id="activities_wrap">
-                        <ul class="nav navbar-nav" id="main-menu">
-
-                            <li class="dropdown parent"><a href="index.html#">Qonunchilik palatasi qarorlari</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Vazirlar mahkamasi qarorlari</a></li>
-                            <li class="dropdown parent"><a href="index.html#">O'z kuchini yo'qotgan me'yoriy hujjatlar</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Rasmiy ma'ruzalar</a></li>
-                            <li class="dropdown parent"><a href="index.html#">Analitik xisobot va taxlillar</a></li>
-                        </ul>
-                    </div>
-
-                    <hr />
-                    <div class="data-banner">
-                        <a class="calc-button" href="https://eduNavoiy.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
-                        <a href="https://eduNavoiy.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
-                        <a style="background: #219653;" href="https://eduNavoiy.uz/korxona-haqida/40-bosh-ish-orinlari.html"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
-                        <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
-                    </div>
-
-                    <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />
-                </div>
-                <div class="clearfix"></div>
             </div>
+            <div class="pull-left block-sidebar col-md-3">
+                <span class="news" style="border:1px solid #3669d1;">
+                    <div class="news__image" style="height: auto;"><img src="../static/images/raxba_copy.jpg" /></div>
+                    <div style="text-align:center; margin-bottom:10px;"><b>{% blocktrans %}To'xtayev Feruz Sadulloyevich{% endblocktrans %}</b></div>
+                    <div style="text-align:center; ">{% blocktrans %}Navoiy viloyat Oliy ta'lim, fan va innovatsiyalar boshqarma boshlig'i{% endblocktrans %}</div>
+                </span>
+
+                <div id="activities_wrap">
+                    <ul class="nav navbar-nav" id="main-menu">
+                        <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Qonunchilik palatasi qarorlari{% endblocktrans %}</a></li>
+                        <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Vazirlar mahkamasi qarorlari{% endblocktrans %}</a></li>
+                        <li class="dropdown parent"><a href="index.html#">{% blocktrans %}O'z kuchini yo'qotgan me'yoriy hujjatlar{% endblocktrans %}</a></li>
+                        <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Rasmiy ma'ruzalar{% endblocktrans %}</a></li>
+                        <li class="dropdown parent"><a href="index.html#">{% blocktrans %}Analitik xisobot va taxlillar{% endblocktrans %}</a></li>
+                    </ul>
+                </div>
+
+                <hr />
+                <div class="data-banner">
+                    <a class="calc-button" href="https://eduNavoiy.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span></a>
+                    <a href="https://eduNavoiy.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span></a>
+                    <a style="background: #219653;" href="/boshqarma-haqida/ish-urin/"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>{% blocktrans %}Bo'sh ish o'rinlari{% endblocktrans %}</span></a>
+                    <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span></a>
+                </div>
+
+                <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />
+            </div>
+            <div class="clearfix"></div>
         </div>
+    </div>
 {% endblock content %}

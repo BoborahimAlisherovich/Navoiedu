@@ -170,31 +170,34 @@ def boshqarma_haqida_detail(request, pk):
     }
 
     return render(request, 'pages/news_detail.html', ctx)
-
-
-
-# news_app/views.py
 from django.shortcuts import render, redirect
 from news_app.forms import MurojatForm, MurojatHammuallifForm
 from django.forms import formset_factory
 
 def murojaatlar(request):
     HammuallifFormSet = formset_factory(MurojatHammuallifForm, extra=0)
+    
     if request.method == 'POST':
         form = MurojatForm(request.POST, request.FILES)
-        formset = HammuallifFormSet(request.POST)
-        if form.is_valid() and formset.is_valid():
+        formset = HammuallifFormSet(request.POST, prefix='hammuallif')
+        
+        if form.is_valid():
             murojat = form.save()
-            for hammuallif_form in formset:
-                hammuallif = hammuallif_form.save(commit=False)
-                hammuallif.murojat = murojat
-                hammuallif.save()
-            return redirect('home_page')  # Muvaffaqiyatli yuborilgandan keyin bosh sahifaga yo‘naltirish
+            
+            if formset.is_valid():
+                for hammuallif_form in formset:
+                    if hammuallif_form.cleaned_data:  # Faqat to'ldirilgan formalarni saqlaymiz
+                        hammuallif = hammuallif_form.save(commit=False)
+                        hammuallif.murojat = murojat
+                        hammuallif.save()
+            
+            return redirect('home_page')
     else:
         form = MurojatForm()
-        formset = HammuallifFormSet()
-    ctx = {
+        formset = HammuallifFormSet(prefix='hammuallif')
+    
+    context = {
         'form': form,
         'formset': formset,
     }
-    return render(request, 'pages/murojaatlar.html', ctx)
+    return render(request, 'pages/murojaatlar.html', context)

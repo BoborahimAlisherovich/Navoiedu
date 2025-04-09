@@ -7,7 +7,7 @@ class RahbariyatTranslationOptions(TranslationOptions):
 
 @register(BoShIshOrin)
 class BoShIshOrinTranslationOptions(TranslationOptions):
-    fields = ('joylashuv','lavozim')
+    fields = ('joylashuv','lavozim','tavsif')
 
 
 

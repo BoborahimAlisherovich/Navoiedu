@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" class="boxed csstransforms3d uz">
@@ -64,7 +65,7 @@
                 <div class="special-settings">
                     <div class="special-settings-wrapper clearfix">
                         <div class="a-fontsize">
-                            Shrift o'lchami:
+                            {% blocktrans %}Shrift o'lchami: {% endblocktrans %}
                             <a class="a-fontsize-small" data-set="fs-small" href="/#"
                                title="Уменьшенный размер шрифта">A</a>
                             <a class="a-fontsize-normal smallFont" href="/#" data-set="fs-normal"
@@ -73,7 +74,7 @@
                                title="Увеличенный размер шрифта">A</a>
                         </div>
                         <div class="a-colors">
-                            Sayt rangi:
+                            {% blocktrans %} Sayt rangi: {% endblocktrans %}
                             <a class="a-color1" data-set="color1" href="/#" title="Черным по белому">A</a>
                             <a class="a-color2" data-set="color2" href="/#" title="Желтым по черному">A</a>
                             <a class="a-color3" data-set="color3" href="/#"
@@ -83,7 +84,7 @@
                         </div>
                         <div class="norm-version">
                             <a href="/#" id="normalversion" class="resetFont" data-set="normalversion"
-                               title="Сайтнинг тўлиқ талқини">Saytning to'liq talqini</a>
+                               title="Сайтнинг тўлиқ талқини">{% blocktrans %} Saytning to'liq talqini {% endblocktrans %}</a>
                         </div>
                     </div>
                     <!-- .special-settings-wrapper -->
@@ -102,45 +103,62 @@
                         <li>
                             <a href="/">
                                 <div class="icon-bg"><i class="fa fa-home" aria-hidden="true"></i></div>
-                                <span>Bosh sahifa</span>
+                                <span>
+                                   {% blocktrans %} Bosh sahifa  {% endblocktrans %}
+                                </span>
                             </a>
                         </li>
                         <li>
                             <a href="">
                                 <div class="icon-bg"><i class="fa fa-sitemap" aria-hidden="true"></i></div>
-                                <span>Sayt xaritasi</span>
+                                <span>  {% blocktrans %} Sayt xaritasi {% endblocktrans %}</span>
                             </a>
                         </li>
                         <li>
                             <a href="/#" class="btn-adaptive">
                                 <div class="icon-bg"><i class="fa fa-mobile" aria-hidden="true"></i></div>
-                                <span>Mobil versiya</span>
+                                <span>  {% blocktrans %} Mobil versiya {% endblocktrans %}</span>
                             </a>
                         </li>
                         <li>
                             <a href="/#" id="specialversion">
                                 <div class="icon-bg"><i class="fa fa-eye" aria-hidden="true"></i></div>
-                                <span>Zaif ko'ruvchilar uchun</span>
+                                <span>  {% blocktrans %} Zaif ko'ruvchilar uchun {% endblocktrans %}</span>
                             </a>
                         </li>
-
-
                         <li>
-                            <a href="/admin">
+                            <!-- <a href="/admin">
                                 <div class="icon-bg"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
-                                <span>Tizimga kirish</span>
-                            </a>
+                                <span>{% blocktrans %} Tizimga kirish {% endblocktrans %}</span>
+                            </a> -->
                         </li>
-
                     </ul>
                 </div>
-                <div class="search">
-                    <form method="post">
-                        <input type="text" name="story" placeholder="Saytdan izlash..">
-                        <input type="hidden" name="do" value="search">
-                        <input type="hidden" name="subaction" value="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                
+                <!-- Qidiruv va til tanlash qismi -->
+                <div style="display: flex; align-items: center; justify-content: flex-end; margin-top: 10px;">
+                    <div class="search" style="margin-right: 15px;">
+                        <form method="post">
+                            <input type="text" name="story" placeholder="Saytdan izlash..">
+                            <input type="hidden" name="do" value="search">
+                            <input type="hidden" name="subaction" value="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div class="language-switcher">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% if request.LANGUAGE_CODE == 'uz' %}O'zbekcha{% elif request.LANGUAGE_CODE == 'en' %}English{% else %}Русский{% endif %} 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/uz{{ request.path|slice:'3:' }}">O'zbekcha</a></li>
+                                <li><a href="/en{{ request.path|slice:'3:' }}">English</a></li>
+                                <li><a href="/ru{{ request.path|slice:'3:' }}">Русский</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,9 +179,9 @@
                         <div class="header-logo-title">
                             <a href="/">
                                 <h3></h3>
-                                <h4><span>Navoiy viloyat Oliy ta’lim</span></h4>
-                                <h4><span>fan va innovatsiyalar</span></h4>
-                                <h4><span>boshqarmasi</span></h4>
+                                <h4><span>{% blocktrans %} Navoiy viloyat Oliy ta’lim {% endblocktrans %}</span></h4>
+                                <h4><span>{% blocktrans %}fan va innovatsiyalar  {% endblocktrans %}</span></h4>
+                                <h4><span>{% blocktrans %}boshqarmasi {% endblocktrans %}</span></h4>
                                 <h5>
                                     <p><span>rasmiy veb-sayti</span></p>
                                 </h5>
@@ -201,79 +219,79 @@
             <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
                 <nav>
                     <ul class="nav nav-pills" id="mainNav">
-                        <li class="dropdown"><a href="/boshqarma-haqida/"><span>Boshqarma haqida</span> </a>
+                        <li class="dropdown"><a href="/boshqarma-haqida/"><span>  {% blocktrans %}Boshqarma haqida {% endblocktrans %}</span> </a>
                             <ul class="dropdown-menu">
-                                <li><a href=""><span>Boshqarma tarixi</span> </a>
+                                <!-- <li><a href=""><span>Boshqarma tarixi</span> </a> -->
 
                                 </li>
-                                <li><a href="/boshqarma-haqida/rahbariyat"><span>Tarkibiy tuzilma</span> </a>
+                                <li><a href="/boshqarma-haqida/rahbariyat"><span>  {% blocktrans %} Tarkibiy tuzilma {% endblocktrans %}</span> </a>
 
                                 </li>
                                 <li><a href=""><span>Funktsiya va vazifalar</span> </a>
 
                                 </li>
-                                <li><a href="/boshqarma-haqida/erishilgan-yutuqlar"><span>Erishilgan yutuqlar</span> </a>
+                                <li><a href="/boshqarma-haqida/erishilgan-yutuqlar"><span>  {% blocktrans %} Erishilgan yutuqlar {% endblocktrans %}</span> </a>
 
                                 </li>
                                 <li><a href=""><span>Qabul jadvali</span> </a>
-
+ 
                                 </li>
-                                <li><a href="/boshqarma-haqida/ish-urin"><span>Bo&#039;sh ish o&#039;rinlari</span> </a>
+                                <li><a href="/boshqarma-haqida/ish-urin"><span>   {% blocktrans %} Bo&#039;sh ish o&#039;rinlari {% endblocktrans %}</span> </a>
 
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown"><a
-                                href="https://edunavoiy.uz/normativ-hujjatlar/"><span>Normativ hujjatlar</span> </a>
+                                href="https://edunavoiy.uz/normativ-hujjatlar/"><span>  {% blocktrans %} Normativ hujjatlar {% endblocktrans %}</span> </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="https://edunavoiy.uz/normativ-hujjatlar/ozbekiston-respuplikasi-qonunlari/"><span>O`zbekiston Respuplikasi Qonunlari</span>
+                                    <a href="#"><span>  {% blocktrans %} O`zbekiston Respuplikasi Qonunlari {% endblocktrans %}</span>
                                     </a>
 
                                 </li>
                                 <li>
-                                    <a href="https://edunavoiy.uz/normativ-hujjatlar/prezident-qaror-va-farmonlari/"><span>Prezident qaror va farmonlari</span>
+                                    <a href="https://edunavoiy.uz/normativ-hujjatlar/prezident-qaror-va-farmonlari/"><span>  {% blocktrans %}  Prezident qaror va farmonlari {% endblocktrans %}</span>
                                     </a>
 
                                 </li>
-                                <li><a href="https://edunavoiy.uz/normativ-hujjatlar/oliy-talim/"><span>Oliy ta’lim, fan va innovatsiyalar vazirligi</span>
+                                <li><a href="https://edunavoiy.uz/normativ-hujjatlar/oliy-talim/"><span>  {% blocktrans %} Oliy ta’lim, fan va innovatsiyalar vazirligi {% endblocktrans %}</span>
                                 </a>
 
                                 </li>
                                 <li>
-                                    <a href="https://edunavoiy.uz/normativ-hujjatlar/navoiy-viloyati-boshqarmasi-qarorlari/"><span>Navoiy viloyati boshqarmasi qarorlari</span>
+                                    <a href="https://edunavoiy.uz/normativ-hujjatlar/navoiy-viloyati-boshqarmasi-qarorlari/"><span>  {% blocktrans %} Navoiy viloyati boshqarmasi qarorlari {% endblocktrans %}</span>
                                     </a>
 
                                 </li>
-                                <li><a href="https://edunavoiy.uz/normativ-hujjatlar/o039z-kuchini-yoqotgan-hujjatlar/"><span>O&#039;z kuchini yo‘qotgan hujjatlar</span>
+                                <li><a href="https://edunavoiy.uz/normativ-hujjatlar/o039z-kuchini-yoqotgan-hujjatlar/"><span>  {% blocktrans %} O&#039;z kuchini yo‘qotgan hujjatlar {% endblocktrans %}</span>
                                 </a>
 
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/korrupsiyaga-qarshi-kurashish/"><span>Korrupsiyaga qarshi kurashish  </span>
+                        <li><a href="/korrupsiyaga-qarshi-kurashish/"><span>  {% blocktrans %} Korrupsiyaga qarshi kurashish {% endblocktrans %} </span>
                         </a>
 
                         </li>
-                        <li><a href="https://edunavoiy.uz/ochiq-malumotlar/"><span>Ochiq ma`lumotlar</span> </a>
+                        <li><a href="https://edunavoiy.uz/ochiq-malumotlar/"><span>  {% blocktrans %}Ochiq ma`lumotlar {% endblocktrans %}</span> </a>
 
                         </li>
-                        <li class="dropdown"><a href="/matbuot-xizmati/"><span>Matbuot xizmati</span> </a>
+                        <li class="dropdown"><a href="/matbuot-xizmati/"><span>  {% blocktrans %} Matbuot xizmati {% endblocktrans %}</span> </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/matbuot-xizmati/yangiliklar/"><span>Yangiliklar</span> </a>
+                                <li><a href="/matbuot-xizmati/yangiliklar/"><span>  {% blocktrans %} Yangiliklar {% endblocktrans %}</span> </a>
 
                                 </li>
-                                <li><a href="/matbuot-xizmati/elon-va-tadbirlar/"><span>E&#039;lon va tadbirlar</span>
+                                <li><a href="/matbuot-xizmati/elon-va-tadbirlar/"><span>  {% blocktrans %} E&#039;lon va tadbirlar {% endblocktrans %}</span>
                                 </a>
 
                                 </li>
-                                <li><a href="https://edunavoiy.uz/matbuot-xizmati/mediateka/"><span>Mediateka</span>
+                                <li><a href="https://edunavoiy.uz/matbuot-xizmati/mediateka/"><span>  {% blocktrans %} Mediateka {% endblocktrans %}</span>
                                 </a>
 
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="https://edunavoiy.uz/bog039lanish/"><span>Bog&#039;lanish</span> </a>
+                        <li><a href="/murojaatlar/"><span>{% blocktrans %} Murojaat qilish {% endblocktrans %} </span> </a>
 
                         </li>
                     </ul>
@@ -282,6 +300,7 @@
         </div>
     </div>
 </header>
+
 <div class="clearfix"></div>
 <div class="left-img">
     <img src="https://edunavoiy.uz/templates/Default/images/" alt=""/>
@@ -289,6 +308,7 @@
 <div class="right-img">
     <img src="https://edunavoiy.uz/templates/Default/images/" alt=""/>
 </div>
+
 
 {% block content %}
 {% endblock content %}
@@ -315,7 +335,7 @@
                     </span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<a class="monthlink"
                                                            onclick="doCalendar('11','2024','left'); return false;"
-                                                           href="https://edunavoiy.uz/2024/11/" title="Следующий месяц"><span
+                                                           href="#" title="Следующий месяц"><span
                                     class="flatpickr-next-month" style="display: block;"><i class="fa fa-chevron-right"
                                                                                             aria-hidden="true"></i></span></a>
                             </div>
@@ -380,12 +400,12 @@
                 </div>
                 <div class="footer-top-item">
                     <div class="title-block">
-                        <h1>Obuna bo'lish</h1>
+                        <h1>{% blocktrans %} Obuna bo'lish {% endblocktrans %}</h1>
                     </div>
                     <div class="subscription">
                         <div class="advert-item item">
-                            <p>E-mail manzilingizni kiritgan holda yangiliklar va maslahatlarni to‘g‘ridan-to‘g‘ri
-                                elektron pochtangiz orqali qabul qilib oling</p>
+                            <p>{% blocktrans %} E-mail manzilingizni kiritgan holda yangiliklar va maslahatlarni to‘g‘ridan-to‘g‘ri
+                                elektron pochtangiz orqali qabul qilib oling {% endblocktrans %}</p>
                         </div>
                         <form action="/#" method="post" accept-charset="utf-8">
                             {% csrf_token %}
@@ -394,25 +414,25 @@
                             </div>
                             <input type="email" placeholder="E-mail pochtangizni kiriting" name="subscribe"
                                    required="required"/>
-                            <button type="submit" class="btn subscribe-btn">Obuna bo'lish</button>
+                            <button type="submit" class="btn subscribe-btn">{% blocktrans %} Obuna bo'lish {% endblocktrans %}</button>
                         </form>
                     </div>
                 </div>
                 <div class="footer-top-item">
                     <div class="title-block">
-                        <h1>E'lonlar</h1>
+                        <h1>{% blocktrans %}E'lonlar {% endblocktrans %} </h1>
                     </div>
                     <div id="owl-advert" class="owl-carousel owl-theme">
                         <div class="advert-item item">
                             <a href="matbuot-xizmati/e039lon-va-tadbirlar/208-dual-talim-jarayonlari.html"
                                target="_blank">
-                                <h4>Dual ta’lim jarayonlari</h4>
+                                <h4>{% blocktrans %} Dual ta’lim jarayonlari {% endblocktrans %}</h4>
                             </a>
                         </div>
                         <div class="advert-item item">
                             <a href="matbuot-xizmati/e039lon-va-tadbirlar/207-1-oktabr-oqituvchi-va-murabbiylar-kuni.html"
                                target="_blank">
-                                <h4>1-oktabr “O‘qituvchi va murabbiylar kuni”</h4>
+                                <h4>{% blocktrans %} 1-oktabr “O‘qituvchi va murabbiylar kuni {% endblocktrans %}”</h4>
                             </a>
                         </div>
                         <div class="advert-item item">
@@ -424,18 +444,18 @@
                         <div class="advert-item item">
                             <a href="matbuot-xizmati/e039lon-va-tadbirlar/205-mirzo-ulugbek-vorislari-respublika-tanlovi.html"
                                target="_blank">
-                                <h4>“Mirzo Ulugʻbek vorislari” Respublika tanlovi</h4>
+                                <h4>{% blocktrans %} “Mirzo Ulugʻbek vorislari” Respublika tanlovi {% endblocktrans %}</h4>
                             </a>
                         </div>
                         <div class="advert-item item">
                             <a href="matbuot-xizmati/e039lon-va-tadbirlar/204-talabalar-festivali.html" target="_blank">
-                                <h4>“Talabalar festivali”</h4>
+                                <h4>“{% blocktrans %} Talabalar festivali {% endblocktrans %}”</h4>
                             </a>
                         </div>
                         <div class="advert-item item">
                             <a href="boshqarma-haqida/erishilgan-yutuqlar/203-barkamol-avlod-2023-sport-musobaqasida-muvoffaqiyatli-birinchi-qadam.html"
                                target="_blank">
-                                <h4>BARKAMOL AVLOD-2023 SPORT MUSOBAQASIDA MUVOFFAQIYATLI BIRINCHI QADAM.</h4>
+                                <h4>{% blocktrans %} BARKAMOL AVLOD-2023 SPORT MUSOBAQASIDA MUVOFFAQIYATLI BIRINCHI QADAM {% endblocktrans %}.</h4>
                             </a>
                         </div>
 
@@ -447,7 +467,7 @@
         <hr/>
         <div class="links-main">
             <div class="title-block">
-                <h1>Foydali havolalar</h1>
+                <h1>{% blocktrans %} Foydali havolalar {% endblocktrans %}</h1>
             </div>
             <div class="links">
                 <div id="owl-links" class="owl-carousel owl-theme">
@@ -458,7 +478,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/my_gov.png" width="40" height="40"/>
                                 </div>
-                                <h3>O‘zbekiston Respublikasi hukumat portali</h3>
+                                <h3>{% blocktrans %} O‘zbekiston Respublikasi hukumat portali {% endblocktrans %}</h3>
                                 <p>http://www.gov.uz/uz</p>
                             </a>
                         </div>
@@ -467,7 +487,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/logo_mjko.svg" width="40" height="40"/>
                                 </div>
-                                <h3>O‘zbekiston Respublikasi uy - joy kommunal xizmat ko‘rsatish vazirligi</h3>
+                                <h3>{% blocktrans %} O‘zbekiston Respublikasi uy - joy kommunal xizmat ko‘rsatish vazirligi {% endblocktrans %}</h3>
                                 <p>https://kommunal.uz/uz</p>
                             </a>
                         </div>
@@ -479,7 +499,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/soliq.svg" width="40" height="40"/>
                                 </div>
-                                <h3>O‘zbekiston Respublikasi Davlat soliq qo‘mitasi</h3>
+                                <h3>{% blocktrans %}  O‘zbekiston Respublikasi Davlat soliq qo‘mitasi {% endblocktrans %}</h3>
                                 <p>http://soliq.uz/uz</p>
                             </a>
                         </div>
@@ -488,7 +508,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/openinfo.png" width="40" height="40"/>
                                 </div>
-                                <h3>Korporativ axborot yagona portali</h3>
+                                <h3>{% blocktrans %}  Korporativ axborot yagona portali {% endblocktrans %}</h3>
                                 <p>http://openinfo.uz</p>
                             </a>
                         </div>
@@ -499,7 +519,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/lex.png"/>
                                 </div>
-                                <h3>O‘zbekiston Respublikasi Qonun hujjatlari ma’lumotlari miliiy bazasi</h3>
+                                <h3>{% blocktrans %}  O‘zbekiston Respublikasi Qonun hujjatlari ma’lumotlari miliiy bazasi {% endblocktrans %}</h3>
                                 <p>http://lex.uz</p>
                             </a>
                         </div>
@@ -509,7 +529,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/gerb.png" width="40" height="40"/>
                                 </div>
-                                <h3>O‘zbekiston Respublikasi Davlat Statistika Qo‘mitasi</h3>
+                                <h3>{% blocktrans %}  O‘zbekiston Respublikasi Davlat Statistika Qo‘mitasi {% endblocktrans %}</h3>
                                 <p>http://stat.uz</p>
                             </a>
                         </div>
@@ -520,7 +540,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/gerb.png" width="40" height="40"/>
                                 </div>
-                                <h3>Navoiy viloyati hokimligi</h3>
+                                <h3>{% blocktrans %}  Navoiy viloyati hokimligi {% endblocktrans %}</h3>
                                 <p>https://navoiy.uz</p>
                             </a>
                         </div>
@@ -530,7 +550,7 @@
                                 <div class="links-img">
                                     <img src="/static/images/links/gerb.png" width="40" height="40"/>
                                 </div>
-                                <h3>Navoiy viloyati Sog'liqni saqlash boshqarmasi</h3>
+                                <h3>{% blocktrans %}  Navoiy viloyati Sog'liqni saqlash boshqarmasi {% endblocktrans %}</h3>
                                 <p>http://xvssb.uz</p>
                             </a>
                         </div>
@@ -550,9 +570,9 @@
                          style="width: 130px;background: #fff;border-radius: 10px;float: left;"/>
 
                     <div class="copyright-text">
-                        <h3>Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarmasi</h3>
+                        <h3>{% blocktrans %} Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarmasi {% endblocktrans %}</h3>
                         <div class="copy">
-                            2023 © Barcha huquqlar himoyalangan.<br/>
+                            {% blocktrans %}  2023 © Barcha huquqlar himoyalangan. {% endblocktrans %}<br/>
                         </div>
                     </div>
                 </div>
@@ -581,13 +601,13 @@
                     <div class="footer-info-bottom">
                         <div class="address">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <p>Navoiy viloyat Urganch shahar P.Mahmud ko‘chasi 162-A-uy</p>
+                            <p>{% blocktrans %}  Navoiy viloyat Urganch shahar P.Mahmud ko‘chasi 162-A-uy {% endblocktrans %}</p>
                         </div>
 
                         <div class="site-info-footer">
                             <ul>
                                 <li>
-                                    Saytning so'nggi yangilangan sanasi:<br/>
+                                    {% blocktrans %} Saytning so'nggi yangilangan sanasi: {% endblocktrans %}<br/>
                                     04-окт.2024-yil Soat: 10:42:33
 
                                 </li>
@@ -597,10 +617,10 @@
 
                     <div class="footer-info-bottom-2">
                         <div class="site-error">
-                            <p>Matnda xatolikni ko'rdingizmi?</p>
-                            <p>Sichqoncha bilan belkgilang va Ctrl + Enter tugmalarini baravar bosing</p>
+                            <p>{% blocktrans %}  Matnda xatolikni ko'rdingizmi? {% endblocktrans %}</p>
+                            <p>{% blocktrans %}  Sichqoncha bilan belkgilang va Ctrl + Enter tugmalarini baravar bosing {% endblocktrans %}</p>
                         </div>
-                        <div class="dev"><small>Sayt yaratuvchisi: <a href="https://xumoyunxurmatullayev.netlify.app/">Lektor™</a></small></div>
+                        <div class="dev"><small>Sayt yaratuvchisi: <a href="">Boborahim</a></small></div>
                     </div>
                 </div>
             </div>

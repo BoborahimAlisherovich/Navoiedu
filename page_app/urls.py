@@ -30,6 +30,7 @@ urlpatterns = [
     # path('boshqarma-haqida/murojaatlar/<int:pk>/', rahbariyat_detail, name='rahbariyat_detail'),
     
     path('korrupsiyaga-qarshi-kurashish/',korrupsiya),
+    path('murojaatlar/',murojaatlar),
 
 
 

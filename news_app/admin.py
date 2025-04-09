@@ -106,13 +106,23 @@ class MurojatHammuallifInline(admin.TabularInline):
     verbose_name_plural = "MurojatHammualliflar"
 
 
+
+# @admin.register(Murojat)
+# class MurojatAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'murojat_kimga', 'create_date','ismi')
+#     search_fields = ('ismi', 'murojat_kimga')
+#     list_filter = ('murojat_kimga','ismi')
+#     inlines = [MurojatHammuallifInline]
+    
+
 @admin.register(Murojat)
 class MurojatAdmin(admin.ModelAdmin):
-    list_display = ('id', 'murojat_kimga', 'create_date','ismi')
-    search_fields = ('ismi', 'murojat_kimga')
-    list_filter = ('murojat_kimga','ismi')
+    list_display = ('id', 'murojat_kimga', 'create_date', 'ismi', 'familiya')
+    search_fields = ('ismi', 'familiya', 'murojat_kimga')
+    list_filter = ('murojat_kimga', 'murojat_turi', 'create_date')
     inlines = [MurojatHammuallifInline]
-
+    readonly_fields = ('create_date',)
+    list_per_page = 20
 
 
 #---------Normativ hujjatlar

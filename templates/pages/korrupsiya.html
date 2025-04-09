@@ -1,65 +1,60 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
 <div class="body container-user">
     <div role="main" class="main row">
-        <!-- Sidebar from your provided code -->
-      
         <!-- Main content area inspired by the image -->
         <div class="col-md-9 main-content">
-            <h1 style="font-size: 24px; font-weight: bold;">Korrupsiyaga qarshi kurash</h1>
+            <h1 style="font-size: 24px; font-weight: bold;">{% blocktrans %}Korrupsiyaga qarshi kurash{% endblocktrans %}</h1>
             <hr style="border: 1px solid #000; margin: 20px 0;" />
 
             <!-- Corruption News Section -->
             <div class="corruption-news">
-                <h3 style="font-size: 18px; font-weight: bold;">Korrupsiyaga qarshi xabar berish:</h3>
+                <h3 style="font-size: 18px; font-weight: bold;">{% blocktrans %}Korrupsiyaga qarshi xabar berish:{% endblocktrans %}</h3>
                 <ul style="list-style-type: disc; margin-left: 20px;">
-                    <li>Bosh prokuratura ishonch raqami – 1007;</li>
-                    <li>Korrupsiyaga qarshi kurashish agentligi – 1253;</li>
-                    <li>Bosh prokuratura huzuridagi Iqtisodiy jinoyatlarga qarshi kurashish departamenti – 71-233-1007;</li>
-                    <li>Telegramdagi @@antikorbot manzili orqali ham xabar berish mumkin.</li>
-                    <li><a href="https://anticorruption.uz/uzc">Sayt: https://anticorruption.uz/uzc</a></li>
+                    <li>{% blocktrans %}Bosh prokuratura ishonch raqami – 1007{% endblocktrans %}</li>
+                    <li>{% blocktrans %}Korrupsiyaga qarshi kurashish agentligi – 1253{% endblocktrans %}</li>
+                    <li>{% blocktrans %}Bosh prokuratura huzuridagi Iqtisodiy jinoyatlarga qarshi kurashish departamenti – 71-233-1007{% endblocktrans %}</li>
+                    <li>{% blocktrans %}Telegramdagi @@antikorbot manzili orqali ham xabar berish mumkin{% endblocktrans %}</li>
+                    <li><a href="https://anticorruption.uz/uzc">{% blocktrans %}Sayt: https://anticorruption.uz/uzc{% endblocktrans %}</a></li>
                 </ul>
 
-                <p><strong>Murojaatlar uchun telefon:</strong> +998 (93)-311-42-28</p>
-                <p><strong>Korrupsiyaga qarshi kurash bo‘yicha qo‘llanmalar</strong></p>
-                <p style="text-decoration: underline;">Oliy ta’lim, fan va innovatsiyalar vazirligi</p>
+                <p><strong>{% blocktrans %}Murojaatlar uchun telefon:{% endblocktrans %}</strong> {% blocktrans %}+998 (93)-311-42-28{% endblocktrans %}</p>
+                <p><strong>{% blocktrans %}Korrupsiyaga qarshi kurash bo‘yicha qo‘llanmalar{% endblocktrans %}</strong></p>
+                <p style="text-decoration: underline;">{% blocktrans %}Oliy ta’lim, fan va innovatsiyalar vazirligi{% endblocktrans %}</p>
             </div>
-
-            <!-- Calendar Section -->
-
 
             <!-- Form-like Section -->
             <div class="form-section" style="margin-top: 20px;">
-                <h3 style="font-size: 18px; font-weight: bold;">Ushbu tasdiqlanadi</h3>
+                <h3 style="font-size: 18px; font-weight: bold;">{% blocktrans %}Ushbu tasdiqlanadi{% endblocktrans %}</h3>
                 <hr style="border: 1px solid #000; margin: 10px 0;" />
-                <p><strong>Karrupsiyaga qarshi kurashish uchun qullanma</strong></p>
+                <p><strong>{% blocktrans %}Karrupsiyaga qarshi kurashish uchun qullanma{% endblocktrans %}</strong></p>
                 
-                <p><a href="{% static 'pdflar/Uslubiy qo`llanma.pdf' %}" target="_blank">Uslubiy bo'llanma _________________________</a></p>
-                <p><a href="{% static 'pdflar/Uslubiy tavsiyalar.pdf' %}" target="_blank">Uslubiy tavsiyalar _________________________</a></p>
+                <p><a href="{% static 'pdflar/Uslubiy qo`llanma.pdf' %}" target="_blank">{% blocktrans %}Uslubiy bo'llanma _________________________{% endblocktrans %}</a></p>
+                <p><a href="{% static 'pdflar/Uslubiy tavsiyalar.pdf' %}" target="_blank">{% blocktrans %}Uslubiy tavsiyalar _________________________{% endblocktrans %}</a></p>
 
-                <p><a href="{% static 'pdflar/Buklet-1.pdf' %}" target="_blank">Budket-1 _________________________</a></p>
-                <p><a href="{% static 'pdflar/Buklet-2.pdf' %}" target="_blank">Budket-2 _________________________</a></p>
-                <p><a href="{% static 'pdflar/Kalendar-1.pdf' %}" target="_blank">Kalendar-1 _________________________</a></p>
-                <p><a href="{% static 'pdflar/Kalendar-2.pdf' %}" target="_blank">Kalendar-2 _________________________</a></p>
-                <p><a href="{% static 'pdflar/Kalendar-3.pdf' %}" target="_blank">Kalendar-3 _________________________</a></p>
-
+                <p><a href="{% static 'pdflar/Buklet-1.pdf' %}" target="_blank">{% blocktrans %}Budket-1 _________________________{% endblocktrans %}</a></p>
+                <p><a href="{% static 'pdflar/Buklet-2.pdf' %}" target="_blank">{% blocktrans %}Budket-2 _________________________{% endblocktrans %}</a></p>
+                <p><a href="{% static 'pdflar/Kalendar-1.pdf' %}" target="_blank">{% blocktrans %}Kalendar-1 _________________________{% endblocktrans %}</a></p>
+                <p><a href="{% static 'pdflar/Kalendar-2.pdf' %}" target="_blank">{% blocktrans %}Kalendar-2 _________________________{% endblocktrans %}</a></p>
+                <p><a href="{% static 'pdflar/Kalendar-3.pdf' %}" target="_blank">{% blocktrans %}Kalendar-3 _________________________{% endblocktrans %}</a></p>
             </div>
         </div>
         <div class="pull-left block-sidebar col-md-3">
             <span class="news" style="border:1px solid #3669d1;">
                 <div class="news__image" style="height: auto;"><img src="{% static 'images/raxba_copy.jpg' %}"/></div>
-                <div style="text-align:center; margin-bottom:10px;"><b>To'xtayev Feruz Sadulloyevich</b></div>
-                <div style="text-align:center;">Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i</div>
+                <div style="text-align:center; margin-bottom:10px;"><b>{% blocktrans %}To'xtayev Feruz Sadulloyevich{% endblocktrans %}</b></div>
+                <div style="text-align:center;">{% blocktrans %}Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i{% endblocktrans %}</div>
             </span>
             <hr/>
             <div class="data-banner">
-                <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Me'yoriy hujjatlar</span></a>
-                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Ish grafigi</span></a>
-                <a style="background: #219653;" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>Bo'sh ish o'rinlari</span></a>
-                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring</span></a>
+                <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span></a>
+                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span></a>
+                <a style="background: #219653;" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>{% blocktrans %}Bo'sh ish o'rinlari{% endblocktrans %}</span></a>
+                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span></a>
             </div>
             <img src="https://raqamli.uz/templates/Raqamli/images/yil_dasturi.jpg" />
         </div>
@@ -68,4 +63,4 @@
     </div>
 </div>
 
-{% endblock content %}  
+{% endblock content %}
