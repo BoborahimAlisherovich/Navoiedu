@@ -1,22 +1,16 @@
 from django.shortcuts import render, get_object_or_404
-
 from news_app.models import (
     ErishilganYutuqlar, 
     MatbuotXizmati, 
     ElonVaTadbirlar,
-     BoShIshOrin,
+    BoShIshOrin,
     Rahbariyat,
     BoshqarmaTarixi,
     QabulJadvali,
     MatbuotXizmatiRasmlar,
+    
   
-    #narmativ hujatlar
-
-    OzbekistonQonunlari,
-    PrezidentFarmonlari,
-    OliyTalImFanInnovatsiya,
-    ViloyatQarorlari,
-    OzKuchiniYoqotgan  )
+ )
 
 # 93 311 16 01 
 def home_page(request):
@@ -175,6 +169,7 @@ from news_app.forms import MurojatForm, MurojatHammuallifForm
 from django.forms import formset_factory
 
 def murojaatlar(request):
+    
     HammuallifFormSet = formset_factory(MurojatHammuallifForm, extra=0)
     
     if request.method == 'POST':

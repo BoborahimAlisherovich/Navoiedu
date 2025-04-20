@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Models for Erishilgan Yutuqlar
 class ErishilganYutuqRasmlari(models.Model):
@@ -142,7 +143,7 @@ class Rahbariyat(models.Model):
 
 class BoshqarmaTarixi(models.Model):
     image = models.ImageField(upload_to='Images/boshqarma_haqida/', verbose_name="Asosiy Rasm")
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255,verbose_name="Sarlavha")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -201,18 +202,17 @@ class QabulJadvali(models.Model):
 
 
 
+    
 class Murojat(models.Model):
     MUROJAT_TURLARI = [
-        ('shikoyat', 'Shikoyat'),
-        ('taklif', 'Taklif'),
-        ('savol', 'Savol'),
+        ('shikoyat', _('Shikoyat')),
+        ('taklif', _('Taklif')),
+        ('savol', _('Savol')),
     ]
     
-    # Kimga yuborilishi uchun tanlovlar
     KIMGA = [
-        ('rahbar', 'Rahbar'),
-        ('urinbosar', 'O\'rinbosar'),
-       
+        ('rahbar', _('Rahbar')),
+        ('urinbosar', _('O‘rinbosar')),
     ]
 
     id  = models.AutoField(primary_key=True)
@@ -248,85 +248,3 @@ class MurojatHammuallif(models.Model):
     def __str__(self):
         return self.familya
 
-
-
-#-----------------
-class OzbekistonQonunlari(models.Model):
-    nomi = models.CharField(max_length=255)
-    fayl = models.FileField(upload_to='qonunlar/')
-    sana = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        
-        return self.nomi
-
-class PrezidentFarmonlari(models.Model):
-    nomi = models.CharField(max_length=255)
-    fayl = models.FileField(upload_to='farmonlar/')
-    sana = models.DateField(auto_now_add=True)
-
-    uzbek_qonunlari = models.ForeignKey(
-        'OzbekistonQonunlari',
-        related_name="PrezidentFarmonlari",
-        on_delete=models.CASCADE,
-        verbose_name="Tegishli PrezidentFarmonlari"
-    )
-
-
-    def __str__(self):
-        return self.nomi
-    
-    
-class OliyTalImFanInnovatsiya(models.Model):
-    nomi = models.CharField(max_length=255)
-    fayl = models.FileField(upload_to='oliytalim/')
-    sana = models.DateField(auto_now_add=True)
-
-    uzbek_qonunlari = models.ForeignKey(
-        'OzbekistonQonunlari',
-        related_name="OliyTalImFanInnovatsiya",
-        on_delete=models.CASCADE,
-        verbose_name="Tegishli OliyTalImFanInnovatsiya"
-    )
-
-    def __str__(self):
-        return self.nomi
-    
-
-class ViloyatQarorlari(models.Model):
-    nomi = models.CharField(max_length=255)
-    fayl = models.FileField(upload_to='viloyat_qarorlari/')
-    sana = models.DateField(auto_now_add=True)
-
-    uzbek_qonunlari = models.ForeignKey(
-        'OzbekistonQonunlari',
-        related_name="ViloyatQarorlari",
-        on_delete=models.CASCADE,
-        verbose_name="Tegishli ViloyatQarorlari"
-    )
-
-    def __str__(self):
-        return self.nomi
-
-class OzKuchiniYoqotgan(models.Model):
-    nomi = models.CharField(max_length=255)
-    fayl = models.FileField(upload_to='yoqotgan_hujjatlar/')
-    sana = models.DateField(auto_now_add=True)
-
-    uzbek_qonunlari = models.ForeignKey(
-        'OzbekistonQonunlari',
-        related_name="OzKuchiniYoqotgan",
-        on_delete=models.CASCADE,
-        verbose_name="Tegishli OzKuchiniYoqotgan"
-    )
-
-
-    def __str__(self):
-        return self.nomi
-
-
-
-
-
-
-    

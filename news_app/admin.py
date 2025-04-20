@@ -18,12 +18,6 @@ from .models import (
   
     #narmativ hujatlar
 
-    OzbekistonQonunlari,
-    PrezidentFarmonlari,
-    OliyTalImFanInnovatsiya,
-    ViloyatQarorlari,
-    OzKuchiniYoqotgan,
-    
 )
 
 # Inline for Erishilgan Yutuqlar
@@ -117,46 +111,9 @@ class MurojatHammuallifInline(admin.TabularInline):
 
 @admin.register(Murojat)
 class MurojatAdmin(admin.ModelAdmin):
-    list_display = ('id', 'murojat_kimga', 'create_date', 'ismi', 'familiya')
+    list_display = ('murojat_kimga', 'create_date', 'ismi', 'familiya','id')
     search_fields = ('ismi', 'familiya', 'murojat_kimga')
     list_filter = ('murojat_kimga', 'murojat_turi', 'create_date')
     inlines = [MurojatHammuallifInline]
     readonly_fields = ('create_date',)
     list_per_page = 20
-
-
-#---------Normativ hujjatlar
-
-class PrezidentFarmonlariInline(admin.TabularInline):
-    model = PrezidentFarmonlari
-    extra = 1
-    verbose_name = "PrezidentFarmonlari"
-    verbose_name_plural = "PrezidentFarmonlarilar"
-
-class OliyTalImFanInnovatsiyaInline(admin.TabularInline):
-    model = OliyTalImFanInnovatsiya
-    extra = 1
-    verbose_name = "OliyTalImFanInnovatsiya"
-    verbose_name_plural = "OliyTalImFanInnovatsiyalar"
-
-class ViloyatQarorlariInline(admin.TabularInline):
-    model = ViloyatQarorlari
-    extra = 1
-    verbose_name = "ViloyatQarorlari"
-    verbose_name_plural = "ViloyatQarorlarilar"
-
-
-class OzKuchiniYoqotganInline(admin.TabularInline):
-    model = OzKuchiniYoqotgan
-    extra = 1
-    verbose_name = "OzKuchiniYoqotgan"
-    verbose_name_plural = "OzKuchiniYoqotganlar"
-
-
-@admin.register(OzbekistonQonunlari)
-class OzbekistonQonunlariAdmin(admin.ModelAdmin):
-    list_display = ('nomi', 'fayl', 'sana')
-    search_fields = ('nomi', 'sana')
-    list_filter = ('nomi','fayl')
-    inlines = [PrezidentFarmonlariInline,OliyTalImFanInnovatsiyaInline,ViloyatQarorlariInline,OzKuchiniYoqotganInline]
-

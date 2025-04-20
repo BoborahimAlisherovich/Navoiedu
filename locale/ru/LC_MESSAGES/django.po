@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 13:05+0500\n"
-"PO-Revision-Date: 2025-04-08 15:00+0500\n"
+"POT-Creation-Date: 2025-04-17 23:16+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Russian <ru@li.org>\n"
-"Language: ru\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,121 +30,119 @@ msgstr "Цвет сайта: "
 
 #: templates/base.html:87
 msgid " Saytning to'liq talqini "
-msgstr "Полная версия сайта"
-
-
+msgstr "Полная версия сайта "
 
 #: templates/base.html:107
 msgid " Bosh sahifa  "
-msgstr "Главная страница"
+msgstr "Главная страница "
 
 #: templates/base.html:114
 msgid " Sayt xaritasi "
-msgstr "Карта сайта"
+msgstr "Карта сайта "
 
 #: templates/base.html:120
 msgid " Mobil versiya "
-msgstr "Мобильная версия"
+msgstr "Мобильная версия "
 
 #: templates/base.html:126
 msgid " Zaif ko'ruvchilar uchun "
-msgstr "Для слабовидящих"
+msgstr "Для слабовидящих "
 
 #: templates/base.html:132
 msgid " Tizimga kirish "
-msgstr ""
+msgstr "Вход в систему "
 
 #: templates/base.html:182
 msgid " Navoiy viloyat Oliy ta’lim "
-msgstr "Навоийская область Высшее образование"
+msgstr "Навоийская область Высшее образование "
 
 #: templates/base.html:183
 msgid "fan va innovatsiyalar  "
-msgstr "наука и инновации"
+msgstr "Наука и инновации "
 
 #: templates/base.html:184
 msgid "boshqarmasi "
-msgstr "управление"
+msgstr "Управление "
+
+#: templates/base.html:186
+msgid " rasmiy veb-sayti "
+msgstr "Официальный веб-сайт "
 
 #: templates/base.html:222
 msgid "Boshqarma haqida "
-msgstr "Об управлении"
+msgstr "Об управлении "
 
 #: templates/base.html:227
 msgid " Tarkibiy tuzilma "
-msgstr "Организационная структура"
+msgstr "Организационная структура "
 
 #: templates/base.html:233
 msgid " Erishilgan yutuqlar "
-msgstr "Достижения"
+msgstr "Достижения "
+
+#: templates/base.html:236
+msgid " Qabul jadvali "
+msgstr "График приема "
 
 #: templates/base.html:239
-#, fuzzy
-#| msgid " Bo'sh ish o'rinlari "
-msgid " Bo&#039;sh ish o&#039;rinlari "
-msgstr "Вакансии"
+msgid " Ish urinlar "
+msgstr "Вакансии "
 
 #: templates/base.html:245
 msgid " Normativ hujjatlar "
-msgstr "Нормативные документы"
+msgstr "Нормативные документы "
 
 #: templates/base.html:248
 msgid " O`zbekiston Respuplikasi Qonunlari "
-msgstr "Законы Республики Узбекистан"
+msgstr "Законы Республики Узбекистан "
 
 #: templates/base.html:253
 msgid "  Prezident qaror va farmonlari "
-msgstr "Указы и постановления Президента"
+msgstr "Указы и постановления Президента "
 
 #: templates/base.html:257
 msgid " Oliy ta’lim, fan va innovatsiyalar vazirligi "
-msgstr "Министерство высшего образования, науки и инноваций"
+msgstr "Министерство высшего образования, науки и инноваций "
 
 #: templates/base.html:262
-msgid " Navoiy viloyati boshqarmasi qarorlari "
-msgstr "Решения управления Навоийской области"
+msgid " O‘zbekiston Respublikasining Ta’lim to‘g‘risida Qonuni "
+msgstr "Закон Республики Узбекистан об образовании "
 
 #: templates/base.html:266
-#, fuzzy
-#| msgid " O'z kuchini yo‘qotgan hujjatlar "
-msgid " O&#039;z kuchini yo‘qotgan hujjatlar "
-msgstr "Утратившие силу документы"
+msgid " O'z kuchini yo‘qotgan hujjatlar "
+msgstr "Документы, утратившие силу "
 
 #: templates/base.html:272
 msgid " Korrupsiyaga qarshi kurashish "
-msgstr "Борьба с коррупцией"
+msgstr "Борьба с коррупцией "
 
 #: templates/base.html:276
 msgid "Ochiq ma`lumotlar "
-msgstr "Открытые данные"
+msgstr "Открытые данные "
 
 #: templates/base.html:279
 msgid " Matbuot xizmati "
-msgstr "Пресс-служба"
+msgstr "Пресс-служба "
 
 #: templates/base.html:281
 msgid " Yangiliklar "
-msgstr "Новости"
+msgstr "Новости "
 
 #: templates/base.html:284
-#, fuzzy
-#| msgid " E'lon va tadbirlar "
-msgid " E&#039;lon va tadbirlar "
-msgstr "Объявления и мероприятия"
+msgid " E'lon va tadbirlar "
+msgstr "Объявления и мероприятия "
 
 #: templates/base.html:288
-msgid " Mediateka "
-msgstr "Медиатека"
+msgid " Media   teka "
+msgstr "Медиа-библиотека "
 
 #: templates/base.html:294
-#, fuzzy
-#| msgid "Murojaat holatini bilish"
-msgid " Murojaat qilish "
-msgstr "Узнать статус обращения"
+msgid " Murojaat qilish  "
+msgstr "Подать обращение "
 
 #: templates/base.html:403 templates/base.html:417
 msgid " Obuna bo'lish "
-msgstr "Подписаться"
+msgstr "Подписаться "
 
 #: templates/base.html:407
 msgid ""
@@ -151,81 +150,81 @@ msgid ""
 "to‘g‘ri\n"
 "                                elektron pochtangiz orqali qabul qilib oling "
 msgstr ""
-"Введите ваш email, чтобы получать новости и советы прямо на вашу электронную "
-"почту"
+"Указав свой адрес электронной почты, получайте новости и советы напрямую\n"
+"                                на вашу электронную почту "
 
 #: templates/base.html:423
 msgid "E'lonlar "
-msgstr "Объявления"
+msgstr "Объявления "
 
 #: templates/base.html:429
 msgid " Dual ta’lim jarayonlari "
-msgstr "Процессы дуального образования"
+msgstr "Процессы дуального образования "
 
 #: templates/base.html:435
 msgid " 1-oktabr “O‘qituvchi va murabbiylar kuni "
-msgstr "1 октября – День учителей и наставников"
+msgstr "1 октября «День учителей и наставников» "
 
 #: templates/base.html:447
 msgid " “Mirzo Ulugʻbek vorislari” Respublika tanlovi "
-msgstr "Республиканский конкурс “Наследники Мирзо Улугбека”"
+msgstr "Республиканский конкурс «Наследники Мирзо Улугбека» "
 
 #: templates/base.html:452
 msgid " Talabalar festivali "
-msgstr "Фестиваль студентов"
+msgstr "Фестиваль студентов "
 
 #: templates/base.html:458
 msgid " BARKAMOL AVLOD-2023 SPORT MUSOBAQASIDA MUVOFFAQIYATLI BIRINCHI QADAM "
-msgstr "Успешный первый шаг на спортивных соревнованиях “Баркамол авлод-2023”"
+msgstr "УСПЕШНЫЙ ПЕРВЫЙ ШАГ В СПОРТИВНОМ СОРЕВНОВАНИИ BARKAMOL AVLOD-2023 "
 
 #: templates/base.html:470
 msgid " Foydali havolalar "
-msgstr ""
+msgstr "Полезные ссылки "
 
 #: templates/base.html:481
 msgid " O‘zbekiston Respublikasi hukumat portali "
-msgstr "Правительственный портал Республики Узбекистан"
+msgstr "Портал правительства Республики Узбекистан "
 
 #: templates/base.html:490
 msgid ""
 " O‘zbekiston Respublikasi uy - joy kommunal xizmat ko‘rsatish vazirligi "
-msgstr "Министерство жилищно-коммунального обслуживания Республики Узбекистан"
+msgstr "Министерство жилищно-коммунального обслуживания Республики Узбекистан "
 
 #: templates/base.html:502
 msgid "  O‘zbekiston Respublikasi Davlat soliq qo‘mitasi "
-msgstr "Государственный налоговый комитет Республики Узбекистан"
+msgstr "Государственный налоговый комитет Республики Узбекистан "
 
 #: templates/base.html:511
 msgid "  Korporativ axborot yagona portali "
-msgstr "Единый портал корпоративной информации"
+msgstr "Единый портал корпоративной информации "
 
 #: templates/base.html:522
 msgid "  O‘zbekiston Respublikasi Qonun hujjatlari ma’lumotlari miliiy bazasi "
-msgstr "Национальная база данных законодательства Республики Узбекистан"
+msgstr "Национальная база данных законодательства Республики Узбекистан "
 
 #: templates/base.html:532
 msgid "  O‘zbekiston Respublikasi Davlat Statistika Qo‘mitasi "
-msgstr "Государственный комитет по статистике Республики Узбекистан"
+msgstr "Государственный комитет Республики Узбекистан по статистике "
 
 #: templates/base.html:543
 msgid "  Navoiy viloyati hokimligi "
-msgstr "Администрация Навоийской области"
+msgstr "Администрация Навоийской области "
 
 #: templates/base.html:553
 msgid "  Navoiy viloyati Sog'liqni saqlash boshqarmasi "
-msgstr "Управление здравоохранения Навоийской области"
+msgstr "Управление здравоохранения Навоийской области "
 
 #: templates/base.html:573
 msgid " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarmasi "
-msgstr "Управление высшего образования, науки и инноваций Навоийской области"
+msgstr "Управление высшего образования, науки и инноваций Навоийской области "
 
 #: templates/base.html:575
 msgid "  2023 © Barcha huquqlar himoyalangan. "
-msgstr "2023 © Все права защищены."
+msgstr "2023 © Все права защищены. "
 
 #: templates/base.html:604
 msgid "  Navoiy viloyat Urganch shahar P.Mahmud ko‘chasi 162-A-uy "
-msgstr "Навоийская область, город Урганч, улица П. Махмуда, 162-А"
+msgstr "Навоийская область, город Ургенч, улица П.Махмуда, 162-А "
 
 #: templates/base.html:610
 msgid " Saytning so'nggi yangilangan sanasi: "
@@ -238,381 +237,387 @@ msgstr "Заметили ошибку в тексте? "
 #: templates/base.html:621
 msgid ""
 "  Sichqoncha bilan belkgilang va Ctrl + Enter tugmalarini baravar bosing "
-msgstr "Выделите мышкой и нажмите Ctrl + Enter одновременно"
+msgstr ""
+"Выделите мышью и одновременно нажмите клавиши Ctrl + Enter "
 
 #: templates/home.html:50
 msgid " So'nggi xabarlar va e'lonlar "
-msgstr "Последние новости и объявления"
+msgstr "Последние новости и объявления "
 
 #: templates/home.html:89
 msgid " To'xtayev Feruz Sadulloyevich  "
-msgstr "Тохтаев Феруз Садуллоевич"
+msgstr "Тохтаев Феруз Садуллоевич "
 
-#: templates/home.html:90
+#: templates/home.html:90 templates/pages/yangiliklar.html:72
 msgid " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
-msgstr ""
-"Руководитель управления высшего образования, науки и инноваций Навоийской "
-"области"
+msgstr "Руководитель управления высшего образования, науки и инноваций Навоийской области "
 
-#: templates/home.html:105
+#: templates/home.html:105 templates/pages/boshqarma-haqida.html:75
+#: templates/pages/rahbaryat.html:34
 msgid " Me'yoriy hujjatlar "
-msgstr "Нормативные документы"
+msgstr "Нормативные документы "
 
 #: templates/home.html:106
-#, fuzzy
-#| msgid " Ish grafigi "
 msgid "  Ish grafigi "
-msgstr "График работы"
+msgstr "График работы "
 
-#: templates/home.html:107
+#: templates/home.html:107 templates/pages/boshqarma-haqida.html:77
+#: templates/pages/ish-urin.html:52
 msgid " Bo'sh ish o'rinlari "
-msgstr "Вакансии"
+msgstr "Вакантные рабочие места "
 
 #: templates/home.html:108
 msgid " Shikoyatlar mavjudmi?"
-msgstr "Есть жалобы?"
+msgstr "Есть ли жалобы? "
 
 #: templates/home.html:108
 msgid " Onlayn tarzda yuboring "
-msgstr "Отправить онлайн"
+msgstr "Отправить онлайн "
+
+#: templates/home.html:121
+msgid " Fotogalereya "
+msgstr "Фотогалерея "
 
 #: templates/home.html:122
-msgid " Fotogalereya "
-msgstr "Фотогалерея"
-
-#: templates/home.html:123
 msgid " Barcha rasmlar "
-msgstr "Все фотографии"
+msgstr "Все изображения "
 
-#: templates/pages/boshqarma-haqida.html:17
+#: templates/pages/boshqarma-haqida.html:18
+msgid "Boshqarma haqida"
+msgstr "Об управлении "
+
+#: templates/pages/boshqarma-haqida.html:58
+msgid " To'xtayev Feruz Sadulloyevich "
+msgstr "Тохтаев Феруз Садуллоевич "
+
+#: templates/pages/boshqarma-haqida.html:59
+#: templates/pages/elon-va-tadbirlar.html:52
+#: templates/pages/erishilgan-yutuqlar.html:53 templates/pages/ish-urin.html:46
+#: templates/pages/korrupsiya.html:50 templates/pages/matbuot-xizmati.html:72
+#: templates/pages/news_detail.html:75
+msgid "Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i"
+msgstr "Руководитель управления высшего образования, науки и инноваций Навоийской области "
+
+#: templates/pages/boshqarma-haqida.html:65
+#: templates/pages/elon-va-tadbirlar.html:58
+#: templates/pages/yangiliklar.html:78
+msgid " Qonunchilik palatasi qarorlari "
+msgstr "Решения Законодательной палаты "
+
+#: templates/pages/boshqarma-haqida.html:66
+msgid " Vazirlar mahkamasi qarorlari"
+msgstr "Решения Кабинета Министров "
+
+#: templates/pages/boshqarma-haqida.html:67
+#: templates/pages/elon-va-tadbirlar.html:60
+#: templates/pages/yangiliklar.html:80
+msgid " O'z kuchini yo'qotgan me'yoriy hujjatlar "
+msgstr "Нормативные документы, утратившие силу "
+
+#: templates/pages/boshqarma-haqida.html:68
+#: templates/pages/elon-va-tadbirlar.html:61
+msgid " Rasmiy ma'ruzalar "
+msgstr "Официальные доклады "
+
+#: templates/pages/boshqarma-haqida.html:69
+#: templates/pages/elon-va-tadbirlar.html:62
+msgid " Analitik xisobot va taxlillar "
+msgstr "Аналитические отчеты и анализы "
+
+#: templates/pages/boshqarma-haqida.html:76 templates/pages/ish-urin.html:51
+#: templates/pages/rahbaryat.html:38
+msgid " Ish grafigi "
+msgstr "График работы "
+
+#: templates/pages/boshqarma-haqida.html:78
+#: templates/pages/erishilgan-yutuqlar.html:72 templates/pages/ish-urin.html:53
+#: templates/pages/korrupsiya.html:57 templates/pages/matbuot-xizmati.html:91
+#: templates/pages/murojaatlar.html:289 templates/pages/news_detail.html:82
+#: templates/pages/rahbaryat.html:42 templates/pages/yangiliklar.html:93
+msgid "Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring"
+msgstr "Есть ли жалобы? <br />Отправить онлайн "
+
 #: templates/pages/elon-va-tadbirlar.html:16
 #: templates/pages/erishilgan-yutuqlar.html:16
 #: templates/pages/matbuot-xizmati.html:16 templates/pages/news_detail.html:16
 #: templates/pages/yangiliklar.html:16
 msgid "Barcha yangiliklar"
-msgstr "Все новости"
+msgstr "Все новости "
 
-#: templates/pages/boshqarma-haqida.html:18
 #: templates/pages/elon-va-tadbirlar.html:17
 #: templates/pages/erishilgan-yutuqlar.html:17
 #: templates/pages/matbuot-xizmati.html:17 templates/pages/yangiliklar.html:17
 msgid "RSS"
-msgstr "RSS"
+msgstr "RSS "
 
-#: templates/pages/boshqarma-haqida.html:20
-msgid "Boshqarma haqida"
-msgstr "Об управлении"
+#: templates/pages/elon-va-tadbirlar.html:19
+msgid "E'lon va tadbirlar"
+msgstr "Объявления и мероприятия "
 
-#: templates/pages/boshqarma-haqida.html:60
 #: templates/pages/elon-va-tadbirlar.html:51
 #: templates/pages/erishilgan-yutuqlar.html:52 templates/pages/ish-urin.html:45
 #: templates/pages/korrupsiya.html:49 templates/pages/matbuot-xizmati.html:71
 #: templates/pages/murojaatlar.html:270 templates/pages/news_detail.html:74
 #: templates/pages/yangiliklar.html:71
-#, fuzzy
-#| msgid " To'xtayev Feruz Sadulloyevich  "
 msgid "To'xtayev Feruz Sadulloyevich"
-msgstr "Тохтаев Феруз Садуллоевич"
+msgstr "Тохтаев Феруз Садуллоевич "
 
-#: templates/pages/boshqarma-haqida.html:61
-#: templates/pages/elon-va-tadbirlar.html:52
-#: templates/pages/erishilgan-yutuqlar.html:53 templates/pages/ish-urin.html:46
-#: templates/pages/korrupsiya.html:50 templates/pages/matbuot-xizmati.html:72
-#: templates/pages/news_detail.html:75 templates/pages/yangiliklar.html:72
-#, fuzzy
-#| msgid ""
-#| " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
-msgid "Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i"
-msgstr ""
-"Руководитель управления высшего образования, науки и инноваций Навоийской "
-"области"
-
-#: templates/pages/boshqarma-haqida.html:67
-#: templates/pages/elon-va-tadbirlar.html:58
-#: templates/pages/erishilgan-yutuqlar.html:59
-#: templates/pages/matbuot-xizmati.html:78 templates/pages/murojaatlar.html:276
-#: templates/pages/yangiliklar.html:78
-msgid "Qonunchilik palatasi qarorlari"
-msgstr "Решения Палаты законодательства"
-
-#: templates/pages/boshqarma-haqida.html:68
 #: templates/pages/elon-va-tadbirlar.html:59
-#: templates/pages/erishilgan-yutuqlar.html:60
-#: templates/pages/matbuot-xizmati.html:79 templates/pages/murojaatlar.html:277
 #: templates/pages/yangiliklar.html:79
-msgid "Vazirlar mahkamasi qarorlari"
-msgstr "Решения Кабинета Министров"
+msgid " Vazirlar mahkamasi qarorlari "
+msgstr "Решения Кабинета Министров "
 
-#: templates/pages/boshqarma-haqida.html:69
-#: templates/pages/elon-va-tadbirlar.html:60
-#: templates/pages/erishilgan-yutuqlar.html:61
-#: templates/pages/matbuot-xizmati.html:80 templates/pages/murojaatlar.html:278
-#: templates/pages/yangiliklar.html:80
-#, fuzzy
-#| msgid " O'z kuchini yo‘qotgan hujjatlar "
-msgid "O'z kuchini yo'qotgan me'yoriy hujjatlar"
-msgstr "Утратившие силу документы"
-
-#: templates/pages/boshqarma-haqida.html:70
-#: templates/pages/elon-va-tadbirlar.html:61
-#: templates/pages/erishilgan-yutuqlar.html:62
-#: templates/pages/matbuot-xizmati.html:81 templates/pages/murojaatlar.html:279
-#: templates/pages/yangiliklar.html:81
-msgid "Rasmiy ma'ruzalar"
-msgstr "Официальные доклады"
-
-#: templates/pages/boshqarma-haqida.html:71
-#: templates/pages/elon-va-tadbirlar.html:62
-#: templates/pages/erishilgan-yutuqlar.html:63
-#: templates/pages/matbuot-xizmati.html:82 templates/pages/murojaatlar.html:280
-#: templates/pages/yangiliklar.html:82
-msgid "Analitik xisobot va taxlillar"
-msgstr "Аналитические отчеты и анализы"
-
-#: templates/pages/boshqarma-haqida.html:77
 #: templates/pages/elon-va-tadbirlar.html:68
 #: templates/pages/erishilgan-yutuqlar.html:69 templates/pages/ish-urin.html:50
 #: templates/pages/korrupsiya.html:54 templates/pages/matbuot-xizmati.html:88
 #: templates/pages/murojaatlar.html:286 templates/pages/news_detail.html:79
-#: templates/pages/rahbaryat.html:34 templates/pages/yangiliklar.html:88
-#, fuzzy
-#| msgid " Me'yoriy hujjatlar "
+#: templates/pages/yangiliklar.html:90
 msgid "Me'yoriy hujjatlar"
-msgstr "Нормативные документы"
+msgstr "Нормативные документы "
 
-#: templates/pages/boshqarma-haqida.html:78
 #: templates/pages/elon-va-tadbirlar.html:69
-#: templates/pages/erishilgan-yutuqlar.html:70 templates/pages/ish-urin.html:51
+#: templates/pages/erishilgan-yutuqlar.html:70
 #: templates/pages/korrupsiya.html:55 templates/pages/matbuot-xizmati.html:89
 #: templates/pages/murojaatlar.html:287 templates/pages/news_detail.html:80
-#: templates/pages/rahbaryat.html:38 templates/pages/yangiliklar.html:89
-#, fuzzy
-#| msgid " Ish grafigi "
+#: templates/pages/yangiliklar.html:91
 msgid "Ish grafigi"
-msgstr "График работы"
+msgstr "График работы "
 
-#: templates/pages/boshqarma-haqida.html:79
 #: templates/pages/elon-va-tadbirlar.html:70
-#: templates/pages/erishilgan-yutuqlar.html:71 templates/pages/ish-urin.html:16
-#: templates/pages/ish-urin.html:52 templates/pages/korrupsiya.html:56
-#: templates/pages/matbuot-xizmati.html:90 templates/pages/murojaatlar.html:288
-#: templates/pages/news_detail.html:81 templates/pages/yangiliklar.html:90
-#, fuzzy
-#| msgid " Bo'sh ish o'rinlari "
-msgid "Bo'sh ish o'rinlari"
-msgstr "Вакансии"
+msgid " ish o'rinlari "
+msgstr "Вакансии "
 
-#: templates/pages/boshqarma-haqida.html:80
 #: templates/pages/elon-va-tadbirlar.html:71
-#: templates/pages/erishilgan-yutuqlar.html:72 templates/pages/ish-urin.html:53
-#: templates/pages/korrupsiya.html:57 templates/pages/matbuot-xizmati.html:91
-#: templates/pages/murojaatlar.html:289 templates/pages/news_detail.html:82
-#: templates/pages/rahbaryat.html:42 templates/pages/yangiliklar.html:91
-#, fuzzy
-#| msgid " Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring "
-msgid "Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring"
-msgstr "Есть жалобы? <br />Отправить онлайн"
-
-#: templates/pages/elon-va-tadbirlar.html:19
-#, fuzzy
-#| msgid " E'lon va tadbirlar "
-msgid "E'lon va tadbirlar"
-msgstr "Объявления и мероприятия"
+msgid " Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring"
+msgstr "Есть ли жалобы? <br />Отправить онлайн "
 
 #: templates/pages/erishilgan-yutuqlar.html:19
 msgid "Erishilgan yutuqlar"
-msgstr "Достижения"
+msgstr "Достижения "
+
+#: templates/pages/erishilgan-yutuqlar.html:59
+#: templates/pages/matbuot-xizmati.html:78 templates/pages/murojaatlar.html:276
+msgid "Qonunchilik palatasi qarorlari"
+msgstr "Решения Законодательной палаты "
+
+#: templates/pages/erishilgan-yutuqlar.html:60
+#: templates/pages/matbuot-xizmati.html:79 templates/pages/murojaatlar.html:277
+msgid "Vazirlar mahkamasi qarorlari"
+msgstr "Решения Кабинета Министров "
+
+#: templates/pages/erishilgan-yutuqlar.html:61
+#: templates/pages/matbuot-xizmati.html:80 templates/pages/murojaatlar.html:278
+msgid "O'z kuchini yo'qotgan me'yoriy hujjatlar"
+msgstr "Нормативные документы, утратившие силу "
+
+#: templates/pages/erishilgan-yutuqlar.html:62
+#: templates/pages/matbuot-xizmati.html:81 templates/pages/murojaatlar.html:279
+#: templates/pages/yangiliklar.html:81
+msgid "Rasmiy ma'ruzalar"
+msgstr "Официальные доклады "
+
+#: templates/pages/erishilgan-yutuqlar.html:63
+#: templates/pages/matbuot-xizmati.html:82 templates/pages/murojaatlar.html:280
+#: templates/pages/yangiliklar.html:82
+msgid "Analitik xisobot va taxlillar"
+msgstr "Аналитические отчеты и анализы "
+
+#: templates/pages/erishilgan-yutuqlar.html:71
+msgid " Ish o'rinlari "
+msgstr "Вакансии "
 
 #: templates/pages/ish-urin.html:15
 msgid "Barcha bo'sh ish o'rinlari"
-msgstr "Все вакансии"
+msgstr "Все вакантные рабочие места "
+
+#: templates/pages/ish-urin.html:16 templates/pages/matbuot-xizmati.html:90
+#: templates/pages/murojaatlar.html:288 templates/pages/yangiliklar.html:92
+msgid "Bo'sh ish o'rinlari"
+msgstr "Вакантные рабочие места "
 
 #: templates/pages/korrupsiya.html:11
-#, fuzzy
-#| msgid " Korrupsiyaga qarshi kurashish "
 msgid "Korrupsiyaga qarshi kurash"
-msgstr "Борьба с коррупцией"
+msgstr "Борьба с коррупцией "
 
 #: templates/pages/korrupsiya.html:16
 msgid "Korrupsiyaga qarshi xabar berish:"
-msgstr "Сообщить о коррупции:"
+msgstr "Сообщить о коррупции: "
 
 #: templates/pages/korrupsiya.html:18
 msgid "Bosh prokuratura ishonch raqami – 1007"
-msgstr "Горячая линия Генеральной прокуратуры – 1007"
+msgstr "Горячая линия Генеральной прокуратуры – 1007 "
 
 #: templates/pages/korrupsiya.html:19
 msgid "Korrupsiyaga qarshi kurashish agentligi – 1253"
-msgstr "Агентство по противодействию коррупции – 1253"
+msgstr "Агентство по противодействию коррупции – 1253 "
 
 #: templates/pages/korrupsiya.html:20
 msgid ""
 "Bosh prokuratura huzuridagi Iqtisodiy jinoyatlarga qarshi kurashish "
 "departamenti – 71-233-1007"
 msgstr ""
-"Департамент по борьбе с экономическими преступлениями при Генеральной "
-"прокуратуре – 71-233-1007"
+"Департамент по борьбе с экономическими преступлениями при Генеральной прокуратуре – 71-233-1007 "
 
 #: templates/pages/korrupsiya.html:21
 msgid "Telegramdagi @@antikorbot manzili orqali ham xabar berish mumkin"
-msgstr "Также можно сообщить через Telegram по адресу @@antikorbot"
+msgstr "Также можно сообщить через адрес в Telegram @@antikorbot "
 
 #: templates/pages/korrupsiya.html:22
 msgid "Sayt: https://anticorruption.uz/uzc"
-msgstr "Сайт: https://anticorruption.uz/uzc"
+msgstr "Сайт: https://anticorruption.uz/uzc "
 
 #: templates/pages/korrupsiya.html:25
 msgid "Murojaatlar uchun telefon:"
-msgstr "Телефон для обращений:"
+msgstr "Телефон для обращений: "
 
 #: templates/pages/korrupsiya.html:25
 msgid "+998 (93)-311-42-28"
-msgstr "+998 (93)-311-42-28"
+msgstr "+998 (93)-311-42-28 "
 
 #: templates/pages/korrupsiya.html:26
 msgid "Korrupsiyaga qarshi kurash bo‘yicha qo‘llanmalar"
-msgstr "Руководства по борьбе с коррупцией"
+msgstr "Руководства по борьбе с коррупцией "
 
 #: templates/pages/korrupsiya.html:27
-#, fuzzy
-#| msgid " Oliy ta’lim, fan va innovatsiyalar vazirligi "
 msgid "Oliy ta’lim, fan va innovatsiyalar vazirligi"
-msgstr "Министерство высшего образования, науки и инноваций"
+msgstr "Министерство высшего образования, науки и инноваций "
 
 #: templates/pages/korrupsiya.html:32
 msgid "Ushbu tasdiqlanadi"
-msgstr "Это подтверждается"
+msgstr "Это подтверждается "
 
 #: templates/pages/korrupsiya.html:34
 msgid "Karrupsiyaga qarshi kurashish uchun qullanma"
-msgstr "Руководство по борьбе с коррупцией"
+msgstr "Руководство по борьбе с коррупцией "
 
 #: templates/pages/korrupsiya.html:36
 msgid "Uslubiy bo'llanma _________________________"
-msgstr "Методическое руководство _________________________"
+msgstr "Методическое руководство _________________________ "
 
 #: templates/pages/korrupsiya.html:37
 msgid "Uslubiy tavsiyalar _________________________"
-msgstr "Методические рекомендации _________________________"
+msgstr "Методические рекомендации _________________________ "
 
 #: templates/pages/korrupsiya.html:39
 msgid "Budket-1 _________________________"
-msgstr "Бюджет-1 _________________________"
+msgstr "Бюджет-1 _________________________ "
 
 #: templates/pages/korrupsiya.html:40
 msgid "Budket-2 _________________________"
-msgstr "Бюджет-2 _________________________"
+msgstr "Бюджет-2 _________________________ "
 
 #: templates/pages/korrupsiya.html:41
 msgid "Kalendar-1 _________________________"
-msgstr "Календарь-1 _________________________"
+msgstr "Календарь-1 _________________________ "
 
 #: templates/pages/korrupsiya.html:42
 msgid "Kalendar-2 _________________________"
-msgstr "Календарь-2 _________________________"
+msgstr "Календарь-2 _________________________ "
 
 #: templates/pages/korrupsiya.html:43
 msgid "Kalendar-3 _________________________"
-msgstr "Календарь-3 _________________________"
+msgstr "Календарь-3 _________________________ "
+
+#: templates/pages/korrupsiya.html:56 templates/pages/news_detail.html:81
+msgid " Ish o'rinlari"
+msgstr "Вакансии "
 
 #: templates/pages/matbuot-xizmati.html:19
-#, fuzzy
-#| msgid " Matbuot xizmati "
 msgid "Matbuot xizmati"
-msgstr "Пресс-служба"
+msgstr "Пресс-служба "
 
 #: templates/pages/murojaatlar.html:15
 msgid "Onlayn murojaat qoldirish"
-msgstr "Оставить онлайн-обращение"
+msgstr "Подать обращение онлайн "
 
 #: templates/pages/murojaatlar.html:19
 msgid "Murojaat holatini bilish"
-msgstr "Узнать статус обращения"
+msgstr "Узнать статус обращения "
 
 #: templates/pages/murojaatlar.html:30
 msgid "Bilan belgilangan maydonlarni to'ldirish talab qilinadi"
-msgstr "Поля, отмеченные *, обязательны для заполнения"
+msgstr "Поля, помеченные *, обязательны для заполнения "
 
 #: templates/pages/murojaatlar.html:31
 msgid ""
 "Elektron shaklda yuborilgan arizalar mualliflarining shaxsiy ma'lumotlari "
 "O'zbekiston qonunchiligi talablariga muvofiq saqlanadi va qayta ishlanadi."
 msgstr ""
-"Личные данные авторов заявлений, поданных в электронной форме, хранятся и "
-"обрабатываются в соответствии с требованиями законодательства Узбекистана."
+"Личные данные авторов заявлений, поданных в электронной форме, хранятся и обрабатываются "
+"в соответствии с требованиями законодательства Узбекистана."
 
 #: templates/pages/murojaatlar.html:36
 msgid "Murojaat turini va uni kimga yuborayotganingizni tanlang"
-msgstr "Выберите тип обращения и кому вы его отправляете"
+msgstr "Выберите тип обращения и кому вы его отправляете "
 
 #: templates/pages/murojaatlar.html:39
 msgid "Murojaatingizni kimga yubormoqchisiz?"
-msgstr "Кому вы хотите отправить ваше обращение?"
+msgstr "Кому вы хотите отправить свое обращение? "
 
 #: templates/pages/murojaatlar.html:48
 msgid "Murojaat turi"
-msgstr "Тип обращения"
+msgstr "Тип обращения "
 
 #: templates/pages/murojaatlar.html:58
 msgid "Murojaatingizdagi nominativ holatda ko'rsating:"
-msgstr "Укажите в именительном падеже в вашем обращении:"
+msgstr "Укажите в именительном падеже в вашем обращении: "
 
 #: templates/pages/murojaatlar.html:61
 msgid "Familyangiz:"
-msgstr "Ваша фамилия:"
+msgstr "Ваша фамилия: "
 
 #: templates/pages/murojaatlar.html:70
 msgid "Ismingiz"
-msgstr "Ваше имя"
+msgstr "Ваше имя "
 
 #: templates/pages/murojaatlar.html:79
 msgid "Otangizni ismi"
-msgstr "Имя вашего отца"
+msgstr "Имя вашего отца "
 
 #: templates/pages/murojaatlar.html:79 templates/pages/murojaatlar.html:112
 msgid "(agar mavjud bo'lsa)"
-msgstr "(если имеется)"
+msgstr "(если имеется) "
 
 #: templates/pages/murojaatlar.html:85
 msgid "Kompaniyaning nomi"
-msgstr "Название компании"
+msgstr "Название компании "
 
 #: templates/pages/murojaatlar.html:85
 msgid "(yuridik shaxslar uchun)"
-msgstr "(для юридических лиц)"
+msgstr "(для юридических лиц) "
 
 #: templates/pages/murojaatlar.html:91
 msgid "Bog'lanish ma'lumotlarini ko'rsatib o'ting:"
-msgstr "Укажите контактные данные:"
+msgstr "Укажите контактные данные: "
 
 #: templates/pages/murojaatlar.html:95
 msgid "Elektron pochta manzili"
-msgstr "Адрес электронной почты"
+msgstr "Адрес электронной почты "
 
 #: templates/pages/murojaatlar.html:96
 msgid "So'rovni yo'naltirish to'g'risida javob yoki xabarnoma olish uchun"
-msgstr "Для получения ответа или уведомления о направлении запроса"
+msgstr "Для получения ответа или уведомления о направлении запроса "
 
 #: templates/pages/murojaatlar.html:105
 msgid "Telefon raqamingiz"
-msgstr "Ваш номер телефона"
+msgstr "Ваш номер телефона "
 
 #: templates/pages/murojaatlar.html:112
 msgid "Murojaatning hammualliflarini qo'shing"
-msgstr "Добавьте соавторов обращения"
+msgstr "Добавьте соавторов обращения "
 
 #: templates/pages/murojaatlar.html:118 templates/pages/murojaatlar.html:229
 #: templates/pages/murojaatlar.html:257
 msgid "hammuallif"
-msgstr "соавтор"
+msgstr "Соавтор "
 
 #: templates/pages/murojaatlar.html:134 templates/pages/murojaatlar.html:245
 msgid "O'chirish"
-msgstr "Удалить"
+msgstr "Удалить "
 
 #: templates/pages/murojaatlar.html:142
 msgid "Qo'shish"
-msgstr "Добавить"
+msgstr "Добавить "
 
 #: templates/pages/murojaatlar.html:152
 msgid ""
@@ -620,9 +625,8 @@ msgid ""
 "maqsadida murojaat matnida siz tasvirlagan harakat, fakt yoki voqea joyining "
 "manzilini ko'rsatish tavsiya etilayotganiga e'tiboringizni qaratamiz."
 msgstr ""
-"Мы обращаем ваше внимание на рекомендацию указать в тексте обращения адрес "
-"действия, факта или события, описанного вами, для объективного и "
-"всестороннего рассмотрения вашего обращения."
+"Обращаем ваше внимание на рекомендацию указать адрес места действия, факта или события, описанного в тексте обращения, "
+"для объективного и всестороннего рассмотрения вашего обращения."
 
 #: templates/pages/murojaatlar.html:153
 msgid ""
@@ -632,12 +636,9 @@ msgid ""
 "shaxsga ko'rib chiqishga yuborilmaydi, bu haqda sizga ma'lumot beriladi. "
 "Apellyatsiya ro'yxatdan o'tgan kundan boshlab yetti kun ichida."
 msgstr ""
-"Если текст вашего обращения не позволяет определить суть предложения, "
-"заявления или жалобы, ответ на обращение не будет дан, и оно не будет "
-"направлено на рассмотрение в государственный орган, местный орган "
-"государственной власти или должностному лицу в соответствии с их "
-"полномочиями; об этом вам будет сообщено в течение семи дней с даты "
-"регистрации апелляции."
+"Если текст вашего обращения не позволяет определить суть предложения, заявления или жалобы, ответ на обращение не будет дан, "
+"и оно не будет направлено на рассмотрение в государственный орган, местный орган государственной власти или должностному лицу в соответствии с их компетенцией. "
+"Вы будете уведомлены об этом. Обращение будет рассмотрено в течение семи дней с даты регистрации."
 
 #: templates/pages/murojaatlar.html:154
 msgid ""
@@ -645,21 +646,18 @@ msgid ""
 "murojaatnomaning matnini elektron hujjat shaklida kiritish uchun maydonga "
 "kiritilgan belgilar soniga cheklov qo'yilmaydi."
 msgstr ""
-"Для изложения сути предложения, заявления или жалобы в поле для ввода текста "
-"обращения в форме электронного документа нет ограничений на количество "
-"введенных символов."
+"Для изложения сути предложения, заявления или жалобы количество символов, вводимых в поле для ввода текста обращения в форме электронного документа, не ограничено."
 
 #: templates/pages/murojaatlar.html:159
 msgid ""
 "Murojaatnomangizni elektron hujjat shaklida kiritish uchun joriy maydonda "
 "taklif, ariza yoki shikoyatning mohiyatini aytib bering:"
 msgstr ""
-"Для подачи вашего обращения в форме электронного документа укажите суть "
-"предложения, заявления или жалобы в данном поле:"
+"Укажите суть предложения, заявления или жалобы в текущем поле для ввода вашего обращения в форме электронного документа: "
 
 #: templates/pages/murojaatlar.html:162
 msgid "Murojaat matni"
-msgstr "Текст обращения"
+msgstr "Текст обращения "
 
 #: templates/pages/murojaatlar.html:173
 msgid ""
@@ -668,9 +666,7 @@ msgid ""
 "kerakli hujjatlar va materiallarni elektron shaklda apellyatsiyaga "
 "qo'shishingiz mumkin."
 msgstr ""
-"При необходимости для подтверждения ваших доводов вы можете прикрепить "
-"нужные документы и материалы в электронной форме к обращению, используя "
-"функцию “Прикрепить документы (файлы)”."
+"При необходимости, для подтверждения ваших доводов вы можете прикрепить необходимые документы и материалы в электронной форме к обращению, используя функцию «Прикрепить документы (файлы)»."
 
 #: templates/pages/murojaatlar.html:174
 msgid ""
@@ -678,9 +674,7 @@ msgid ""
 "hujjatlar va materiallar faqat siz aytgan taklif, bayonot yoki shikoyatning "
 "mohiyatini tasdiqlashiga qaratamiz."
 msgstr ""
-"Обращаем ваше внимание на то, что документы и материалы, приложенные в "
-"предложенной форме на сайте, предназначены только для подтверждения сути "
-"упомянутого вами предложения, заявления или жалобы."
+"Обращаем ваше внимание, что документы и материалы, прикрепленные в предложенной форме на веб-сайте, предназначены исключительно для подтверждения сути упомянутого вами предложения, заявления или жалобы."
 
 #: templates/pages/murojaatlar.html:175
 msgid ""
@@ -688,9 +682,7 @@ msgid ""
 "qilinadigan formatsiz ikkita mustaqil fayl qo'shimchalari bilan istalgan "
 "tartibda elektron shaklda biriktirishingiz mumkin:"
 msgstr ""
-"Вы можете прикрепить необходимые документы и материалы в электронной форме "
-"без архивации (файл вложения), в любом порядке, с двумя независимыми "
-"файловыми приложениями в приемлемых форматах:"
+"Вы можете прикрепить необходимые документы и материалы в электронной форме без архивирования (файл приложения) в любом порядке с двумя независимыми файловыми вложениями в принятых форматах: "
 
 #: templates/pages/murojaatlar.html:177
 msgid ""
@@ -700,7 +692,7 @@ msgid ""
 msgstr ""
 "txt, doc, docx, rtf, xls, xlsx, pps, ppt, odt, ods, odp, pub, pdf, jpg, "
 "jpeg, bmp, png, tif, gif, pcx, mp3, wma, avi, mp4, mkv, wmv, mov, flv, "
-"torrent, xml, zip, svg, rar"
+"torrent, xml, zip, svg, rar "
 
 #: templates/pages/murojaatlar.html:178
 msgid ""
@@ -709,9 +701,7 @@ msgid ""
 "provayderi serveri tomonidan qayta ishlangan uzatilgan fayllar hajmiga "
 "bog'liqligini sizga ma'lum qilamiz."
 msgstr ""
-"Сообщаем вам, что передача дополнительного файла (файлов) на почтовый сервер "
-"зависит от пропускной способности сети “Интернет” пользователя и объема "
-"переданных файлов, обработанных сервером интернет-провайдера."
+"Информируем вас, что передача дополнительного файла (файлов) на почтовый сервер зависит от пропускной способности сети «Интернет» пользователя и объема переданных файлов, обработанных сервером интернет-провайдера."
 
 #: templates/pages/murojaatlar.html:180
 msgid ""
@@ -720,83 +710,74 @@ msgid ""
 "ajratilgan aloqa kanallari orqali Internetga ulanganda, fayl (lar) ning "
 "umumiy hajmini uzatish va qayta ishlash:"
 msgstr ""
-"Когда ваше устройство подключено к Интернету через выделенные каналы связи, "
-"обеспечивающие скорость передачи данных с использованием технологий ADSL, "
-"3G, 4G, WiFi и других, передача и обработка общего объема файла (файлов):"
+"Когда ваше устройство подключено к Интернету через выделенные каналы связи, обеспечивающие скорость передачи данных с использованием технологий ADSL, 3G, 4G, WiFi и других, передача и обработка общего объема файла (файлов): "
 
 #: templates/pages/murojaatlar.html:182
 msgid "5 Mbgacha, qoida tariqasida, vaqtni kechiktirmasdan amalga oshiriladi;"
-msgstr "До 5 МБ, как правило, осуществляется без задержки;"
+msgstr "До 5 МБ, как правило, осуществляется без задержки; "
 
 #: templates/pages/murojaatlar.html:183
 msgid ""
 "5 Mb dan 10 Mb gacha bo'lgan fayllar, vaqtni kechiktirish bilan amalga "
 "oshirish mumkin;"
-msgstr "Файлы от 5 МБ до 10 МБ могут быть обработаны с задержкой;"
+msgstr ""
+"Файлы от 5 МБ до 10 МБ могут быть обработаны с задержкой; "
 
 #: templates/pages/murojaatlar.html:184
 msgid "10 MB dan ortiq dastur amalga oshirilmasligi mumkin."
-msgstr "Файлы более 10 МБ могут не быть обработаны."
+msgstr "Файлы объемом более 10 МБ могут не быть обработаны. "
 
 #: templates/pages/murojaatlar.html:192
 msgid ""
 "Murojaatga kerakli hujjatlar va materiallarni elektron shaklda qo'shish "
 "uchun \"Fayl(lar) biriktirish\" tugmani bosing"
 msgstr ""
-"Чтобы прикрепить необходимые документы и материалы к обращению в электронной "
-"форме, нажмите кнопку “Прикрепить файл(ы)”"
+"Для прикрепления необходимых документов и материалов в электронной форме к обращению нажмите кнопку «Прикрепить файл(ы)» "
 
 #: templates/pages/murojaatlar.html:197
 msgid "Fayl(lar) biriktirish"
-msgstr "Прикрепить файл(ы)"
+msgstr "Прикрепить файл(ы) "
 
 #: templates/pages/murojaatlar.html:197
 msgid "Faylning umumiy hajmi 10 MB dan oshmasligi kerak"
-msgstr "Общий размер файла не должен превышать 10 МБ"
+msgstr "Общий объем файла не должен превышать 10 МБ "
 
 #: templates/pages/murojaatlar.html:210
 msgid "Murojaatni jo'natish"
-msgstr "Отправить обращение"
+msgstr "Отправить обращение "
 
 #: templates/pages/murojaatlar.html:232
 msgid "Familiya"
-msgstr "Фамилия"
+msgstr "Фамилия "
 
 #: templates/pages/murojaatlar.html:235
 msgid "Ism"
-msgstr "Имя"
+msgstr "Имя "
 
 #: templates/pages/murojaatlar.html:238
 msgid "Otasining ismi"
-msgstr "Отчество"
+msgstr "Отчество "
 
 #: templates/pages/murojaatlar.html:241
 msgid "Email"
-msgstr "Электронная почта"
+msgstr "Электронная почта "
 
 #: templates/pages/murojaatlar.html:271
-#, fuzzy
-#| msgid ""
-#| " Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i "
 msgid "Navoiy viloyat Oliy ta'lim, fan va innovatsiyalar boshqarma boshlig'i"
-msgstr ""
-"Руководитель управления высшего образования, науки и инноваций Навоийской "
-"области"
+msgstr "Руководитель управления высшего образования, науки и инноваций Навоийской области "
 
 #: templates/pages/news_detail.html:66
 msgid "Ko'rishlar: 21"
-msgstr "Просмотры: 21"
+msgstr "Просмотры: 21 "
 
 #: templates/pages/news_detail.html:67
 msgid "Sahifani chop etish"
-msgstr "Печать страницы"
+msgstr "Печатать страницу "
 
 #: templates/pages/rahbaryat.html:11
-msgid "Rahbariyat"
-msgstr "Руководство"
+msgid " Rahbariyat "
+msgstr "Руководство "
 
 #: templates/pages/yangiliklar.html:19
-#, fuzzy
-#| msgid " Yangiliklar "
 msgid "Yangiliklar"
-msgstr "Новости"
+msgstr "Новости "
