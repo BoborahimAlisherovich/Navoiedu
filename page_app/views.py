@@ -40,6 +40,25 @@ def erishilgan_yutuqlar(request):
     return render(request, 'pages/erishilgan-yutuqlar.html', ctx)
 
 
+def qabul_jadvali(request):
+    qabul_jadvali = QabulJadvali.objects.all()
+
+    ctx = {
+        'qabul_jadvali': qabul_jadvali,
+    }
+
+    return render(request, 'pages/qabul_jadvali.html', ctx)
+
+
+def qabul_jadvali_detail(request, pk):
+    jadvallar = get_object_or_404(QabulJadvali, pk=pk)
+
+    ctx = {
+        'data': jadvallar,
+    }
+    return render(request, 'pages/news_detail.html', ctx)
+
+    
 def bosh_ish_urinlar(request):
     bosh_ish_urinlar = BoShIshOrin.objects.all()
 

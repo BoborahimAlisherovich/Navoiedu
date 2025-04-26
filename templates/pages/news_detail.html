@@ -3,85 +3,175 @@
 {% load static %}
 
 {% block content %}
-
 <div class="body container-user">
     <div role="main" class="main row">
+        <!-- FIXED BUTTON -->
         <div class="fixed-block">
-            <a href="/murojaatlar" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+            <a href="/murojaatlar" class="feed-button" style="background: url({% static 'images/human-feedback-uz.png' %});"></a>
         </div>
+
         <!-- MAIN CONTENT -->
         <div class="pull-left col-md-9">
             <div class="news-main">
                 <div class="yangilik-block">
-                    <a href="#">{% blocktrans %}Barcha yangiliklar{% endblocktrans %}</a>
-                    <h1>{{ data.title }}</h1>
+                    <a href="#">{% trans "Barcha yangiliklar" %}</a>
+                    {% if data.title %}
+                        <h1>{{ data.title }}</h1>
+                    {% endif %}
                 </div>
-                <div class="news_item_detail">
-                    <div class="news__date">
-                        <i>
-                            <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="/static/images/sprite_icons.svg#icon__time"></use>
-                            </svg>
-                        </i>
-                        <span>{{ data.sana }}</span>
-                    </div>
-                    <div class="news__location">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <span>{{ data.joylashuv }}</span>
-                        <div class="news__title">{{ data.title }}</div>
-                    </div>
-                    <div class="news__content">{{ data.content|safe }}</div>
-                    <h3>{{ data.lavozim }}</h3>
 
-                    <div class="news__content">{{ data.tavsif }}</div>
-                </div>
-                <div class="news__title">{{ data.ism }}</div>
-                        
-                <div style="text-align:left;">
-                    <span style="font-size:16px;line-height:107%;font-family:'Times New Roman', serif;">
-                        <img src="{{ data.image.url }}" class="fr-fic fr-dib" alt="" style="max-width: 700px; max-height: 700px;">
-                    </span>
-                </div>
-                <div class="news__date"><i class="fa fa-phone"></i> {{ data.telefon }}</div>
-                <div class="news__date"><i class="fa fa-envelope"></i> <a href="mailto:{{ rahbar.email }}">{{ data.email }}</a></div>
-                
-                {% if rasmlar %}
-                <table style="width:100%;">
-                    <tbody>
-                        <tr>
+                <div class="news_item_detail">
+                    <!-- Date -->
+                    {% if data.sana %}
+                        <div class="news__date">
+                            <i>
+                                <svg class="ico_svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="{% static 'images/sprite_icons.svg' %}#icon__time"></use>
+                                </svg>
+                            </i>
+                            <span>{{ data.sana }}</span>
+                        </div>
+                    {% endif %}
+
+                    <!-- Location -->
+                    {% if data.joylashuv %}
+                        <div class="news__location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>{{ data.joylashuv }}</span>
+                        </div>
+                    {% endif %}
+
+                    <!-- Name -->
+                    {% if data.name %}
+                        <h3>{{ data.name }}</h3>
+                    {% endif %}
+
+                    <!-- Position -->
+                    {% if data.lavozim %}
+                        <h4>{{ data.lavozim }}</h4>
+                    {% endif %}
+
+                    <!-- Person Name -->
+                    {% if data.ism %}
+                        <div class="news__title">{{ data.ism }}</div>
+                    {% endif %}
+
+                    <!-- Content -->
+                    {% if data.content %}
+                        <div class="news__content">{{ data.content|safe }}</div>
+                    {% endif %}
+
+                    <!-- Description -->
+                    {% if data.tavsif %}
+                        <div class="news__content">{{ data.tavsif|safe }}</div>
+                    {% endif %}
+
+                    <!-- Text -->
+                    {% if data.matn %}
+                        <div class="news__content">{{ data.matn|safe }}</div>
+                    {% endif %}
+
+                    <!-- Qabul Jadvali (Special Case) -->
+                    {% if data.qabul_jadvali %}
+                        <div class="news__content">
+                            <h4>{% trans "Qabul jadvali" %}</h4>
+                            {{ data.qabul_jadvali|safe }}
+                        </div>
+                    {% endif %}
+
+                    <!-- Image -->
+                    {% if data.image %}
+                        <div style="text-align: left; margin-top: 15px;">
+                            <img src="{{ data.image.url }}" class="fr-fic fr-dib" alt="" style="max-width: 700px; max-height: 700px;">
+                        </div>
+                    {% endif %}
+
+                    <!-- Phone -->
+                    {% if data.telefon %}
+                        <div class="news__date">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>{{ data.telefon }}</span>
+                        </div>
+                    {% endif %}
+
+                    <!-- Email -->
+                    {% if data.email %}
+                        <div class="news__date">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                        </div>
+                    {% endif %}
+
+                    <!-- Achievements -->
+                    {% if data.yutuqlar %}
+                        <div class="news__content">
+                            <h4>{% trans "Erishgan yutuqlari" %}</h4>
+                            {{ data.yutuqlar|safe }}
+                        </div>
+                    {% endif %}
+
+                    <!-- Additional Images -->
+                    {% if rasmlar %}
+                        <h4 style="margin-top: 20px;">{% trans "Qo‘shimcha rasmlar" %}</h4>
+                        <div class="additional-images" style="display: flex; flex-wrap: wrap; gap: 10px;">
                             {% for image in rasmlar %}
-                                <td style="width:50%;">
-                                    <img src="{{ image.image.url }}" class="fr-fic fr-dib" alt="" style="max-width: 700px; max-height: 700px;">
-                                </td>
-                                {% if forloop.counter|divisibleby:2 %}</tr><tr>{% endif %}
+                                <div style="flex: 1 1 calc(50% - 10px); box-sizing: border-box;">
+                                    <img src="{{ image.image.url }}" class="fr-fic fr-dib" alt="" style="max-width: 100%; height: auto;">
+                                </div>
                             {% endfor %}
-                        </tr>
-                    </tbody>
-                </table>
-                {% endif %}
-                
-                <hr/>
-                <div class="date-main" align="center">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i> {{ data.sana }} <br/>
-                    <i class="fa fa-eye" aria-hidden="true"></i> {% blocktrans %}Ko'rishlar: 21{% endblocktrans %} <br/>
-                    <a href="#"><i class="fa fa-print" aria-hidden="true"></i> {% blocktrans %}Sahifani chop etish{% endblocktrans %}</a>
+                        </div>
+                    {% endif %}
+
+                    <hr/>
+
+                    <!-- Meta Information -->
+                    <div class="date-main" align="center">
+                        {% if data.sana %}
+                            <i class="fa fa-clock-o" aria-hidden="true"></i> {{ data.sana }} <br/>
+                        {% endif %}
+                        <i class="fa fa-eye" aria-hidden="true"></i> {% trans "Ko'rishlar: 21" %} <br/>
+                        <a href="#"><i class="fa fa-print" aria-hidden="true"></i> {% trans "Sahifani chop etish" %}</a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- SIDEBAR -->
         <div class="pull-left block-sidebar col-md-3">
-            <span class="news" style="border:1px solid #3669d1;">
-                <div class="news__image" style="height: auto;"><img src="{% static 'images/raxba_copy.jpg' %}"/></div>
-                <div style="text-align:center; margin-bottom:10px;"><b>{% blocktrans %}To'xtayev Feruz Sadulloyevich{% endblocktrans %}</b></div>
-                <div style="text-align:center;">{% blocktrans %}Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i{% endblocktrans %}</div>
+            <span class="news" style="border: 1px solid #3669d1; display: block;">
+                <div class="news__image" style="height: auto;">
+                    <img src="{% static 'images/raxba_copy.jpg' %}" alt="Raxbar" style="width: 100%; height: auto;">
+                </div>
+                <div style="text-align: center; margin-bottom: 10px;">
+                    <b>{% trans "To'xtayev Feruz Sadulloyevich" %}</b>
+                </div>
+                <div style="text-align: center;">
+                    {% trans "Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i" %}
+                </div>
             </span>
+
             <hr/>
+
             <div class="data-banner">
-                <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html"><i class="fa fa-files-o" aria-hidden="true"></i> <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span></a>
-                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span></a>
-                <a style="background: #219653;" href="/boshqarma-haqida/ish-urin/"><i class="fa fa-user-plus" aria-hidden="true"></i> <span>{% blocktrans %} Ish o'rinlari{% endblocktrans %}</span></a>
-                <a href="https://my.gov.uz/" class="mygov"><i class="fa fa-comments-o" aria-hidden="true"></i><span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span></a>
+                <a href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                    <span>{% trans "Me'yoriy hujjatlar" %}</span>
+                </a>
+                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span>{% trans "Ish grafigi" %}</span>
+                </a>
+                <a style="background: #219653;" href="/boshqarma-haqida/ish-urin/">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    <span>{% trans "Ish o'rinlari" %}</span>
+                </a>
+                <a href="https://my.gov.uz/" class="mygov">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <span>{% trans "Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring" %}</span>
+                </a>
             </div>
         </div>
+
         <div class="clearfix"></div>
     </div>
 </div>

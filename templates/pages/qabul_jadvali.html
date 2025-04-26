@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="body container-user">
+    <div role="main" class="main row">
+        <div class="fixed-block">
+            <a href="/murojaatlar" class="feed-button" style="background: url(/static/images/human-feedback-uz.png);"> </a>
+        </div>
+
+        <div class="pull-left col-md-9">
+            <div class="news-main">
+                <div class="yangilik-block">
+                    <a href="#">{% blocktrans %}Barcha qabul jadvali{% endblocktrans %}</a>
+                    <h1>{% blocktrans %}Qabul jadvali{% endblocktrans %}</h1>
+                </div>
+
+                {% for i in qabul_jadvali %}
+                    <div class="announcement-box row mb-3">
+                        <div class="col-md-4">
+                            <img src="{{ i.image.url }}" class="img-fluid rounded" style="height: 150px; width: 100%; object-fit: cover;" />
+                        </div>
+                        <div class="col-md-8 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="fw-bold">{{ i.name }}</h5>
+                                <!-- <p class="text-muted small">{{ i.matn|truncatewords:15 }}</p> -->
+                            </div>
+                            <div>
+                                <a href="{% url 'qabul_jadvali_detail' pk=i.id %}" class="btn btn-outline-primary btn-sm">{% trans "Batafsil" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="pull-left block-sidebar col-md-3">
+            <span class="news" style="border:1px solid #3669d1;">
+                <div class="news__image"><img src="/static/images/raxba_copy.jpg" class="img-fluid" /></div>
+                <div style="text-align:center; margin-bottom:10px;"><b>{% blocktrans %}To'xtayev Feruz Sadulloyevich{% endblocktrans %}</b></div>
+                <div style="text-align:center;">{% blocktrans %}Navoiy viloyat Oliy ta’lim, fan va innovatsiyalar boshqarma boshlig'i{% endblocktrans %}</div>
+            </span>
+
+            <div id="activities_wrap" class="mt-3">
+                <ul class="nav navbar-nav" id="main-menu">
+                    <li><a href="#">{% blocktrans %} Qonunchilik palatasi qarorlari {% endblocktrans %}</a></li>
+                    <li><a href="#">{% blocktrans %} Vazirlar mahkamasi qarorlari {% endblocktrans %}</a></li>
+                    <li><a href="#">{% blocktrans %} O'z kuchini yo'qotgan me'yoriy hujjatlar {% endblocktrans %}</a></li>
+                    <li><a href="#">{% blocktrans %}Rasmiy ma'ruzalar{% endblocktrans %}</a></li>
+                    <li><a href="#">{% blocktrans %}Analitik xisobot va taxlillar{% endblocktrans %}</a></li>
+                </ul>
+            </div>
+
+            <hr />
+            <div class="data-banner">
+                <a class="calc-button" href="https://navoiyedu.uz/xizmatlar/hujjatlar-shakli/41-meyoriy-hujjatlar.html">
+                    <i class="fa fa-files-o"></i> <span>{% blocktrans %}Me'yoriy hujjatlar{% endblocktrans %}</span>
+                </a>
+                <a href="https://navoiyedu.uz/boglanish/39-ish-grafigi.html">
+                    <i class="fa fa-clock-o"></i> <span>{% blocktrans %}Ish grafigi{% endblocktrans %}</span>
+                </a>
+                <a style="background: #219653;" href="/boshqarma-haqida/ish-urin/">
+                    <i class="fa fa-user-plus"></i> <span>{% blocktrans %}Bo'sh ish o'rinlari{% endblocktrans %}</span>
+                </a>
+                <a href="https://my.gov.uz/" class="mygov">
+                    <i class="fa fa-comments-o"></i><span>{% blocktrans %}Shikoyatlar mavjudmi? <br />Onlayn tarzda yuboring{% endblocktrans %}</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<style>
+.announcement-box {
+    background-color: #fdfdfd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+</style>
+{% endblock content %}

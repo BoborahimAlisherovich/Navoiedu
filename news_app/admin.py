@@ -9,6 +9,7 @@ from .models import (
 
     Murojat,
     MurojatHammuallif,    
+    
 
     #boshqarma haqida 
     BoShIshOrin,
@@ -38,8 +39,8 @@ class ErishilganYutuqlarAdmin(admin.ModelAdmin):
 class MatbuotXizmatiRasmlarInline(admin.TabularInline):
     model = MatbuotXizmatiRasmlar
     extra = 1
-    verbose_name = "Matbuot Rasmi"
-    verbose_name_plural = "Matbuot Rasmlari"
+    verbose_name = "Yangilik Rasmi"
+    verbose_name_plural = "yangilik Rasmlari"
 
 @admin.register(MatbuotXizmati)
 class MatbuotXizmatiAdmin(admin.ModelAdmin):
@@ -78,19 +79,24 @@ class RahbariyatInline(admin.TabularInline):
     verbose_name_plural = "Rahbariyatlar"
 
 
-class QabulJadvaliInline(admin.TabularInline):
-    model = QabulJadvali
-    extra = 1
-    verbose_name = "QabulJadvali"
-    verbose_name_plural = "QabulJadvalilar"
+# class QabulJadvaliInline(admin.TabularInline):
+#     model = QabulJadvali
+#     extra = 1
+#     verbose_name = "QabulJadvali"
+#     verbose_name_plural = "QabulJadvalilar"
 
+@admin.register(QabulJadvali)
+class QabulJadvaliAdmin(admin.ModelAdmin):
+    list_display = ('name', 'image')
+    search_fields = ('name', )
+    list_filter = ('name',)
 
 @admin.register(BoshqarmaTarixi)
 class BoshqarmaTarixiAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'created_at')
     search_fields = ('title', 'content')
     list_filter = ('created_at','title')
-    inlines = [BoShIshOrinInline,RahbariyatInline,QabulJadvaliInline]
+    inlines = [BoShIshOrinInline,RahbariyatInline]
 
 
 class MurojatHammuallifInline(admin.TabularInline):

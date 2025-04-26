@@ -781,3 +781,5 @@ msgstr "Руководство "
 #: templates/pages/yangiliklar.html:19
 msgid "Yangiliklar"
 msgstr "Новости "
+
+

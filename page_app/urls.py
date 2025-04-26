@@ -28,6 +28,9 @@ urlpatterns = [
     
     path('boshqarma-haqida/murojaatlar/', murojaatlar),
     # path('boshqarma-haqida/murojaatlar/<int:pk>/', rahbariyat_detail, name='rahbariyat_detail'),
+
+     path('boshqarma-haqida/qabul-jadvali/', qabul_jadvali),
+     path('boshqarma-haqida/qabul-jadvali/<int:pk>/', qabul_jadvali_detail, name='qabul_jadvali_detail'),
     
     path('korrupsiyaga-qarshi-kurashish/',korrupsiya),
     path('murojaatlar/',murojaatlar),

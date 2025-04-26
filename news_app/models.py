@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from ckeditor.fields import RichTextField
 
 # Models for Erishilgan Yutuqlar
 class ErishilganYutuqRasmlari(models.Model):
@@ -24,7 +25,7 @@ class ErishilganYutuqlar(models.Model):
     image = models.ImageField(upload_to='yutuqlar/', verbose_name="Asosiy Rasm")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan Sana")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=" ilangan Sana")
 
     def __str__(self):
         return self.title
@@ -49,8 +50,8 @@ class MatbuotXizmatiRasmlar(models.Model):
         return f"Rasm: {self.image.name}"
 
     class Meta:
-        verbose_name = "Matbuot Xizmati Rasmi"
-        verbose_name_plural = "Matbuot Xizmati Rasmlari"
+        verbose_name = "Yangiliklar Rasmi"
+        verbose_name_plural = "Yangiliklar Rasmlari"
 
 
 class MatbuotXizmati(models.Model):
@@ -64,8 +65,8 @@ class MatbuotXizmati(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Matbuot Xizmati"
-        verbose_name_plural = "Matbuot Xizmati"
+        verbose_name = "Yangiliklar "
+        verbose_name_plural = "Yangiliklar "
         ordering = ['-id']
 
 
@@ -183,20 +184,18 @@ class BoshqarmaTarixi(models.Model):
 
     
 class QabulJadvali(models.Model):
-    ism = models.CharField(max_length=255)
-    lavozim = models.CharField(max_length=255)
-    qabul_vaqti = models.CharField(max_length=255)
-    telefon = models.CharField(max_length=20)
-    email = models.EmailField(blank=True, null=True)
-    boshqarma_tarix = models.ForeignKey(
-        'BoshqarmaTarixi',
-        related_name="QabulJadvali",
-        on_delete=models.CASCADE,
-        verbose_name="Tegishli QabulJadvali"
-    )
+    name = models.CharField(max_length=255, verbose_name="Politexnikum nomi")
+    matn = RichTextField()
+    image = models.ImageField(upload_to='Images/qabul_jadvali/', verbose_name="Asosiy Rasm")
+    # boshqarma_tarix = models.ForeignKey(
+    #     'BoshqarmaTarixi',
+    #     related_name="QabulJadvali",
+    #     on_delete=models.CASCADE,
+    #     verbose_name="Tegishli QabulJadvali"
+    # )
 
     def __str__(self):
-        return self.ism
+        return self.name
 
 
 
