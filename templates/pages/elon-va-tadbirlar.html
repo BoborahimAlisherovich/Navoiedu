@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
@@ -11,17 +12,17 @@
                 </div>
                 <!-- MAIN CONTENT -->
                 <div class="pull-left col-md-9">
-                    <div class="news-main">
-                        <div class="yangilik-block">
+                    <div class="news-main" >
+                        <div class="yangilik-block" >
                         <a href="https://navoiyedu.uz/matbuot-xizmati/e039lon-va-tadbirlar/uz/news.html">{% blocktrans %}Barcha yangiliklar{% endblocktrans %}</a>
                         <a href="https://navoiyedu.uz/matbuot-xizmati/e039lon-va-tadbirlar/uz/rss" class="rss">{% blocktrans %}RSS{% endblocktrans %} <i class="fa fa-rss" aria-hidden="true"></i></a>
-                            <h1>
+                            <h1 style="margin-top: 20px;">
                                 {% blocktrans %}E'lon va tadbirlar{% endblocktrans %}
                             </h1>
                         </div>
                         {% for i in elon_va_tadbirlar %}
                             <div class="grid_item news_item">
-    <a href="{% url 'elon_va_tadbir_detail' pk=i.id %}" class="news">
+    <a href="{% url 'elon_va_tadbir_detail' pk=i.id %}" class="news" style="margin-top: 20px; margin-left: 6px;">
         <div class="news__image" style="background: url({{i.image.url}});background-size: cover;"></div>
         <div class="news__title">
             {{ i.title }}

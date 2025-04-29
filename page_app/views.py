@@ -186,30 +186,46 @@ def boshqarma_haqida_detail(request, pk):
 from django.shortcuts import render, redirect
 from news_app.forms import MurojatForm, MurojatHammuallifForm
 from django.forms import formset_factory
+from news_app.bot import send_message
+# agar send_message alohida faylda bo‘lsa
 
 def murojaatlar(request):
-    
     HammuallifFormSet = formset_factory(MurojatHammuallifForm, extra=0)
-    
+
     if request.method == 'POST':
         form = MurojatForm(request.POST, request.FILES)
         formset = HammuallifFormSet(request.POST, prefix='hammuallif')
-        
+
         if form.is_valid():
             murojat = form.save()
-            
+
+            # Telegramga yuborish
+            send_message(
+                murojat_kimga=murojat.murojat_kimga,
+                murojat_turi=murojat.murojat_turi,
+                familiya=murojat.familiya,
+                ismi=murojat.ismi,
+                otasining_ismi=murojat.otasining_ismi,
+                kompaniyaning_nomi=murojat.kompaniyaning_nomi,
+                pochta_manzil=murojat.pochta_manzil,
+                mirojat_matni=murojat.mirojat_matni,
+                tel_raqam=murojat.tel_raqam,
+                create_date=murojat.create_date,
+                id=murojat.id
+            )
+
             if formset.is_valid():
                 for hammuallif_form in formset:
-                    if hammuallif_form.cleaned_data:  # Faqat to'ldirilgan formalarni saqlaymiz
+                    if hammuallif_form.cleaned_data:
                         hammuallif = hammuallif_form.save(commit=False)
                         hammuallif.murojat = murojat
                         hammuallif.save()
-            
+
             return redirect('home_page')
     else:
         form = MurojatForm()
         formset = HammuallifFormSet(prefix='hammuallif')
-    
+
     context = {
         'form': form,
         'formset': formset,

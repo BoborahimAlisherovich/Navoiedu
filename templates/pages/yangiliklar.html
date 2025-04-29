@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
@@ -22,7 +24,7 @@
 
                         {% for i in matbuot_xizmatlari %}
                             <div class="grid_item news_item">
-                                <a href="{% url 'matbuot_xizmati_detail' pk=i.id %}" class="news">
+                                <a href="{% url 'matbuot_xizmati_detail' pk=i.id %}" class="news" style="margin-top: 20px; margin-left: 6px;">
                                     <div class="news__image" style="background: url({{i.image.url}});background-size: cover;"></div>
                                     <div class="news__title">
                                         {{ i.title }}
@@ -98,4 +100,3 @@
             </div>
         </div>
 {% endblock content %}  
-

@@ -200,6 +200,12 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 }
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
+@media (max-width: 767px) {
+    .special-menu li a {
+        display: none;
+    }
+}  
+
 @-webkit-keyframes wobble {
   0% { -webkit-transform: translateX(0%); }
   15% { -webkit-transform: translateX(-25%) rotate(-5deg); }

@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Rahbariyat,BoShIshOrin,ErishilganYutuqlar,MatbuotXizmati,ElonVaTadbirlar,BoshqarmaTarixi
+from .models import Rahbariyat,BoShIshOrin,ErishilganYutuqlar,MatbuotXizmati,ElonVaTadbirlar,BoshqarmaTarixi,QabulJadvali
 
 @register(Rahbariyat)
 class RahbariyatTranslationOptions(TranslationOptions):
@@ -11,10 +11,13 @@ class BoShIshOrinTranslationOptions(TranslationOptions):
 
 
 
+@register(QabulJadvali)
+class QabulJadvaliTranslationOptions(TranslationOptions):
+    fields = ('name','matn')
+
 @register(ErishilganYutuqlar)
 class ErishilganYutuqlarTranslationOptions(TranslationOptions):
     fields = ('title','content')
-
 
 @register(MatbuotXizmati)
 class MatbuotXizmatiTranslationOptions(TranslationOptions):
