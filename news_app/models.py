@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
+from googletrans import Translator
+
+# Initialize translator
+translator = Translator()
 
 # Models for Erishilgan Yutuqlar
 class ErishilganYutuqRasmlari(models.Model):
@@ -25,10 +29,22 @@ class ErishilganYutuqlar(models.Model):
     image = models.ImageField(upload_to='yutuqlar/', verbose_name="Asosiy Rasm")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=" ilangan Sana")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan Sana")
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        # Auto-translate title and content if not provided
+        if self.title_uz and not self.title_en:
+            self.title_en = translator.translate(self.title_uz, src='uz', dest='en').text
+        if self.title_uz and not self.title_ru:
+            self.title_ru = translator.translate(self.title_uz, src='uz', dest='ru').text
+        if self.content_uz and not self.content_en:
+            self.content_en = translator.translate(self.content_uz, src='uz', dest='en').text
+        if self.content_uz and not self.content_ru:
+            self.content_ru = translator.translate(self.content_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Erishilgan Yutuq"
@@ -47,6 +63,7 @@ class MatbuotXizmatiRasmlar(models.Model):
     )
 
     def __str__(self):
+        
         return f"Rasm: {self.image.name}"
 
     class Meta:
@@ -64,9 +81,20 @@ class MatbuotXizmati(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        if self.title_uz and not self.title_en:
+            self.title_en = translator.translate(self.title_uz, src='uz', dest='en').text
+        if self.title_uz and not self.title_ru:
+            self.title_ru = translator.translate(self.title_uz, src='uz', dest='ru').text
+        if self.content_uz and not self.content_en:
+            self.content_en = translator.translate(self.content_uz, src='uz', dest='en').text
+        if self.content_uz and not self.content_ru:
+            self.content_ru = translator.translate(self.content_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
+
     class Meta:
-        verbose_name = "Yangiliklar "
-        verbose_name_plural = "Yangiliklar "
+        verbose_name = "Yangiliklar"
+        verbose_name_plural = "Yangiliklar"
         ordering = ['-id']
 
 
@@ -89,7 +117,7 @@ class ElonVaTadbirlarRasmlar(models.Model):
 
 
 class ElonVaTadbirlar(models.Model):
-    title = models.CharField(max_length=455, verbose_name="Sarlavha",)
+    title = models.CharField(max_length=455, verbose_name="Sarlavha")
     image = models.ImageField(upload_to='Images/elon_va_tadbirlar/', verbose_name="Asosiy Rasm")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
@@ -98,15 +126,24 @@ class ElonVaTadbirlar(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        if self.title_uz and not self.title_en:
+            self.title_en = translator.translate(self.title_uz, src='uz', dest='en').text
+        if self.title_uz and not self.title_ru:
+            self.title_ru = translator.translate(self.title_uz, src='uz', dest='ru').text
+        if self.content_uz and not self.content_en:
+            self.content_en = translator.translate(self.content_uz, src='uz', dest='en').text
+        if self.content_uz and not self.content_ru:
+            self.content_ru = translator.translate(self.content_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "Elon va Tadbir"
         verbose_name_plural = "Elon va Tadbirlar"
         ordering = ['-id']
 
 
-
-
-#new addit
+# Models for Boshqarma Haqida
 class BoShIshOrin(models.Model):
     image = models.ImageField(upload_to='Images/bo_shish_orin/', verbose_name="Rasm")
     lavozim = models.CharField(max_length=100)
@@ -122,11 +159,26 @@ class BoShIshOrin(models.Model):
 
     def __str__(self):
         return self.lavozim
-    
+
+    def save(self, *args, **kwargs):
+        if self.lavozim_uz and not self.lavozim_en:
+            self.lavozim_en = translator.translate(self.lavozim_uz, src='uz', dest='en').text
+        if self.lavozim_uz and not self.lavozim_ru:
+            self.lavozim_ru = translator.translate(self.lavozim_uz, src='uz', dest='ru').text
+        if self.joylashuv_uz and not self.joylashuv_en:
+            self.joylashuv_en = translator.translate(self.joylashuv_uz, src='uz', dest='en').text
+        if self.joylashuv_uz and not self.joylashuv_ru:
+            self.joylashuv_ru = translator.translate(self.joylashuv_uz, src='uz', dest='ru').text
+        if self.tavsif_uz and not self.tavsif_en:
+            self.tavsif_en = translator.translate(self.tavsif_uz, src='uz', dest='en').text
+        if self.tavsif_uz and not self.tavsif_ru:
+            self.tavsif_ru = translator.translate(self.tavsif_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
+
 
 class Rahbariyat(models.Model):
     ism = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='Images/rahbariyat/',verbose_name="Rasm")
+    image = models.ImageField(upload_to='Images/rahbariyat/', verbose_name="Rasm")
     lavozim = models.CharField(max_length=100)
     telefon = models.CharField(max_length=20)
     email = models.EmailField()
@@ -138,68 +190,67 @@ class Rahbariyat(models.Model):
     )
 
     def __str__(self):
-        
-        
         return self.ism
+
+    def save(self, *args, **kwargs):
+        if self.ism_uz and not self.ism_en:
+            self.ism_en = translator.translate(self.ism_uz, src='uz', dest='en').text
+        if self.ism_uz and not self.ism_ru:
+            self.ism_ru = translator.translate(self.ism_uz, src='uz', dest='ru').text
+        if self.lavozim_uz and not self.lavozim_en:
+            self.lavozim_en = translator.translate(self.lavozim_uz, src='uz', dest='en').text
+        if self.lavozim_uz and not self.lavozim_ru:
+            self.lavozim_ru = translator.translate(self.lavozim_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
+
 
 class BoshqarmaTarixi(models.Model):
     image = models.ImageField(upload_to='Images/boshqarma_haqida/', verbose_name="Asosiy Rasm")
-    title = models.CharField(max_length=255,verbose_name="Sarlavha")
+    title = models.CharField(max_length=255, verbose_name="Sarlavha")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True)
-    
 
     def __str__(self):
         return self.title
-    
+
+    def save(self, *args, **kwargs):
+        if self.title_uz and not self.title_en:
+            self.title_en = translator.translate(self.title_uz, src='uz', dest='en').text
+        if self.title_uz and not self.title_ru:
+            self.title_ru = translator.translate(self.title_uz, src='uz', dest='ru').text
+        if self.content_uz and not self.content_en:
+            self.content_en = translator.translate(self.content_uz, src='uz', dest='en').text
+        if self.content_uz and not self.content_ru:
+            self.content_ru = translator.translate(self.content_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "Boshqarma Haqida"
         verbose_name_plural = "Boshqarma Haqida"
 
 
-# class BoshqarmaTarixi(models.Model):
-#     title = models.CharField(max_length=255)
-#     content = models.TextField()
-#     created_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return self.title
-    
-
-    
-# class TarkibiyTuzilma(models.Model):
-#     title = models.CharField(max_length=255)
-#     content = models.TextField()
-#     created_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return self.title
-#     boshqarma_tarix = models.ForeignKey(
-#         'BoshqarmaTarixi',
-#         related_name="TarkibiyTuzilma",
-#         on_delete=models.CASCADE,
-#         verbose_name="Tegishli TarkibiyTuzilma"
-#     )
-
-
-    
 class QabulJadvali(models.Model):
     name = models.CharField(max_length=255, verbose_name="Politexnikum nomi")
     matn = RichTextField()
     image = models.ImageField(upload_to='Images/qabul_jadvali/', verbose_name="Asosiy Rasm")
-    # boshqarma_tarix = models.ForeignKey(
-    #     'BoshqarmaTarixi',
-    #     related_name="QabulJadvali",
-    #     on_delete=models.CASCADE,
-    #     verbose_name="Tegishli QabulJadvali"
-    # )
 
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        if self.name_uz and not self.name_en:
+            self.name_en = translator.translate(self.name_uz, src='uz', dest='en').text
+        if self.name_uz and not self.name_ru:
+            self.name_ru = translator.translate(self.name_uz, src='uz', dest='ru').text
+        if self.matn_uz and not self.matn_en:
+            self.matn_en = translator.translate(self.matn_uz, src='uz', dest='en').text
+        if self.matn_uz and not self.matn_ru:
+            self.matn_ru = translator.translate(self.matn_uz, src='uz', dest='ru').text
+        super().save(*args, **kwargs)
 
-
-
+    class Meta:
+        verbose_name = "Qabul Jadvali"
+        verbose_name_plural = "Qabul Jadvali"
 
     
 class Murojat(models.Model):
