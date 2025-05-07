@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from news_app.models import (
     ErishilganYutuqlar, 
     MatbuotXizmati, 
@@ -8,27 +8,24 @@ from news_app.models import (
     BoshqarmaTarixi,
     QabulJadvali,
     MatbuotXizmatiRasmlar,
-    
-  
- )
+)
+from news_app.forms import MurojatForm, MurojatHammuallifForm
+from django.forms import formset_factory
+from news_app.bot import send_message
 
-# 93 311 16 01 
 def home_page(request):
     elon_va_tadbirlar = ElonVaTadbirlar.objects.all()
-    bosh_ish_urinlar = BoShIshOrin.objects.all()  # Bo'sh ish o'rinlarini ham olish
+    bosh_ish_urinlar = BoShIshOrin.objects.all()
 
     ctx = {
         'elon_va_tadbirlar': elon_va_tadbirlar,
-        'bosh_ish_urinlar': bosh_ish_urinlar,  # Kontekstga qo'shish
+        'bosh_ish_urinlar': bosh_ish_urinlar,
     }
 
     return render(request, 'home.html', ctx)
 
-
 def korrupsiya(request):
     return render(request, 'pages/korrupsiya.html')
-
-
 
 def erishilgan_yutuqlar(request):
     erishilgan_yutuqlar = ErishilganYutuqlar.objects.all()
@@ -39,7 +36,6 @@ def erishilgan_yutuqlar(request):
 
     return render(request, 'pages/erishilgan-yutuqlar.html', ctx)
 
-
 def qabul_jadvali(request):
     qabul_jadvali = QabulJadvali.objects.all()
 
@@ -49,16 +45,16 @@ def qabul_jadvali(request):
 
     return render(request, 'pages/qabul_jadvali.html', ctx)
 
-
 def qabul_jadvali_detail(request, pk):
     jadvallar = get_object_or_404(QabulJadvali, pk=pk)
+    jadvallar.view_count = jadvallar.view_count + 1
+    jadvallar.save()
 
     ctx = {
         'data': jadvallar,
     }
     return render(request, 'pages/news_detail.html', ctx)
 
-    
 def bosh_ish_urinlar(request):
     bosh_ish_urinlar = BoShIshOrin.objects.all()
 
@@ -68,9 +64,7 @@ def bosh_ish_urinlar(request):
 
     return render(request, 'pages/ish-urin.html', ctx)
 
-
 def rahbariyat(request):
-    
     rahbariyat = Rahbariyat.objects.all()
 
     ctx = {
@@ -79,32 +73,30 @@ def rahbariyat(request):
 
     return render(request, 'pages/rahbaryat.html', ctx)
 
-
 def rahbariyat_detail(request, pk):
     rahbariyatlar = get_object_or_404(Rahbariyat, pk=pk)
+    rahbariyatlar.view_count = rahbariyatlar.view_count + 1
+    rahbariyatlar.save()
 
     ctx = {
         'data': rahbariyatlar,
     }
     return render(request, 'pages/news_detail.html', ctx)
 
-    
-
-
 def bosh_ish_urinlar_detail(request, pk):
     bosh_ish_urin = get_object_or_404(BoShIshOrin, pk=pk)
+    bosh_ish_urin.view_count = bosh_ish_urin.view_count + 1
+    bosh_ish_urin.save()
 
     ctx = {
         'data': bosh_ish_urin,
     }
     return render(request, 'pages/news_detail.html', ctx)
 
-    # return render(request, 'pages/ish-urin-detail.html', ctx)
-
-
-
 def erishilgan_yutuq_detail(request, pk):
     erishilgan_yutuq = get_object_or_404(ErishilganYutuqlar, pk=pk)
+    erishilgan_yutuq.view_count = erishilgan_yutuq.view_count + 1
+    erishilgan_yutuq.save()
 
     ctx = {
         'data': erishilgan_yutuq,
@@ -122,15 +114,14 @@ def matbuot_xizmati(request):
 
 def matbuot_xizmati_detail(request, pk):
     matbuot_xizmati = get_object_or_404(MatbuotXizmati, pk=pk)
-    rasmlar = MatbuotXizmatiRasmlar.objects.filter(yutuq=matbuot_xizmati)  # Tegishli rasmlar olinmoqda
-
+    matbuot_xizmati.view_count = matbuot_xizmati.view_count + 1
+    matbuot_xizmati.save()
+    rasmlar = MatbuotXizmatiRasmlar.objects.filter(yutuq=matbuot_xizmati)
 
     ctx = {
         'data': matbuot_xizmati,
-        'rasmlar': rasmlar,  # Rasmlarni kontekstga qo'shamiz
+        'rasmlar': rasmlar,
     }
-    
-
 
     return render(request, 'pages/news_detail.html', ctx)
 
@@ -143,9 +134,10 @@ def elon_va_tadbirlar(request):
 
     return render(request, 'pages/elon-va-tadbirlar.html', ctx)
 
-
 def elon_va_tadbir_detail(request, pk):
     elon_va_tadbir = get_object_or_404(ElonVaTadbirlar, pk=pk)
+    elon_va_tadbir.view_count = elon_va_tadbir.view_count + 1
+    elon_va_tadbir.save()
 
     ctx = {
         'data': elon_va_tadbir
@@ -161,7 +153,6 @@ def yangiliklar(request):
     }
     return render(request, 'pages/yangiliklar.html', ctx)
 
-
 def murojaat_izlash(request):
     return render(request, 'pages/murojaat-izlash.html')
 
@@ -174,20 +165,16 @@ def boshqarma_haqida(request):
 
     return render(request, 'pages/boshqarma-haqida.html', ctx)
 
-
 def boshqarma_haqida_detail(request, pk):
     boshqarma_haqid = get_object_or_404(BoshqarmaTarixi, pk=pk)
+    boshqarma_haqid.view_count = boshqarma_haqid.view_count + 1
+    boshqarma_haqid.save()
 
     ctx = {
         'data': boshqarma_haqid,
     }
 
     return render(request, 'pages/news_detail.html', ctx)
-from django.shortcuts import render, redirect
-from news_app.forms import MurojatForm, MurojatHammuallifForm
-from django.forms import formset_factory
-from news_app.bot import send_message
-# agar send_message alohida faylda bo‘lsa
 
 def murojaatlar(request):
     HammuallifFormSet = formset_factory(MurojatHammuallifForm, extra=0)
@@ -199,7 +186,6 @@ def murojaatlar(request):
         if form.is_valid():
             murojat = form.save()
 
-            # Telegramga yuborish
             send_message(
                 murojat_kimga=murojat.murojat_kimga,
                 murojat_turi=murojat.murojat_turi,

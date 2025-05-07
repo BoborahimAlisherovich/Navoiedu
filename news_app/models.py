@@ -30,6 +30,7 @@ class ErishilganYutuqlar(models.Model):
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan Sana")
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
 
     def __str__(self):
         return self.title
@@ -77,6 +78,7 @@ class MatbuotXizmati(models.Model):
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan Sana")
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
 
     def __str__(self):
         return self.title
@@ -122,6 +124,7 @@ class ElonVaTadbirlar(models.Model):
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan Sana")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan Sana")
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
 
     def __str__(self):
         return self.title
@@ -150,6 +153,7 @@ class BoShIshOrin(models.Model):
     joylashuv = models.CharField(max_length=100)
     sana = models.DateField()
     tavsif = models.TextField()
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
     boshqarma_tarix = models.ForeignKey(
         'BoshqarmaTarixi',
         related_name="BoShIshOrin",
@@ -182,6 +186,7 @@ class Rahbariyat(models.Model):
     lavozim = models.CharField(max_length=100)
     telefon = models.CharField(max_length=20)
     email = models.EmailField()
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
     boshqarma_tarix = models.ForeignKey(
         'BoshqarmaTarixi',
         related_name="Rahbariyatlar",
@@ -209,6 +214,7 @@ class BoshqarmaTarixi(models.Model):
     title = models.CharField(max_length=255, verbose_name="Sarlavha")
     content = models.TextField(verbose_name="Kontent")
     created_at = models.DateTimeField(auto_now_add=True)
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
 
     def __str__(self):
         return self.title
@@ -233,6 +239,7 @@ class QabulJadvali(models.Model):
     name = models.CharField(max_length=255, verbose_name="Politexnikum nomi")
     matn = RichTextField()
     image = models.ImageField(upload_to='Images/qabul_jadvali/', verbose_name="Asosiy Rasm")
+    view_count = models.IntegerField(default=0, verbose_name="Ko'rishlar soni")
 
     def __str__(self):
         return self.name
